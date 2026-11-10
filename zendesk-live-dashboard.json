@@ -1,18 +1,18 @@
 {
   "source": "Zendesk Explore · INIU-Report dashboard delivery",
-  "exportedAt": "2026-11-10T02:12:55+08:00",
+  "exportedAt": "2026-11-11T02:11:42+08:00",
   "dateRanges": {
     "response": [
       "2026-09-11",
-      "2026-11-09"
+      "2026-11-10"
     ],
     "volume": [
       "2026-05-01",
-      "2026-11-09"
+      "2026-11-10"
     ],
     "satisfaction": [
       "2026-01-01",
-      "2026-11-09"
+      "2026-11-10"
     ],
     "product": [
       "January",
@@ -750,16 +750,16 @@
     },
     {
       "date": "2026-11-06",
-      "targets": 790,
+      "targets": 791,
       "median": 13,
-      "average": 38.47594936708861,
+      "average": 45.123893805309734,
       "cycles10": 324,
-      "p10": 41.01265822784811,
-      "p20": 65.44303797468355,
-      "p30": 76.0759493670886,
-      "p1h": 87.21518987341771,
-      "p2h": 94.05063291139241,
-      "pge2h": 5.949367088607595
+      "p10": 40.960809102402024,
+      "p20": 65.36030341340076,
+      "p30": 75.97977243994943,
+      "p1h": 87.10493046776233,
+      "p2h": 93.93173198482933,
+      "pge2h": 6.06826801517067
     },
     {
       "date": "2026-11-07",
@@ -789,16 +789,29 @@
     },
     {
       "date": "2026-11-09",
-      "targets": 802,
+      "targets": 822,
       "median": 16,
-      "average": 34.87281795511222,
-      "cycles10": 282,
-      "p10": 35.16209476309227,
-      "p20": 60.47381546134664,
-      "p30": 75.6857855361596,
-      "p1h": 85.41147132169577,
-      "p2h": 93.51620947630923,
-      "pge2h": 6.483790523690773
+      "average": 44.42335766423358,
+      "cycles10": 284,
+      "p10": 34.54987834549878,
+      "p20": 59.24574209245742,
+      "p30": 74.330900243309,
+      "p1h": 84.30656934306569,
+      "p2h": 92.45742092457421,
+      "pge2h": 7.542579075425791
+    },
+    {
+      "date": "2026-11-10",
+      "targets": 926,
+      "median": 11,
+      "average": 33.57775377969762,
+      "cycles10": 432,
+      "p10": 46.652267818574515,
+      "p20": 70.19438444924407,
+      "p30": 83.69330453563715,
+      "p1h": 93.73650107991361,
+      "p2h": 96.43628509719223,
+      "pge2h": 3.5637149028077757
     }
   ],
   "volume": [
@@ -2149,9 +2162,16 @@
     {
       "date": "2026-11-09",
       "inbound": 874,
-      "replies": 888,
-      "difference": 14,
-      "acceptance": 101.60183066361557
+      "replies": 891,
+      "difference": 17,
+      "acceptance": 101.94508009153319
+    },
+    {
+      "date": "2026-11-10",
+      "inbound": 983,
+      "replies": 1091,
+      "difference": 108,
+      "acceptance": 110.98677517802645
     }
   ],
   "satisfactionDaily": [
@@ -4605,17 +4625,17 @@
     },
     {
       "date": "2026-11-03",
-      "score": 98,
-      "rated": 50,
-      "good": 49,
+      "score": 97.95918367346938,
+      "rated": 49,
+      "good": 48,
       "bad": 1,
       "ratingCountAvailable": true
     },
     {
       "date": "2026-11-04",
-      "score": 95.65217391304348,
-      "rated": 69,
-      "good": 66,
+      "score": 95.71428571428572,
+      "rated": 70,
+      "good": 67,
       "bad": 3,
       "ratingCountAvailable": true
     },
@@ -4637,26 +4657,34 @@
     },
     {
       "date": "2026-11-07",
-      "score": 97.43589743589743,
-      "rated": 39,
-      "good": 38,
-      "bad": 1,
+      "score": 100,
+      "rated": 37,
+      "good": 37,
+      "bad": 0,
       "ratingCountAvailable": true
     },
     {
       "date": "2026-11-08",
-      "score": 91.8918918918919,
-      "rated": 37,
-      "good": 34,
+      "score": 92.10526315789474,
+      "rated": 38,
+      "good": 35,
       "bad": 3,
       "ratingCountAvailable": true
     },
     {
       "date": "2026-11-09",
-      "score": 96.07843137254902,
-      "rated": 51,
-      "good": 49,
-      "bad": 2,
+      "score": 94.64285714285714,
+      "rated": 56,
+      "good": 53,
+      "bad": 3,
+      "ratingCountAvailable": true
+    },
+    {
+      "date": "2026-11-10",
+      "score": 87.71929824561403,
+      "rated": 57,
+      "good": 50,
+      "bad": 7,
       "ratingCountAvailable": true
     }
   ],
@@ -5761,8 +5789,8 @@
       "tickets": 14
     }
   ],
-  "dataThrough": "2026-11-09",
-  "deliveryDirectory": "incoming-20261110",
+  "dataThrough": "2026-11-10",
+  "deliveryDirectory": "incoming-20261111",
   "productSource": "Zendesk Explore · Ticket Type workbook",
   "productSourceFile": "C:\\Users\\Amy\\Downloads\\Ticket_Type_11102026_1129.xlsx",
   "productExportedAt": "2026-11-10T11:29:00+08:00",
