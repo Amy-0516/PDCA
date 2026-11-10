@@ -1,0 +1,1460 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zendesk 客服运营工作台</title><style>
+:root{--ink:#172b4d;--muted:#65758b;--line:#dfe6ee;--bg:#f5f7fa;--green:#61a584;--dark:#294d55;--blue:#4076c8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 32px}.logo{width:40px;height:40px;border-radius:9px;background:#203b44;color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px}.title{font-size:24px;font-weight:750}.source{margin-left:auto;color:#28855a;font-weight:650}.btn,select{border:1px solid #c7d3e0;border-radius:7px;background:#fff;padding:10px 14px;font:inherit;color:var(--ink)}.btn{font-weight:650}.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.layout{display:grid;grid-template-columns:225px 1fr;min-height:calc(100vh - 76px)}aside{background:#fff;border-right:1px solid var(--line);padding:15px 10px}.nav{display:block;width:100%;border:0;background:transparent;text-align:left;padding:13px 14px;margin:3px 0;border-radius:7px;font:inherit;color:var(--ink);cursor:pointer}.nav.active,.nav:hover{background:#e9f1fb;color:#3569ad;font-weight:700}.dot{color:#a5c2e9;margin-right:8px}main{padding:22px;max-width:1650px;width:100%;margin:auto}.tab{display:none}.tab.active{display:block}.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:15px}.toolbar h1{margin:0;font-size:22px}.toolbar p{margin:4px 0 0;color:var(--muted)}.toolbar .spacer{flex:1}.notice{background:#eaf4ff;color:#285f9d;border-radius:7px;padding:11px 13px;margin-bottom:15px}.kpis{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:19px;box-shadow:0 1px 2px #15223808}.label{color:var(--muted);font-weight:650;font-size:13px}.value{font-size:32px;font-weight:750;margin:9px 0}.up{color:#278061}.down{color:#c85555}.two{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;margin-top:14px}.card h2{font-size:18px;margin:0 0 6px}.hint{color:var(--muted);line-height:1.55}.chart{height:315px;width:100%;margin-top:12px}.table-wrap{overflow:visible;margin-top:14px}.data-table{border-collapse:separate;border-spacing:0;width:100%;white-space:nowrap}.data-table th{position:sticky;top:0;z-index:4;background:#f6f8fa;color:#63748b;text-align:left;padding:12px;font-size:13px;box-shadow:0 1px 0 #dfe6ee,0 5px 10px rgba(23,43,77,.05)}.data-table td{border-top:1px solid var(--line);padding:12px}.ai p{margin:8px 0;border-bottom:1px solid var(--line);padding-bottom:8px}.ai p:last-child{border:0}.pill{font-size:12px;padding:4px 8px;border-radius:20px;background:#e8f1fb;color:#3569ad}.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.action{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:7px;padding:12px}.action h3{margin:8px 0;font-size:15px}.bar{height:7px;background:#e8edf2;border-radius:8px;overflow:hidden}.bar b{height:100%;display:block;background:var(--green)}.product-hero{display:grid;grid-template-columns:1.35fr .9fr;gap:14px;margin-top:14px}.product-table{width:100%;border-collapse:separate;border-spacing:0;min-width:800px}.product-table th{background:#eff7f8;color:#526475;font-size:12px;text-align:right;padding:11px;border-bottom:1px solid #dce8ec}.product-table th:first-child{text-align:left;border-radius:8px 0 0 0}.product-table th:last-child{border-radius:0 8px 0 0}.product-table th.month-group{background:#dcecef;color:#254c55;text-align:center;border-left:2px solid #c4d9dd}.product-table th[rowspan]{vertical-align:middle}.date-range{margin-left:8px}.date-range input{min-width:132px}.product-table td{padding:11px;border-bottom:1px solid #edf1f3;text-align:right}.product-table td:first-child{text-align:left;font-weight:650}.product-table tr:hover{background:#f8fbfb}.metric-good{color:#19764f;font-weight:700}.metric-watch{color:#bd6b24;font-weight:700}.type-dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px;background:#5aa7ba}.mini-bar{height:7px;background:#e8f0f2;border-radius:7px;overflow:hidden;min-width:76px}.mini-bar span{display:block;height:100%;background:#5aa7ba;border-radius:7px}.insight{padding:14px 0;border-bottom:1px solid #e5eaf0}.insight:last-child{border-bottom:0}.insight strong{display:block;margin-bottom:5px}.delta{font-size:12px;color:#64748b}@media(max-width:900px){.product-hero{grid-template-columns:1fr}.product-table{min-width:720px}}@media(max-width:900px){.layout{grid-template-columns:1fr}aside{display:flex;overflow:auto;padding:7px}.nav{white-space:nowrap;width:auto}.kpis,.actions{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}@media(max-width:600px){header{padding:0 12px}.title{font-size:18px}.source{display:none}.kpis,.actions{grid-template-columns:1fr}main{padding:12px}}
+
+.date-range{display:inline-flex;gap:7px;align-items:center}.date-range input{border:1px solid #c7d3e0;border-radius:7px;padding:9px 10px;font:inherit;color:var(--ink)}
+.compact-value{font-size:clamp(20px,2vw,30px)}.product-kpis{margin-bottom:14px}.product-trend-card{margin-top:0}.product-chart{height:360px;width:100%}.chart-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.chart-heading h2{margin:0}.chart-heading p{margin:6px 0 0}.compact-select{border:1px solid #c7d3e0;border-radius:7px;background:#fff;padding:9px 12px;font:inherit;color:var(--ink)}.chart-footnote{display:flex;flex-wrap:wrap;gap:18px;padding-top:10px;color:var(--muted);font-size:13px}.chart-footnote b{color:var(--ink)}.product-table-card{margin-top:14px}.product-table-wrap{max-height:520px;overflow:auto}.product-table td .cell-muted{color:#98a5b3}.product-insights{margin-top:14px}.product-insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.product-insight{background:#f7fafb;border:1px solid #e3ebef;border-radius:8px;padding:13px}.product-insight strong{display:block;margin-bottom:7px}.product-insight p{margin:0;color:var(--muted);line-height:1.55}.trend-up{color:#1c7652;font-weight:700}.trend-down{color:#c45d48;font-weight:700}.trend-flat{color:#8a6719;font-weight:700}@media(max-width:900px){.product-insights-grid{grid-template-columns:1fr}.chart-heading{flex-direction:column}.product-chart{height:300px}.date-range{width:100%;flex-wrap:wrap}.date-range input{flex:1}}
+
+.date-range{display:inline-flex;gap:7px;align-items:center}.date-range input{border:1px solid #c7d3e0;border-radius:7px;padding:9px 10px;font:inherit;color:var(--ink)}
+.compact-value{font-size:clamp(20px,2vw,30px)}.product-kpis{margin-bottom:14px}.product-trend-card{margin-top:0}.product-chart{height:360px;width:100%}.chart-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.chart-heading h2{margin:0}.chart-heading p{margin:6px 0 0}.compact-select{border:1px solid #c7d3e0;border-radius:7px;background:#fff;padding:9px 12px;font:inherit;color:var(--ink)}.chart-footnote{display:flex;flex-wrap:wrap;gap:18px;padding-top:10px;color:var(--muted);font-size:13px}.chart-footnote b{color:var(--ink)}.product-table-card{margin-top:14px}.product-table-wrap{max-height:520px;overflow:auto}.product-table td .cell-muted{color:#98a5b3}.product-insights{margin-top:14px}.product-insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.product-insight{background:#f7fafb;border:1px solid #e3ebef;border-radius:8px;padding:13px}.product-insight strong{display:block;margin-bottom:7px}.product-insight p{margin:0;color:var(--muted);line-height:1.55}.trend-up{color:#1c7652;font-weight:700}.trend-down{color:#c45d48;font-weight:700}.trend-flat{color:#8a6719;font-weight:700}@media(max-width:900px){.product-insights-grid{grid-template-columns:1fr}.chart-heading{flex-direction:column}.product-chart{height:300px}.date-range{width:100%;flex-wrap:wrap}.date-range input{flex:1}}
+
+html,body{max-width:100%;overflow-x:hidden}.layout,main,.tab,.card{min-width:0}.date-range{display:inline-flex;gap:7px;align-items:center}.date-range input{border:1px solid #c7d3e0;border-radius:7px;padding:9px 10px;font:inherit;color:var(--ink)}
+.compact-value{font-size:clamp(20px,2vw,30px)}.product-kpis{margin-bottom:14px}.product-trend-card{margin-top:0}.product-chart{height:360px;width:100%;min-width:0}.chart-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.chart-heading h2{margin:0}.chart-heading p{margin:6px 0 0}.compact-select{border:1px solid #c7d3e0;border-radius:7px;background:#fff;padding:9px 12px;font:inherit;color:var(--ink)}.chart-footnote{display:flex;flex-wrap:wrap;gap:18px;padding-top:10px;color:var(--muted);font-size:13px}.chart-footnote b{color:var(--ink)}.product-table-card{margin-top:14px}.product-table-wrap{max-height:520px;overflow:auto}.product-table td .cell-muted{color:#98a5b3}.product-insights{margin-top:14px}.product-insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.product-insight{background:#f7fafb;border:1px solid #e3ebef;border-radius:8px;padding:13px}.product-insight strong{display:block;margin-bottom:7px}.product-insight p{margin:0;color:var(--muted);line-height:1.55}.trend-up{color:#1c7652;font-weight:700}.trend-down{color:#c45d48;font-weight:700}.trend-flat{color:#8a6719;font-weight:700}@media(max-width:900px){header{height:auto;min-height:76px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.source{display:none}.product-insights-grid{grid-template-columns:1fr}.chart-heading{flex-direction:column}.product-chart{height:300px}.date-range{width:100%;flex-wrap:wrap}.date-range input{flex:1}}
+
+/* 2026-11-05 readability patch */
+.date-range input,
+input[type="date"] {
+  background: #fff !important;
+  color: #172b4d !important;
+  border: 1px solid #9fb1c6 !important;
+  color-scheme: light !important;
+}
+.date-range input::-webkit-datetime-edit,
+.date-range input::-webkit-datetime-edit-text,
+.date-range input::-webkit-datetime-edit-month-field,
+.date-range input::-webkit-datetime-edit-day-field,
+.date-range input::-webkit-datetime-edit-year-field {
+  color: #172b4d !important;
+}
+.date-range input::-webkit-calendar-picker-indicator { opacity: .8; }
+.product-table th.metric-group { background: #dcecef; color: #254c55; text-align: center; border-left: 2px solid #c4d9dd; }
+.product-table th.metric-group + th.metric-group { border-left: 2px solid #c4d9dd; }
+.product-table td:nth-child(4), .product-table td:nth-child(6), .product-table th:nth-child(4), .product-table th:nth-child(6) { border-left: 2px solid #e0eaed; }
+
+
+/* Compact product comparison */
+.product-table-wrap { max-height: 610px; overflow: auto; }
+.product-table { min-width: 1120px; }
+.product-table td { white-space: nowrap; vertical-align: middle; }
+.product-table td:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; }
+.product-table td b { font-size: 16px; }
+.product-volume-trend-card { margin-top: 14px; }
+.product-volume-trend-chart { height: 310px; width: 100%; min-width: 760px; }
+@media(max-width:900px){ .product-volume-trend-chart{height:280px} }
+
+
+/* Final compact comparison layout */
+.product-table-wrap { overflow: auto; max-height: 610px; }
+.product-table { width: 100%; min-width: 0; table-layout: fixed; }
+.product-table th, .product-table td { padding: 15px 12px; white-space: nowrap; }
+.product-table th:first-child, .product-table td:first-child { width: 260px; text-align: left; }
+.product-table th:first-child { left: 0; z-index: 8; background: #eff7f8; }
+.product-table td:first-child { position: sticky; left: 0; z-index: 3; background: #fff; box-shadow: 8px 0 12px -12px rgba(23,43,77,.32); }
+.product-table tr:nth-child(even) td:first-child { background: #f8fbfb; }
+.product-table td:not(:first-child), .product-table th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.product-table th.metric-group { text-align: center; }
+@media(max-width:900px){ .product-table{min-width:960px}.product-table th:first-child,.product-table td:first-child{width:220px} }
+
+/* Align metric group dividers with the header groups */
+.product-table thead tr:nth-child(2) th:nth-child(3),
+.product-table thead tr:nth-child(2) th:nth-child(5) { border-left: 2px solid #e0eaed; }
+.product-table thead tr:nth-child(2) th:nth-child(4),
+.product-table thead tr:nth-child(2) th:nth-child(6) { border-left: 0; }
+.product-table tbody td:nth-child(4),
+.product-table tbody td:nth-child(6) { border-left: 2px solid #e0eaed; }
+
+/* Split metrics into aligned monthly tables */
+.metric-tables { display: grid; gap: 16px; }
+.product-metric-section { border: 1px solid #e1e8ed; border-radius: 10px; overflow: hidden; background: #fff; }
+.product-metric-heading { display: flex; align-items: baseline; gap: 10px; padding: 12px 16px; background: #f7fafb; border-bottom: 1px solid #e1e8ed; }
+.product-metric-heading h3 { margin: 0; font-size: 16px; }
+.product-metric-heading span { color: #65758b; font-size: 13px; }
+.product-metric-wrap { overflow: auto; max-height: 440px; margin: 0; }
+.product-metric-table { width: 100%; min-width: 920px; table-layout: fixed; }
+.product-metric-table th, .product-metric-table td { padding: 13px 14px; white-space: nowrap; }
+.product-metric-table th:first-child, .product-metric-table td:first-child { width: 260px; text-align: left; }
+.product-metric-table th:first-child { position: sticky; left: 0; z-index: 6; background: #eff7f8; }
+.product-metric-table td:first-child { position: sticky; left: 0; z-index: 2; background: #fff; font-weight: 650; box-shadow: 8px 0 12px -12px rgba(23,43,77,.3); }
+.product-metric-table tr:nth-child(even) td:first-child { background: #f8fbfb; }
+.product-metric-table td:not(:first-child), .product-metric-table th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+@media(max-width:900px){ .product-metric-table{min-width:840px}.product-metric-table th:first-child,.product-metric-table td:first-child{width:220px} }
+
+
+/* Exclude incomplete current-month data from operating conclusions */
+.analysis-note { margin-bottom: 12px; padding: 11px 13px; border-radius: 8px; background: #fff7e8; color: #8a5a18; border: 1px solid #f0d3a1; line-height: 1.55; }
+
+
+/* All-ticket-type operational analysis */
+.all-type-insights .product-insight { min-height: 260px; }
+.all-type-insights ul { margin: 5px 0 10px; padding-left: 20px; color: #4b5f78; line-height: 1.55; }
+.all-type-insights p { margin: 8px 0 2px; }
+.all-type-insights em { font-size: 12px; color: #8a6719; font-style: normal; }
+.move-up { color: #19764f; }
+.move-flat { color: #65758b; }
+.move-down { color: #b4533d; }
+.analysis-note.neutral { background: #eef6fb; border-color: #c9deeb; color: #315c79; }
+
+
+/* Chart label clarity and filtered trend analysis */
+.trend-partial { color: #8a6719; background: #fff7e8; border: 1px solid #f0d3a1; border-radius: 14px; padding: 3px 8px; }
+.chart-footnote { align-items: center; }
+
+
+/* Make filter period visible in operational analysis */
+.all-type-insights small { color: #65758b; font-size: 13px; font-weight: 650; }
+
+
+/* Metric leaderboard panels */
+.product-metric-layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; }
+.product-metric-layout .product-metric-wrap { border: 0; max-height: 440px; }
+.metric-ranking { border-left: 1px solid #e1e8ed; padding: 14px; background: #fbfcfd; }
+.ranking-heading h4 { margin: 0; font-size: 16px; }
+.ranking-heading p { margin: 4px 0 10px; color: #65758b; font-size: 12px; }
+.metric-ranking ol { list-style: none; padding: 0; margin: 0; }
+.metric-ranking li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 7px; align-items: center; margin: 7px 0; font-size: 12px; }
+.rank-number { color: #65758b; font-weight: 700; text-align: center; }
+.rank-main { min-width: 0; }
+.rank-main b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #334155; }
+.rank-main i { display: block; height: 5px; background: #e5ecef; border-radius: 6px; overflow: hidden; margin-top: 3px; }
+.rank-main em { display: block; height: 100%; background: #5b9f80; border-radius: 6px; }
+.metric-ranking strong { color: #294d55; font-variant-numeric: tabular-nums; }
+.rank-toggle { width: 100%; margin-top: 9px; padding: 7px 9px; font-size: 12px; }
+@media(max-width:1050px){ .product-metric-layout{grid-template-columns:1fr}.metric-ranking{border-left:0;border-top:1px solid #e1e8ed}.metric-ranking ol{columns:2;column-gap:18px}.metric-ranking li{break-inside:avoid} }
+
+/* Rebalanced Product Analysis metric tables */
+.product-metric-layout{grid-template-columns:minmax(0,1fr) minmax(390px,430px)}
+.product-metric-table{min-width:760px}
+.product-metric-table th:first-child,.product-metric-table td:first-child{width:210px}
+.product-metric-table th,.product-metric-table td{padding:12px 11px}
+.metric-ranking{padding:16px 18px}
+.metric-ranking li{grid-template-columns:24px minmax(0,1fr) auto;gap:9px;margin:9px 0;font-size:13px}
+.ranking-heading h4{font-size:17px}
+.ranking-heading p{font-size:13px;margin-bottom:12px}
+.rank-main i{height:6px;margin-top:4px}
+.rank-toggle{margin-top:12px}
+@media(max-width:1250px){.product-metric-layout{grid-template-columns:minmax(0,1fr) 360px}.product-metric-table{min-width:700px}.product-metric-table th:first-child,.product-metric-table td:first-child{width:190px}}
+
+
+/* CSAT OGSM-PDCA */
+.csat-ogsm-card { margin-top: 14px; }
+.csat-ogsm-summary { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:14px 0; }
+.csat-ogsm-summary>div { background:#f7fafb; border:1px solid #e1e8ed; border-radius:8px; padding:12px; }
+.csat-ogsm-summary span { display:block; color:#65758b; font-size:12px; font-weight:650; }
+.csat-ogsm-summary b { display:block; margin-top:5px; font-size:22px; color:#203b44; }
+.csat-ogsm-objective { display:flex; gap:10px; align-items:flex-start; border-left:4px solid #5b9f80; background:#f2f8f4; padding:11px 13px; border-radius:0 8px 8px 0; line-height:1.55; }
+.csat-ogsm-objective strong { color:#2f6d52; }
+.csat-ogsm-actions { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:14px; }
+.csat-ogsm-action { border:1px solid #e1e8ed; border-radius:8px; padding:12px; background:#fff; }
+.csat-ogsm-action .phase { color:#4f806a; font-size:12px; font-weight:750; }
+.csat-ogsm-action h3 { font-size:15px; margin:7px 0; }
+.csat-ogsm-action p { margin:0; color:#65758b; font-size:13px; line-height:1.5; min-height:58px; }
+.csat-ogsm-action footer { display:flex; justify-content:space-between; margin-top:10px; color:#65758b; font-size:12px; }
+.csat-ogsm-check { margin-top:14px; padding:11px 13px; border-radius:8px; background:#eef6fb; color:#315c79; line-height:1.55; }
+.csat-ogsm-check.good { background:#edf8f0; color:#256e4c; }
+.csat-ogsm-check.watch { background:#fff7e8; color:#8a5a18; }
+@media(max-width:900px){ .csat-ogsm-summary,.csat-ogsm-actions { grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .csat-ogsm-summary,.csat-ogsm-actions { grid-template-columns:1fr; } }
+
+
+/* OGSM roadmap mirror */
+.ogsm-roadmap { margin-top: 14px; }
+.ogsm-roadmap h3 { margin: 0 0 10px; font-size: 18px; }
+.ogsm-roadmap-scroll { overflow: auto; border: 1px solid #e1e8ed; border-radius: 10px; }
+.ogsm-roadmap-table { width: 100%; min-width: 1280px; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.ogsm-roadmap-table th { background: #eff6f5; color: #48615a; padding: 12px; text-align: left; font-size: 13px; border-bottom: 1px solid #dfe9e6; border-right: 1px solid #dfe9e6; }
+.ogsm-roadmap-table td { vertical-align: top; padding: 13px; color: #475569; line-height: 1.55; border-bottom: 1px solid #e7eef0; border-right: 1px solid #e7eef0; font-size: 13px; }
+.ogsm-roadmap-table th:first-child, .ogsm-roadmap-table td:first-child { width: 190px; position: sticky; left: 0; z-index: 2; background: #fff; }
+.ogsm-roadmap-table th:first-child { z-index: 4; background: #eff6f5; }
+.ogsm-roadmap-table tr:last-child td { border-bottom: 0; }
+.ogsm-roadmap-table th:last-child, .ogsm-roadmap-table td:last-child { border-right: 0; }
+.ogsm-code { display:inline-grid; place-items:center; width:22px; height:22px; margin-right:7px; border-radius:50%; background:#5b9f80; color:#fff; font-size:12px; font-weight:800; }
+.ogsm-outcome { font-weight:750; color:#203b44; }
+
+
+/* CSAT-only OGSM progress sync */
+.ogsm-progress-item { padding: 5px 0; border-bottom: 1px solid #edf1f3; }
+.ogsm-progress-item:last-child { border-bottom: 0; }
+.ogsm-progress-item b { display: block; color: #2f6d52; font-size: 12px; }
+.ogsm-progress-item span { color: #475569; font-size: 12px; line-height: 1.45; }
+
+
+/* Unified OGSM-PDCA map */
+.csat-ogsm-actions:empty { display:none; }
+.ogsm-action-inline { padding:6px 0; border-bottom:1px solid #edf1f3; }
+.ogsm-action-inline:last-child { border-bottom:0; }
+.ogsm-action-inline b { display:block; color:#2f6d52; font-size:12px; }
+.ogsm-action-inline span { display:block; color:#334155; font-size:12px; line-height:1.45; }
+.ogsm-action-inline small { color:#65758b; font-size:11px; }
+.ogsm-resources { display:flex; flex-direction:column; gap:4px; margin-top:9px; }
+.ogsm-resources a { color:#3569ad; text-decoration:none; font-size:12px; word-break:break-all; }
+.ogsm-resources a:hover { text-decoration:underline; }
+.ogsm-resource-empty { display:block; margin-top:8px; color:#98a5b3; font-size:12px; }
+.ogsm-roadmap-table { min-width:1500px; }
+
+
+/* Detailed substantial progress items */
+.ogsm-substantial-list { display:grid; gap:8px; }
+.ogsm-substantial-item { border-left:3px solid #5b8eaa; background:#f7fbfd; padding:8px 9px; border-radius:0 6px 6px 0; }
+.ogsm-substantial-item b { display:block; color:#3e6d86; font-size:12px; }
+.ogsm-substantial-item span { display:block; color:#334155; margin-top:3px; line-height:1.45; }
+.ogsm-substantial-item small { display:block; color:#7a8795; margin-top:5px; font-size:11px; }
+
+
+/* OGSM key meeting cards */
+.ogsm-meeting-list { display:grid; gap:7px; }
+.ogsm-meeting-item { display:flex; flex-wrap:wrap; align-items:center; gap:7px; padding:8px; background:#f7fafb; border:1px solid #e1e8ed; border-radius:7px; }
+.ogsm-meeting-item b { flex:1 1 100%; color:#334155; font-size:13px; }
+.meeting-status, .meeting-date { font-size:12px; border-radius:12px; padding:2px 7px; }
+.meeting-status { background:#e9edf3; color:#64748b; font-weight:700; }
+.meeting-status.即将 { background:#e8f0ff; color:#4f73bb; }
+.meeting-status.进行中 { background:#fff3d9; color:#9a6512; }
+.meeting-date { background:#f1f3f5; color:#65758b; }
+.ogsm-meeting-item .ogsm-resources { width:100%; }
+
+
+/* Product OGSM projects */
+.product-ogsm-card{margin-top:14px}.product-ogsm-project{margin-top:14px}.product-ogsm-project h3{margin:0 0 8px;font-size:16px}.product-ogsm-project h3 span{font-size:12px;color:#65758b;font-weight:500}
+
+
+/* Compact OGSM roadmap layout */
+.ogsm-roadmap-table{min-width:1180px}
+.ogsm-roadmap-table th:first-child,.ogsm-roadmap-table td:first-child{width:175px}
+.ogsm-phase-list{display:grid;gap:8px}
+.ogsm-phase-card{padding:9px 10px;border:1px solid #dce8e5;border-left:3px solid #5b9f80;background:#f7fbf9;border-radius:0 7px 7px 0}
+.ogsm-phase-card b{display:block;color:#2f6d52;font-size:12px}
+.ogsm-phase-card span{display:block;margin-top:3px;color:#334155;line-height:1.5}
+.ogsm-phase-card small{display:block;margin-top:6px;color:#65758b;font-size:11px}
+.ogsm-text-list{display:grid;gap:7px}
+.ogsm-text-item{padding:8px 9px;border-left:3px solid #8aa9bb;background:#f7fafc;border-radius:0 6px 6px 0;color:#475569}
+.ogsm-more{margin-top:8px;border-top:1px solid #e1e8ed;padding-top:7px}
+.ogsm-more summary{cursor:pointer;color:#3569ad;font-size:12px;font-weight:700}
+.ogsm-more-content{display:grid;gap:8px;margin-top:8px}
+
+</style></head><body><header><div class="logo">服</div><div class="title">用户服务运营工作台</div><div class="source" id="sourceSyncStatus">● 工作台数据同步 · 加载中</div><button class="btn">布局设置</button><button class="btn primary" id="refresh">刷新已导入数据</button></header><div class="layout"><aside><button class="nav active" data-tab="overview"><span class="dot">●</span>运营总览</button><button class="nav" data-tab="tickets"><span class="dot">●</span>Tickets</button><button class="nav" data-tab="satisfaction"><span class="dot">●</span>Satisfaction</button><button class="nav" data-tab="products"><span class="dot">●</span>Product Analysis</button></aside><main>
+<section id="overview" class="tab active"><div class="toolbar"><div><h1>运营总览</h1><p>选择“自定义时间”后，可在日期框内设定开始和结束日期。</p></div><div class="spacer"></div><select class="range"><option value="7">近 7 天</option><option value="30">近 1 个月</option><option value="90">近 3 个月</option><option value="6">近 6 个月</option><option value="custom">自定义时间</option></select><span class="date-range" id="overviewCustomDates" style="display:none"><input id="overviewStart" data-custom-date="start" type="date" value="2025-11-01" aria-label="开始日期"><input id="overviewEnd" data-custom-date="end" type="date" value="2026-11-04" aria-label="结束日期"></span></div><div class="kpis"><div class="card"><div class="label">创建工单</div><div class="value total">5,296</div><span class="up">当前范围</span></div><div class="card"><div class="label">满意度</div><div class="value score">93.4%</div><span class="up">Zendesk Explore</span></div><div class="card"><div class="label">响应 - 中位数</div><div class="value median">12 min</div><span class="up">目标 ≤15 min</span></div><div class="card"><div class="label">≤1 小时响应</div><div class="value onehour">95.6%</div><span class="up">SLA 达成</span></div></div></section>
+<section id="tickets" class="tab"><div class="toolbar"><div><h1>Tickets</h1><p>团队响应效率、创建工单趋势与 SLA 达成情况</p><p class="hint" id="ticketSyncHint">数据源：Zendesk Explore Response time · Team</p></div><div class="spacer"></div><select class="range"><option value="7">近 7 天</option><option value="30">近 1 个月</option><option value="90">近 3 个月</option><option value="6">近 6 个月</option><option value="custom">自定义时间</option></select><span class="date-range" id="ticketCustomDates" style="display:none"><input id="ticketStart" data-custom-date="start" type="date" value="2025-11-01" aria-label="开始日期"><input id="ticketEnd" data-custom-date="end" type="date" value="2026-11-04" aria-label="结束日期"></span></div><div class="kpis"><div class="card"><div class="label">响应 - 中位数</div><div class="value median">12 min</div><span class="up">目标 ≤15 min</span></div><div class="card"><div class="label">响应 - 平均数</div><div class="value avg">25 min</div><span class="up">较上一周期 -10 min</span></div><div class="card"><div class="label">≤10 分钟响应</div><div class="value ten">39.5%</div><span class="up">范围平均覆盖率</span></div><div class="card"><div class="label">≤20 分钟响应</div><div class="value twenty">63.7%</div><span class="up">范围平均覆盖率</span></div><div class="card"><div class="label">≤30 分钟响应</div><div class="value thirty">75.4%</div><span class="up">范围平均覆盖率</span></div><div class="card"><div class="label">≤1 小时响应</div><div class="value onehour">86.5%</div><span class="up">范围平均覆盖率</span></div><div class="card"><div class="label">≤2 小时响应</div><div class="value twohour">92.6%</div><span class="up">范围平均覆盖率</span></div></div><div class="two"><div class="card"><h2>创建工单与响应趋势</h2><div class="hint">柱形：创建工单；折线：响应 - 中位数。分钟数直接标注在折线节点。</div><svg id="ticketChart" class="chart" viewBox="0 0 900 315" preserveAspectRatio="none" aria-label="创建工单与响应趋势"></svg></div><div class="card ai"><h2>AI 运营解读</h2><p><b>数据完整性：</b><span id="dataQualityInsight">正在校验最新日期的数据完整性。</span></p><p><b>创建工单：</b><span id="volumeInsight">等待计算。</span></p><p><b>响应趋势：</b><span id="responseInsight">等待计算。</span></p><p><b>≤10分钟覆盖：</b><span id="tenInsight">等待计算。</span></p><p><b>≤20分钟覆盖：</b><span id="twentyInsight">等待计算。</span></p><p><b>星期运营洞察：</b><span id="weekdayInsight">等待计算。</span></p><p><b>团队行动建议：</b><span id="strategyInsight">等待计算。</span></p></div></div><div class="card table-wrap"><h2>Response time · Team</h2><p class="hint">响应 - 中位数；响应 - 平均数。可选近 7 天、近 1 个月、近 3 个月、近 6 个月或自定义日期。</p><table class="data-table"><thead><tr><th>SLA 更新日期</th><th>SLA targets</th><th>响应 - 中位数</th><th>响应 - 平均数</th><th>≤10mins</th><th>≤10mins%</th><th>≤20mins%</th><th>≤30mins%</th><th>≤1h%</th><th>≤2h%</th></tr></thead><tbody id="rows"></tbody></table></div><div class="card csat-ogsm-card ticket-ogsm-card" id="ticketOgsM"><div class="chart-heading"><div><h2>响应时效 · OGSM-PDCA</h2><p class="hint">关联 iNIU Care 的 B 成果，验证响应时效和三回合解决率相关行动是否改善。</p></div><span class="pill" id="ticketOgsSyncState">项目快照</span></div><div class="csat-ogsm-summary"><div><span>端到端成果</span><b id="ticketOgsTarget">—</b></div><div><span>≤10mins 响应</span><b id="ticketOgsTen">—</b></div><div><span>≤20mins 响应</span><b id="ticketOgsTwenty">—</b></div><div><span>验证区间</span><b id="ticketOgsPeriod">—</b></div></div><div class="csat-ogsm-objective"><strong>Objective B</strong><span id="ticketOgsObjective">—</span></div><div class="ogsm-roadmap" id="ticketOgsRoadmap"></div><div class="csat-ogsm-check" id="ticketOgsCheck"></div></div></section>
+<section id="satisfaction" class="tab"><div class="toolbar"><div><h1>Satisfaction</h1><p>满意度得分与评价量，以 Zendesk Explore 的 Non-Recall Satisfaction 日明细和月度汇总为准。</p></div><div class="spacer"></div><select class="range"><option value="7">近 7 天</option><option value="30">近 1 个月</option><option value="90">近 3 个月</option><option value="6">近 6 个月</option><option value="custom">自定义时间</option></select><span id="satCustomDates" class="date-range" style="display:none"><input id="satStart" data-custom-date="start" type="date" value="2026-01-01"><input id="satEnd" data-custom-date="end" type="date" value="2026-11-04"></span></div><div class="notice">来源：Zendesk Explore · Non-Recall Satisfaction · 2025 年 11 月至 2026 年 10 月月度汇总｜China Time。</div><div class="kpis"><div class="card"><div class="label">满意度得分</div><div class="value score">93.4%</div></div><div class="card"><div class="label">好评工单</div><div class="value good">368</div></div><div class="card"><div class="label">低分评价</div><div class="value bad">26</div></div></div><div class="card" style="margin-top:14px"><h2>满意度趋势</h2><div class="hint">折线为 Non-Recall Satisfaction 得分；柱形为评价工单。7 天和 1 个月按日展示，更长区间按月聚合。</div><svg id="satChart" class="chart" viewBox="0 0 900 315" preserveAspectRatio="none"></svg></div>
+<div class="card csat-ogsm-card" id="csatOgsM">
+  <div class="chart-heading">
+    <div>
+      <h2>CSAT · OGSM-PDCA</h2>
+      <p class="hint">将项目看板行动与当前 Satisfaction 数据关联，持续验证行动是否缩小 CSAT 目标差距。</p>
+    </div>
+    <span class="pill" id="ogsmSyncState">项目快照</span>
+  </div>
+  <div class="csat-ogsm-summary">
+    <div><span>目标</span><b id="ogsmTarget">—</b></div>
+    <div><span>当前 CSAT</span><b id="ogsmCurrent">—</b></div>
+    <div><span>目标差距</span><b id="ogsmGap">—</b></div>
+    <div><span>验证区间</span><b id="ogsmPeriod">—</b></div>
+  </div>
+  <div class="csat-ogsm-objective"><strong>Objective</strong><span id="ogsmObjective">—</span></div>
+  <div class="csat-ogsm-actions" id="ogsmActions"></div>
+  <div class="ogsm-roadmap" id="ogsmRoadmap"></div>
+  <div class="csat-ogsm-check" id="ogsmCheck"></div>
+</div></section>
+
+
+
+<section id="products" class="tab">
+  <div class="toolbar">
+    <div>
+      <h1>Product Analysis</h1>
+      <p>从工单规模、满意度和一次解决效率观察产品问题变化。</p>
+    </div>
+    <div class="spacer"></div>
+    <select class="range">
+<option value="7">近 7 天</option>
+<option value="30">近 1 个月</option>
+<option value="90">近 3 个月</option>
+<option value="6">近 6 个月</option>
+<option value="custom">自定义时间</option></select>
+    <span id="productCustomDates" class="date-range" style="display:none">
+      <input id="productStart" data-custom-date="start" type="date" value="2026-01-01">
+      <input id="productEnd" data-custom-date="end" type="date" value="2026-11-04">
+    </span>
+  </div>
+  <div class="notice" id="productSource">
+    数据源：Zendesk Explore 导出 · 2026-01 至 2026-11（11 月截至 11 月 4 日）· China Time。
+  </div>
+  <div class="kpis product-kpis">
+    <div class="card">
+      <div class="label">所选范围工单</div>
+      <div class="value" id="productTotal">—</div>
+      <span class="hint" id="productTotalNote">等待计算</span>
+    </div>
+    <div class="card">
+      <div class="label">最大问题类型</div>
+      <div class="value compact-value" id="productTopType">—</div>
+      <span class="hint" id="productTopNote">等待计算</span>
+    </div>
+    <div class="card">
+      <div class="label">Product Defect 满意度变化</div>
+      <div class="value" id="productDefectSatisfaction">—</div>
+      <span class="hint" id="productDefectSatisfactionNote">等待计算</span>
+    </div>
+    <div class="card">
+      <div class="label">Product Defect 三回合变化</div>
+      <div class="value" id="productDefectThreeRound">—</div>
+      <span class="hint" id="productDefectThreeRoundNote">等待计算</span>
+    </div>
+  </div>
+  <div class="card product-trend-card">
+    <div class="chart-heading">
+      <div>
+        <h2 id="productTrendTitle">Ticket Type 月度趋势</h2>
+        <p class="hint" id="productTrendHint">选择任一 Ticket Type。工单量、满意度和三回合比例按月放在同一视图。</p>
+      </div>
+      <select id="productTypeSelect" class="compact-select" aria-label="问题类型"></select>
+    </div>
+    <svg id="productChart" class="product-chart" viewBox="0 0 1000 360" preserveAspectRatio="none"></svg>
+    <div class="chart-footnote" id="productTrendFoot"></div>
+  </div>
+  <div class="card product-table-card">
+    <div class="chart-heading">
+      <div>
+        <h2>Ticket Type 数字对比</h2>
+        <p class="hint" id="productTableHint">按工单量、满意度、三回合比例拆分表格，显示所选范围全部月份。</p>
+      </div>
+      <button class="btn" id="productTableToggle">收起类型</button>
+    </div>
+    <div id="productMetricTables" class="metric-tables"></div>
+  </div>
+  <div class="card product-insights">
+    <h2>运营判断</h2>
+    <div id="productInsights"></div>
+  </div>
+<div class="card product-ogsm-card" id="productOgsM"><div class="chart-heading"><div><h2>产品质量 / VOC · OGSM</h2><p class="hint">同步 VOC 驱动产品闭环与 iNIU Smart Help 的端到端成果、进展、会议、链接和附件。</p></div><span class="pill" id="productOgsSyncState">项目快照</span></div><div id="productOgsProjects"></div></div></section>
+</main></div><script>
+
+const liveData = {"source":"Zendesk Explore · INIU-Report dashboard delivery","exportedAt":"2026-11-10T02:12:55+08:00","dateRanges":{"response":["2026-09-11","2026-11-09"],"volume":["2026-05-01","2026-11-09"],"satisfaction":["2026-01-01","2026-11-09"],"product":["January","November"]},"response":[{"date":"2026-09-11","targets":406,"median":13,"average":93.74384236453201,"cycles10":178,"p10":43.84236453201971,"p20":66.00985221674877,"p30":73.64532019704434,"p1h":83.49753694581281,"p2h":88.91625615763546,"pge2h":11.083743842364532},{"date":"2026-09-12","targets":532,"median":19,"average":63.3796992481203,"cycles10":149,"p10":28.007518796992482,"p20":51.691729323308266,"p30":66.16541353383458,"p1h":81.01503759398496,"p2h":92.85714285714286,"pge2h":7.142857142857142},{"date":"2026-09-13","targets":564,"median":13,"average":39.219858156028366,"cycles10":216,"p10":38.297872340425535,"p20":68.79432624113475,"p30":80.31914893617021,"p1h":91.66666666666666,"p2h":96.27659574468085,"pge2h":3.723404255319149},{"date":"2026-09-14","targets":689,"median":20,"average":91.09433962264151,"cycles10":177,"p10":25.689404934687953,"p20":50.07256894049347,"p30":65.45718432510886,"p1h":79.5355587808418,"p2h":85.77648766328012,"pge2h":14.223512336719885},{"date":"2026-09-15","targets":819,"median":21,"average":110.06471306471306,"cycles10":200,"p10":24.42002442002442,"p20":49.93894993894994,"p30":62.14896214896215,"p1h":76.31257631257631,"p2h":84.12698412698413,"pge2h":15.873015873015872},{"date":"2026-09-16","targets":792,"median":15,"average":52.59722222222222,"cycles10":283,"p10":35.73232323232323,"p20":62.247474747474755,"p30":73.86363636363636,"p1h":85.98484848484848,"p2h":92.67676767676768,"pge2h":7.3232323232323235},{"date":"2026-09-17","targets":733,"median":11,"average":34.62073669849932,"cycles10":363,"p10":49.5225102319236,"p20":75.17053206002728,"p30":84.72032742155525,"p1h":92.90586630286494,"p2h":96.72578444747613,"pge2h":3.2742155525238745},{"date":"2026-09-18","targets":718,"median":11,"average":37.42200557103064,"cycles10":353,"p10":49.16434540389972,"p20":71.44846796657382,"p30":81.75487465181058,"p1h":91.5041782729805,"p2h":96.10027855153204,"pge2h":3.8997214484679668},{"date":"2026-09-19","targets":550,"median":14,"average":80.75454545454545,"cycles10":221,"p10":40.18181818181818,"p20":60.18181818181818,"p30":74,"p1h":87.09090909090908,"p2h":92.18181818181819,"pge2h":7.818181818181818},{"date":"2026-09-20","targets":505,"median":12,"average":68.63960396039604,"cycles10":224,"p10":44.35643564356436,"p20":71.28712871287128,"p30":82.77227722772277,"p1h":92.27722772277228,"p2h":95.44554455445544,"pge2h":4.554455445544554},{"date":"2026-09-21","targets":812,"median":14,"average":73.43349753694581,"cycles10":309,"p10":38.05418719211823,"p20":61.083743842364534,"p30":71.55172413793103,"p1h":80.91133004926108,"p2h":87.31527093596058,"pge2h":12.68472906403941},{"date":"2026-09-22","targets":886,"median":12,"average":55.830699774266364,"cycles10":393,"p10":44.35665914221219,"p20":70.20316027088036,"p30":80.58690744920993,"p1h":89.1647855530474,"p2h":93.90519187358916,"pge2h":6.094808126410835},{"date":"2026-09-23","targets":762,"median":10,"average":54.01312335958005,"cycles10":391,"p10":51.31233595800525,"p20":77.03412073490814,"p30":85.56430446194226,"p1h":91.0761154855643,"p2h":94.22572178477691,"pge2h":5.774278215223097},{"date":"2026-09-24","targets":687,"median":11,"average":52.24017467248908,"cycles10":325,"p10":47.30713245997089,"p20":72.48908296943232,"p30":81.07714701601164,"p1h":89.8107714701601,"p2h":93.44978165938865,"pge2h":6.550218340611353},{"date":"2026-09-25","targets":550,"median":11,"average":72.30727272727273,"cycles10":263,"p10":47.81818181818182,"p20":72.36363636363636,"p30":81.63636363636364,"p1h":90.36363636363637,"p2h":94.36363636363636,"pge2h":5.636363636363637},{"date":"2026-09-26","targets":574,"median":13,"average":104.90243902439025,"cycles10":243,"p10":42.33449477351917,"p20":64.63414634146342,"p30":74.21602787456446,"p1h":82.75261324041811,"p2h":89.72125435540069,"pge2h":10.278745644599303},{"date":"2026-09-27","targets":472,"median":11,"average":66.75847457627118,"cycles10":208,"p10":44.06779661016949,"p20":70.76271186440678,"p30":80.9322033898305,"p1h":89.19491525423729,"p2h":92.16101694915254,"pge2h":7.838983050847458},{"date":"2026-09-28","targets":678,"median":14,"average":87.37905604719764,"cycles10":266,"p10":39.233038348082594,"p20":63.27433628318584,"p30":73.30383480825958,"p1h":83.92330383480827,"p2h":92.03539823008849,"pge2h":7.964601769911504},{"date":"2026-09-29","targets":722,"median":10,"average":65.67036011080333,"cycles10":375,"p10":51.93905817174516,"p20":75.48476454293629,"p30":81.99445983379502,"p1h":89.33518005540166,"p2h":93.21329639889197,"pge2h":6.786703601108034},{"date":"2026-09-30","targets":750,"median":11,"average":50.849333333333334,"cycles10":371,"p10":49.46666666666666,"p20":74.93333333333332,"p30":85.06666666666666,"p1h":93.46666666666667,"p2h":96.26666666666667,"pge2h":3.733333333333334},{"date":"2026-10-01","targets":628,"median":9,"average":73.27707006369427,"cycles10":360,"p10":57.324840764331206,"p20":79.45859872611464,"p30":85.19108280254777,"p1h":92.19745222929936,"p2h":94.42675159235668,"pge2h":5.573248407643312},{"date":"2026-10-02","targets":593,"median":10,"average":76.65935919055649,"cycles10":309,"p10":52.1079258010118,"p20":72.17537942664418,"p30":79.25801011804384,"p1h":87.68971332209107,"p2h":92.4114671163575,"pge2h":7.588532883642496},{"date":"2026-10-03","targets":479,"median":11,"average":1797.8747390396659,"cycles10":238,"p10":49.68684759916493,"p20":71.39874739039665,"p30":79.54070981210856,"p1h":90.39665970772442,"p2h":93.31941544885177,"pge2h":6.6805845511482245},{"date":"2026-10-04","targets":435,"median":12,"average":70.02298850574712,"cycles10":199,"p10":45.74712643678161,"p20":68.04597701149426,"p30":78.39080459770115,"p1h":88.50574712643679,"p2h":92.87356321839081,"pge2h":7.126436781609195},{"date":"2026-10-05","targets":653,"median":10,"average":64.3323124042879,"cycles10":357,"p10":54.67075038284839,"p20":76.11026033690659,"p30":84.68606431852986,"p1h":91.57733537519142,"p2h":93.87442572741195,"pge2h":6.1255742725880555},{"date":"2026-10-06","targets":663,"median":10,"average":69.69683257918552,"cycles10":365,"p10":55.052790346908,"p20":79.03469079939669,"p30":86.42533936651584,"p1h":92.91101055806938,"p2h":95.62594268476622,"pge2h":4.374057315233785},{"date":"2026-10-07","targets":836,"median":9,"average":58.58612440191388,"cycles10":459,"p10":54.90430622009569,"p20":80.14354066985646,"p30":86.96172248803828,"p1h":92.70334928229666,"p2h":95.81339712918661,"pge2h":4.186602870813397},{"date":"2026-10-08","targets":771,"median":10,"average":98.07782101167315,"cycles10":398,"p10":51.621271076524,"p20":75.87548638132296,"p30":83.78728923476005,"p1h":90.40207522697796,"p2h":92.60700389105058,"pge2h":7.392996108949417},{"date":"2026-10-09","targets":760,"median":13.5,"average":91.28157894736842,"cycles10":319,"p10":41.973684210526315,"p20":60.921052631578945,"p30":69.07894736842105,"p1h":78.94736842105263,"p2h":87.23684210526315,"pge2h":12.763157894736842},{"date":"2026-10-10","targets":584,"median":15,"average":119.90068493150685,"cycles10":227,"p10":38.86986301369863,"p20":65.58219178082192,"p30":74.65753424657534,"p1h":87.67123287671232,"p2h":92.63698630136986,"pge2h":7.363013698630137},{"date":"2026-10-11","targets":538,"median":12,"average":89.94237918215613,"cycles10":239,"p10":44.42379182156134,"p20":72.11895910780669,"p30":82.15613382899627,"p1h":90.33457249070632,"p2h":94.23791821561338,"pge2h":5.762081784386617},{"date":"2026-10-12","targets":672,"median":10,"average":70.29761904761905,"cycles10":338,"p10":50.297619047619044,"p20":71.72619047619048,"p30":79.46428571428571,"p1h":88.39285714285714,"p2h":93.45238095238095,"pge2h":6.547619047619048},{"date":"2026-10-13","targets":776,"median":11,"average":91.64819587628865,"cycles10":367,"p10":47.29381443298969,"p20":69.3298969072165,"p30":76.15979381443299,"p1h":84.40721649484536,"p2h":88.91752577319588,"pge2h":11.082474226804123},{"date":"2026-10-14","targets":827,"median":11,"average":58.955259975816205,"cycles10":411,"p10":49.697702539298675,"p20":73.15598548972189,"p30":80.65296251511487,"p1h":89.23821039903265,"p2h":92.86577992744861,"pge2h":7.134220072551391},{"date":"2026-10-15","targets":960,"median":9,"average":45.83125,"cycles10":534,"p10":55.625,"p20":80.10416666666667,"p30":86.45833333333334,"p1h":94.6875,"p2h":96.66666666666667,"pge2h":3.3333333333333335},{"date":"2026-10-16","targets":963,"median":15,"average":103.39563862928348,"cycles10":354,"p10":36.7601246105919,"p20":58.25545171339564,"p30":67.601246105919,"p1h":77.67393561786086,"p2h":82.45067497403946,"pge2h":17.549325025960542},{"date":"2026-10-17","targets":665,"median":16,"average":103.6390977443609,"cycles10":253,"p10":38.045112781954884,"p20":59.3984962406015,"p30":71.12781954887218,"p1h":85.86466165413535,"p2h":94.4360902255639,"pge2h":5.56390977443609},{"date":"2026-10-18","targets":632,"median":12,"average":51.47943037974684,"cycles10":276,"p10":43.67088607594937,"p20":69.30379746835443,"p30":82.12025316455697,"p1h":93.19620253164557,"p2h":97.31012658227847,"pge2h":2.689873417721519},{"date":"2026-10-19","targets":845,"median":13,"average":77.03195266272189,"cycles10":343,"p10":40.59171597633136,"p20":64.85207100591715,"p30":75.14792899408283,"p1h":85.79881656804734,"p2h":90.1775147928994,"pge2h":9.822485207100591},{"date":"2026-10-20","targets":952,"median":12,"average":44.706932773109244,"cycles10":442,"p10":46.42857142857143,"p20":67.43697478991596,"p30":77.10084033613445,"p1h":86.02941176470588,"p2h":93.59243697478992,"pge2h":6.4075630252100835},{"date":"2026-10-21","targets":945,"median":11,"average":41.77883597883598,"cycles10":443,"p10":46.87830687830688,"p20":73.12169312169313,"p30":84.86772486772487,"p1h":92.91005291005291,"p2h":96.4021164021164,"pge2h":3.5978835978835977},{"date":"2026-10-22","targets":1004,"median":10,"average":34.45318725099602,"cycles10":508,"p10":50.59760956175299,"p20":76.09561752988047,"p30":85.7569721115538,"p1h":95.4183266932271,"p2h":97.01195219123507,"pge2h":2.9880478087649402},{"date":"2026-10-23","targets":772,"median":13,"average":73.03626943005182,"cycles10":342,"p10":44.30051813471503,"p20":64.63730569948186,"p30":73.57512953367875,"p1h":82.7720207253886,"p2h":87.43523316062176,"pge2h":12.564766839378239},{"date":"2026-10-24","targets":614,"median":20,"average":96.52442996742671,"cycles10":193,"p10":31.433224755700323,"p20":50.4885993485342,"p30":59.446254071661244,"p1h":68.24104234527687,"p2h":83.22475570032573,"pge2h":16.775244299674267},{"date":"2026-10-25","targets":602,"median":17,"average":77.00498338870432,"cycles10":194,"p10":32.22591362126246,"p20":57.475083056478404,"p30":71.42857142857143,"p1h":81.56146179401993,"p2h":88.37209302325581,"pge2h":11.627906976744185},{"date":"2026-10-26","targets":859,"median":15,"average":65.06286379511059,"cycles10":310,"p10":36.08847497089639,"p20":62.9802095459837,"p30":75.66938300349243,"p1h":88.70779976717112,"p2h":96.74039580908033,"pge2h":3.259604190919674},{"date":"2026-10-27","targets":977,"median":14,"average":46.11566018423746,"cycles10":379,"p10":38.792221084953944,"p20":63.66427840327533,"p30":76.56090071647903,"p1h":93.24462640736951,"p2h":97.7482088024565,"pge2h":2.2517911975435005},{"date":"2026-10-28","targets":952,"median":11,"average":36.67331932773109,"cycles10":464,"p10":48.739495798319325,"p20":76.99579831932773,"p30":86.34453781512606,"p1h":94.64285714285714,"p2h":96.42857142857143,"pge2h":3.571428571428571},{"date":"2026-10-29","targets":966,"median":12,"average":34,"cycles10":445,"p10":46.06625258799172,"p20":72.46376811594203,"p30":85.09316770186336,"p1h":95.34161490683229,"p2h":96.99792960662525,"pge2h":3.002070393374741},{"date":"2026-10-30","targets":786,"median":16,"average":59.88295165394402,"cycles10":276,"p10":35.11450381679389,"p20":56.61577608142494,"p30":67.30279898218829,"p1h":83.07888040712467,"p2h":88.16793893129771,"pge2h":11.83206106870229},{"date":"2026-10-31","targets":616,"median":18.5,"average":50.298701298701296,"cycles10":184,"p10":29.87012987012987,"p20":54.05844155844156,"p30":66.88311688311688,"p1h":84.0909090909091,"p2h":95.45454545454545,"pge2h":4.545454545454546},{"date":"2026-11-01","targets":556,"median":14.5,"average":43.24640287769784,"cycles10":207,"p10":37.23021582733813,"p20":63.66906474820144,"p30":73.92086330935251,"p1h":86.6906474820144,"p2h":95.32374100719424,"pge2h":4.676258992805756},{"date":"2026-11-02","targets":802,"median":17,"average":38.100997506234414,"cycles10":261,"p10":32.54364089775561,"p20":60.723192019950126,"p30":75.56109725685786,"p1h":91.52119700748129,"p2h":96.38403990024938,"pge2h":3.6159600997506236},{"date":"2026-11-03","targets":916,"median":24,"average":81.12991266375546,"cycles10":227,"p10":24.781659388646286,"p20":46.50655021834061,"p30":58.29694323144105,"p1h":72.48908296943232,"p2h":79.03930131004367,"pge2h":20.96069868995633},{"date":"2026-11-04","targets":1046,"median":11,"average":32.8585086042065,"cycles10":518,"p10":49.521988527724666,"p20":73.90057361376672,"p30":84.99043977055449,"p1h":95.12428298279158,"p2h":96.74952198852772,"pge2h":3.2504780114722758},{"date":"2026-11-05","targets":864,"median":11,"average":31.167824074074073,"cycles10":407,"p10":47.10648148148148,"p20":72.45370370370371,"p30":83.91203703703704,"p1h":93.51851851851852,"p2h":95.37037037037037,"pge2h":4.62962962962963},{"date":"2026-11-06","targets":790,"median":13,"average":38.47594936708861,"cycles10":324,"p10":41.01265822784811,"p20":65.44303797468355,"p30":76.0759493670886,"p1h":87.21518987341771,"p2h":94.05063291139241,"pge2h":5.949367088607595},{"date":"2026-11-07","targets":722,"median":20,"average":70.54709141274238,"cycles10":202,"p10":27.977839335180054,"p20":50.69252077562327,"p30":63.850415512465375,"p1h":80.05540166204986,"p2h":89.75069252077562,"pge2h":10.249307479224377},{"date":"2026-11-08","targets":589,"median":18,"average":45.87096774193548,"cycles10":181,"p10":30.730050933786078,"p20":54.49915110356537,"p30":66.553480475382,"p1h":84.55008488964346,"p2h":97.45331069609507,"pge2h":2.5466893039049237},{"date":"2026-11-09","targets":802,"median":16,"average":34.87281795511222,"cycles10":282,"p10":35.16209476309227,"p20":60.47381546134664,"p30":75.6857855361596,"p1h":85.41147132169577,"p2h":93.51620947630923,"pge2h":6.483790523690773}],"volume":[{"date":"2026-05-01","inbound":376,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-02","inbound":264,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-03","inbound":210,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-04","inbound":348,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-05","inbound":403,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-06","inbound":423,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-07","inbound":389,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-08","inbound":341,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-09","inbound":270,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-10","inbound":189,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-11","inbound":418,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-12","inbound":527,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-13","inbound":412,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-14","inbound":401,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-15","inbound":365,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-16","inbound":301,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-17","inbound":179,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-18","inbound":401,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-19","inbound":484,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-20","inbound":388,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-21","inbound":512,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-22","inbound":436,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-23","inbound":288,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-24","inbound":226,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-25","inbound":331,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-26","inbound":338,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-27","inbound":338,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-28","inbound":339,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-29","inbound":299,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-30","inbound":288,"replies":null,"difference":null,"acceptance":null},{"date":"2026-05-31","inbound":237,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-01","inbound":336,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-02","inbound":353,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-03","inbound":366,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-04","inbound":378,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-05","inbound":333,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-06","inbound":316,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-07","inbound":233,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-08","inbound":360,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-09","inbound":373,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-10","inbound":312,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-11","inbound":358,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-12","inbound":343,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-13","inbound":267,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-14","inbound":213,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-15","inbound":374,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-16","inbound":383,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-17","inbound":375,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-18","inbound":411,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-19","inbound":300,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-20","inbound":300,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-21","inbound":200,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-22","inbound":384,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-23","inbound":463,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-24","inbound":418,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-25","inbound":343,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-26","inbound":397,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-27","inbound":368,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-28","inbound":234,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-29","inbound":419,"replies":null,"difference":null,"acceptance":null},{"date":"2026-06-30","inbound":469,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-01","inbound":451,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-02","inbound":491,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-03","inbound":431,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-04","inbound":397,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-05","inbound":213,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-06","inbound":441,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-07","inbound":526,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-08","inbound":516,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-09","inbound":524,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-10","inbound":407,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-11","inbound":345,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-12","inbound":318,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-13","inbound":407,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-14","inbound":518,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-15","inbound":493,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-16","inbound":508,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-17","inbound":460,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-18","inbound":412,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-19","inbound":284,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-20","inbound":484,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-21","inbound":429,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-22","inbound":450,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-23","inbound":360,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-24","inbound":369,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-25","inbound":220,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-26","inbound":263,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-27","inbound":384,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-28","inbound":470,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-29","inbound":425,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-30","inbound":384,"replies":null,"difference":null,"acceptance":null},{"date":"2026-07-31","inbound":368,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-01","inbound":350,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-02","inbound":241,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-03","inbound":443,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-04","inbound":397,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-05","inbound":569,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-06","inbound":515,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-07","inbound":469,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-08","inbound":344,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-09","inbound":257,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-10","inbound":408,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-11","inbound":501,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-12","inbound":509,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-13","inbound":455,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-14","inbound":430,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-15","inbound":378,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-16","inbound":304,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-17","inbound":438,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-18","inbound":506,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-19","inbound":486,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-20","inbound":487,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-21","inbound":488,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-22","inbound":359,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-23","inbound":332,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-24","inbound":450,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-25","inbound":496,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-26","inbound":527,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-27","inbound":462,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-28","inbound":437,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-29","inbound":365,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-30","inbound":256,"replies":null,"difference":null,"acceptance":null},{"date":"2026-08-31","inbound":395,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-01","inbound":498,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-02","inbound":482,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-03","inbound":386,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-04","inbound":459,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-05","inbound":339,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-06","inbound":283,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-07","inbound":401,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-08","inbound":430,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-09","inbound":485,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-10","inbound":452,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-11","inbound":459,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-12","inbound":364,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-13","inbound":338,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-14","inbound":410,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-15","inbound":463,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-16","inbound":415,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-17","inbound":465,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-18","inbound":436,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-19","inbound":372,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-20","inbound":281,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-21","inbound":456,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-22","inbound":564,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-23","inbound":483,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-24","inbound":457,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-25","inbound":382,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-26","inbound":324,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-27","inbound":241,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-28","inbound":379,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-29","inbound":433,"replies":null,"difference":null,"acceptance":null},{"date":"2026-09-30","inbound":387,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-01","inbound":403,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-02","inbound":321,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-03","inbound":278,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-04","inbound":248,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-05","inbound":383,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-06","inbound":423,"replies":null,"difference":null,"acceptance":null},{"date":"2026-10-07","inbound":947,"replies":1028,"difference":81,"acceptance":null},{"date":"2026-10-08","inbound":858,"replies":881,"difference":23,"acceptance":null},{"date":"2026-10-09","inbound":831,"replies":851,"difference":20,"acceptance":null},{"date":"2026-10-10","inbound":608,"replies":620,"difference":12,"acceptance":101.9736842105263},{"date":"2026-10-11","inbound":564,"replies":567,"difference":3,"acceptance":100.53191489361701},{"date":"2026-10-12","inbound":719,"replies":718,"difference":-1,"acceptance":99.86091794158554},{"date":"2026-10-13","inbound":834,"replies":846,"difference":12,"acceptance":101.43884892086331},{"date":"2026-10-14","inbound":857,"replies":910,"difference":53,"acceptance":106.18436406067677},{"date":"2026-10-15","inbound":1019,"replies":1058,"difference":39,"acceptance":103.82728164867517},{"date":"2026-10-16","inbound":1018,"replies":1027,"difference":9,"acceptance":100.88408644400786},{"date":"2026-10-17","inbound":675,"replies":696,"difference":21,"acceptance":103.11111111111111},{"date":"2026-10-18","inbound":658,"replies":650,"difference":-8,"acceptance":98.78419452887537},{"date":"2026-10-19","inbound":897,"replies":904,"difference":7,"acceptance":100.78037904124861},{"date":"2026-10-20","inbound":995,"replies":1090,"difference":95,"acceptance":109.54773869346735},{"date":"2026-10-21","inbound":977,"replies":1058,"difference":81,"acceptance":108.29068577277378},{"date":"2026-10-22","inbound":1018,"replies":1065,"difference":47,"acceptance":104.61689587426326},{"date":"2026-10-23","inbound":811,"replies":859,"difference":48,"acceptance":105.91861898890258},{"date":"2026-10-24","inbound":657,"replies":621,"difference":-36,"acceptance":94.52054794520548},{"date":"2026-10-25","inbound":634,"replies":667,"difference":33,"acceptance":105.20504731861197},{"date":"2026-10-26","inbound":927,"replies":964,"difference":37,"acceptance":103.99137001078749},{"date":"2026-10-27","inbound":1044,"replies":1104,"difference":60,"acceptance":105.74712643678161},{"date":"2026-10-28","inbound":995,"replies":1062,"difference":67,"acceptance":106.73366834170854},{"date":"2026-10-29","inbound":1018,"replies":1078,"difference":60,"acceptance":105.89390962671905},{"date":"2026-10-30","inbound":825,"replies":857,"difference":32,"acceptance":103.87878787878788},{"date":"2026-10-31","inbound":641,"replies":698,"difference":57,"acceptance":108.89235569422777},{"date":"2026-11-01","inbound":576,"replies":588,"difference":12,"acceptance":102.08333333333333},{"date":"2026-11-02","inbound":837,"replies":870,"difference":33,"acceptance":103.94265232974911},{"date":"2026-11-03","inbound":974,"replies":1029,"difference":55,"acceptance":105.64681724845997},{"date":"2026-11-04","inbound":1105,"replies":1179,"difference":74,"acceptance":106.69683257918552},{"date":"2026-11-05","inbound":901,"replies":972,"difference":71,"acceptance":107.88013318534962},{"date":"2026-11-06","inbound":842,"replies":888,"difference":46,"acceptance":105.46318289786223},{"date":"2026-11-07","inbound":769,"replies":734,"difference":-35,"acceptance":95.44863459037711},{"date":"2026-11-08","inbound":639,"replies":635,"difference":-4,"acceptance":99.37402190923318},{"date":"2026-11-09","inbound":874,"replies":888,"difference":14,"acceptance":101.60183066361557}],"satisfactionDaily":[{"date":"2026-01-01","score":77.77777777777779,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-02","score":96.15384615384616,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-03","score":97.61904761904762,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-04","score":88,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-05","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-06","score":91.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-07","score":67.56756756756756,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-08","score":61.7208077260755,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-09","score":60.733695652173914,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-10","score":56.52173913043478,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-11","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-12","score":37.17105263157895,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-13","score":37.142857142857146,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-14","score":35.32608695652174,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-15","score":43.96551724137931,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-16","score":25,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-17","score":39.705882352941174,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-18","score":29.72972972972973,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-19","score":54.90196078431373,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-20","score":36.507936507936506,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-21","score":29.508196721311474,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-22","score":65.38461538461539,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-23","score":34.78260869565217,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-24","score":65.51724137931035,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-25","score":35.294117647058826,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-26","score":46.42857142857143,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-27","score":40,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-28","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-29","score":38.372093023255815,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-30","score":61.111111111111114,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-01-31","score":65,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-01","score":56.25,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-02","score":41.17647058823529,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-03","score":55.88235294117647,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-04","score":52.77777777777778,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-05","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-06","score":65.38461538461539,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-07","score":43.75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-08","score":14.285714285714285,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-09","score":41.66666666666667,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-10","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-11","score":68.42105263157895,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-12","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-13","score":73.33333333333333,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-14","score":70,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-15","score":72.22222222222221,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-16","score":23.076923076923077,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-17","score":76.19047619047619,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-18","score":69.23076923076923,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-19","score":40,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-20","score":61.53846153846154,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-21","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-22","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-23","score":37.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-24","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-25","score":60.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-26","score":55.00000000000001,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-27","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-02-28","score":57.14285714285714,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-01","score":25,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-02","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-03","score":53.84615384615385,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-04","score":68.75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-05","score":69.23076923076923,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-06","score":80.95238095238095,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-07","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-08","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-09","score":47.05882352941176,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-10","score":61.904761904761905,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-11","score":64,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-12","score":73.68421052631578,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-13","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-14","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-15","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-16","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-17","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-18","score":44.44444444444444,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-19","score":41.66666666666667,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-20","score":76.92307692307693,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-21","score":90,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-22","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-23","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-24","score":62.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-25","score":83.33333333333334,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-26","score":64.28571428571429,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-27","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-28","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-29","score":83.33333333333334,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-30","score":33.33333333333333,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-03-31","score":53.333333333333336,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-01","score":73.33333333333333,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-02","score":57.14285714285714,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-03","score":53.84615384615385,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-04","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-05","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-06","score":57.14285714285714,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-07","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-08","score":80,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-09","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-10","score":76.47058823529412,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-11","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-12","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-13","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-14","score":45.45454545454545,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-15","score":56.25,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-16","score":62.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-17","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-18","score":87.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-19","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-20","score":33.33333333333333,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-21","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-22","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-23","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-24","score":91.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-25","score":87.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-26","score":71.42857142857143,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-27","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-28","score":70,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-29","score":63.63636363636363,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-04-30","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-01","score":84.61538461538461,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-02","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-03","score":66.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-04","score":69.23076923076923,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-05","score":55.55555555555556,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-06","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-07","score":63.63636363636363,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-08","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-09","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-10","score":87.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-11","score":91.66666666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-12","score":83.33333333333334,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-13","score":62.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-14","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-15","score":100,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-16","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-17","score":37.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-18","score":56.25,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-19","score":71.42857142857143,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-20","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-21","score":68.75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-22","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-23","score":71.42857142857143,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-24","score":50,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-25","score":80,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-26","score":33.33333333333333,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-27","score":80,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-28","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-29","score":44.44444444444444,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-30","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-05-31","score":37.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-01","score":40.99290780141844,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-02","score":62.273901808785524,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-03","score":61.19402985074627,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-04","score":69.23076923076923,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-05","score":63.26530612244898,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-06","score":72.54901960784314,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-07","score":76.08695652173914,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-08","score":67.21311475409836,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-09","score":83.33333333333334,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-10","score":60,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-11","score":80.32786885245902,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-12","score":73.23943661971832,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-13","score":66.11570247933885,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-14","score":72,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-15","score":80.48780487804879,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-16","score":85.29411764705883,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-17","score":69.6078431372549,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-18","score":74.01574803149606,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-19","score":67.81609195402298,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-20","score":69.72477064220183,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-21","score":62.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-22","score":82.35294117647058,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-23","score":83.33333333333334,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-24","score":77.60416666666666,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-25","score":61.81818181818181,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-26","score":75.75757575757575,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-27","score":62.18487394957983,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-28","score":64.77987421383648,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-29","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-06-30","score":80.76923076923077,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-01","score":63.52941176470588,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-02","score":69.76744186046511,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-03","score":68.35443037974683,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-04","score":69.49152542372882,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-05","score":74,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-06","score":80.85106382978722,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-07","score":88.57142857142857,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-08","score":78.125,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-09","score":79,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-10","score":86.3013698630137,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-11","score":75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-12","score":82.45614035087719,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-13","score":82.35294117647058,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-14","score":87.87878787878788,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-15","score":87.2340425531915,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-16","score":84.81012658227847,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-17","score":76.92307692307693,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-18","score":78.33333333333333,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-19","score":73.58490566037736,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-20","score":76.92307692307693,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-21","score":79.54545454545455,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-22","score":72.88135593220339,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-23","score":84.375,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-24","score":85.56701030927834,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-25","score":68.96551724137932,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-26","score":76.92307692307693,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-27","score":89.36170212765957,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-28","score":88,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-29","score":81.66666666666667,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-30","score":76.47058823529412,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-07-31","score":81.08108108108108,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-01","score":84.21052631578947,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-02","score":78.43137254901961,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-03","score":82.75862068965517,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-04","score":98.30508474576271,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-05","score":87.95180722891565,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-06","score":89.16666666666667,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-07","score":83.03571428571429,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-08","score":80.18867924528303,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-09","score":92.53731343283582,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-10","score":88.67924528301887,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-11","score":87.71929824561403,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-12","score":84.93150684931507,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-13","score":84.4155844155844,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-14","score":86.48648648648648,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-15","score":88.88888888888889,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-16","score":76.11940298507463,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-17","score":89.87341772151899,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-18","score":87.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-19","score":82.53968253968253,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-20","score":83.33333333333334,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-21","score":91.34615384615384,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-22","score":87.8048780487805,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-23","score":82.08955223880598,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-24","score":88.60759493670885,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-25","score":81.53846153846153,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-26","score":88.11881188118812,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-27","score":84.90566037735849,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-28","score":89.69072164948454,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-29","score":80.2919708029197,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-30","score":81.70731707317073,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-08-31","score":88.60759493670885,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-01","score":88.88888888888889,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-02","score":89.1566265060241,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-03","score":88.75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-04","score":81.25,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-05","score":85.71428571428571,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-06","score":80.95238095238095,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-07","score":81.35593220338984,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-08","score":77.27272727272727,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-09","score":91.30434782608695,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-10","score":91.56626506024097,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-11","score":88,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-12","score":87.5,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-13","score":83.56164383561644,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-14","score":79.66101694915254,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-15","score":92.5925925925926,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-16","score":84.375,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-17","score":81.42857142857143,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-18","score":90.27777777777779,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-19","score":85,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-20","score":88.75,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-21","score":80.82191780821918,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-22","score":88.88888888888889,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-23","score":85.52631578947368,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-24","score":88.57142857142857,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-25","score":90.32258064516128,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-26","score":94.23076923076923,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-27","score":85.9375,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-28","score":89.55223880597015,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-29","score":95.23809523809523,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-09-30","score":92.64705882352942,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-01","score":88.88888888888889,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-02","score":80,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-03","score":83.63636363636363,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-04","score":88.13559322033898,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-05","score":79.36507936507937,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-06","score":89.01098901098901,"rated":0,"good":0,"bad":0,"ratingCountAvailable":false},{"date":"2026-10-07","score":90.69767441860465,"rated":43,"good":39,"bad":4,"ratingCountAvailable":true},{"date":"2026-10-08","score":90.19607843137256,"rated":51,"good":46,"bad":5,"ratingCountAvailable":true},{"date":"2026-10-09","score":98.0392156862745,"rated":51,"good":50,"bad":1,"ratingCountAvailable":true},{"date":"2026-10-10","score":92.3076923076923,"rated":39,"good":36,"bad":3,"ratingCountAvailable":true},{"date":"2026-10-11","score":96.15384615384616,"rated":26,"good":25,"bad":1,"ratingCountAvailable":true},{"date":"2026-10-12","score":95.74468085106383,"rated":47,"good":45,"bad":2,"ratingCountAvailable":true},{"date":"2026-10-13","score":80.95238095238095,"rated":42,"good":34,"bad":8,"ratingCountAvailable":true},{"date":"2026-10-14","score":88.46153846153845,"rated":52,"good":46,"bad":6,"ratingCountAvailable":true},{"date":"2026-10-15","score":87.3015873015873,"rated":63,"good":55,"bad":8,"ratingCountAvailable":true},{"date":"2026-10-16","score":96.61016949152543,"rated":59,"good":57,"bad":2,"ratingCountAvailable":true},{"date":"2026-10-17","score":86.66666666666667,"rated":45,"good":39,"bad":6,"ratingCountAvailable":true},{"date":"2026-10-18","score":96.55172413793103,"rated":29,"good":28,"bad":1,"ratingCountAvailable":true},{"date":"2026-10-19","score":93.47826086956522,"rated":46,"good":43,"bad":3,"ratingCountAvailable":true},{"date":"2026-10-20","score":91.93548387096774,"rated":62,"good":57,"bad":5,"ratingCountAvailable":true},{"date":"2026-10-21","score":94.02985074626866,"rated":67,"good":63,"bad":4,"ratingCountAvailable":true},{"date":"2026-10-22","score":98.38709677419355,"rated":62,"good":61,"bad":1,"ratingCountAvailable":true},{"date":"2026-10-23","score":91.48936170212765,"rated":47,"good":43,"bad":4,"ratingCountAvailable":true},{"date":"2026-10-24","score":93.02325581395348,"rated":43,"good":40,"bad":3,"ratingCountAvailable":true},{"date":"2026-10-25","score":100,"rated":35,"good":35,"bad":0,"ratingCountAvailable":true},{"date":"2026-10-26","score":90.19607843137256,"rated":51,"good":46,"bad":5,"ratingCountAvailable":true},{"date":"2026-10-27","score":94.02985074626866,"rated":67,"good":63,"bad":4,"ratingCountAvailable":true},{"date":"2026-10-28","score":92.53731343283582,"rated":67,"good":62,"bad":5,"ratingCountAvailable":true},{"date":"2026-10-29","score":91.66666666666666,"rated":72,"good":66,"bad":6,"ratingCountAvailable":true},{"date":"2026-10-30","score":93.87755102040816,"rated":49,"good":46,"bad":3,"ratingCountAvailable":true},{"date":"2026-10-31","score":95,"rated":40,"good":38,"bad":2,"ratingCountAvailable":true},{"date":"2026-11-01","score":95.1219512195122,"rated":41,"good":39,"bad":2,"ratingCountAvailable":true},{"date":"2026-11-02","score":93.47826086956522,"rated":46,"good":43,"bad":3,"ratingCountAvailable":true},{"date":"2026-11-03","score":98,"rated":50,"good":49,"bad":1,"ratingCountAvailable":true},{"date":"2026-11-04","score":95.65217391304348,"rated":69,"good":66,"bad":3,"ratingCountAvailable":true},{"date":"2026-11-05","score":93.10344827586206,"rated":58,"good":54,"bad":4,"ratingCountAvailable":true},{"date":"2026-11-06","score":87.8048780487805,"rated":41,"good":36,"bad":5,"ratingCountAvailable":true},{"date":"2026-11-07","score":97.43589743589743,"rated":39,"good":38,"bad":1,"ratingCountAvailable":true},{"date":"2026-11-08","score":91.8918918918919,"rated":37,"good":34,"bad":3,"ratingCountAvailable":true},{"date":"2026-11-09","score":96.07843137254902,"rated":51,"good":49,"bad":2,"ratingCountAvailable":true}],"satisfactionMonthly":[{"year":2025,"month":"November","score":87.32227488151659,"rated":844,"good":737,"bad":107},{"year":2025,"month":"December","score":53.1606593008513,"rated":5521,"good":2935,"bad":2586},{"year":2026,"month":"January","score":62.78950077200206,"rated":1943,"good":1220,"bad":723},{"year":2026,"month":"February","score":76.6076421248835,"rated":1073,"good":822,"bad":251},{"year":2026,"month":"March","score":82.5,"rated":1040,"good":858,"bad":182},{"year":2026,"month":"April","score":81.48837209302326,"rated":1075,"good":876,"bad":199},{"year":2026,"month":"May","score":85.22483940042827,"rated":934,"good":796,"bad":138},{"year":2026,"month":"June","score":89.87701040681173,"rated":1057,"good":950,"bad":107},{"year":2026,"month":"July","score":87.90476190476191,"rated":1050,"good":923,"bad":127},{"year":2026,"month":"August","score":89.2802450229709,"rated":1306,"good":1166,"bad":140},{"year":2026,"month":"September","score":90.62015503875969,"rated":1290,"good":1169,"bad":121},{"year":2026,"month":"October","score":93.07637401855817,"rated":1401,"good":1304,"bad":97}],"product":[{"type":"Shopify Account Issues","month":"November","satisfaction":null,"threeRound":100,"tickets":4},{"type":"Shopify Account Issues","month":"October","satisfaction":null,"threeRound":100,"tickets":3},{"type":"Shopify Account Issues","month":"September","satisfaction":100,"threeRound":50,"tickets":7},{"type":"Shopify Account Issues","month":"August","satisfaction":null,"threeRound":100,"tickets":7},{"type":"Shopify Account Issues","month":"July","satisfaction":71.42857142857143,"threeRound":92.5,"tickets":44},{"type":"Shopify Account Issues","month":"June","satisfaction":0,"threeRound":73.33333333333333,"tickets":15},{"type":"Shopify Account Issues","month":"May","satisfaction":83.33333333333334,"threeRound":82.92682926829268,"tickets":42},{"type":"Shopify Account Issues","month":"April","satisfaction":100,"threeRound":83.33333333333334,"tickets":12},{"type":"Shipping & Delivery","month":"November","satisfaction":92.45283018867924,"threeRound":83.984375,"tickets":316},{"type":"Shipping & Delivery","month":"October","satisfaction":81.64556962025317,"threeRound":77.91563275434244,"tickets":893},{"type":"Shipping & Delivery","month":"September","satisfaction":85.96491228070175,"threeRound":78.2258064516129,"tickets":798},{"type":"Shipping & Delivery","month":"August","satisfaction":87.56756756756758,"threeRound":81.94174757281554,"tickets":1056},{"type":"Shipping & Delivery","month":"July","satisfaction":80.41237113402062,"threeRound":85.06224066390041,"tickets":742},{"type":"Shipping & Delivery","month":"June","satisfaction":83.11688311688312,"threeRound":83.6322869955157,"tickets":465},{"type":"Shipping & Delivery","month":"May","satisfaction":78.33333333333333,"threeRound":81.41361256544502,"tickets":441},{"type":"Shipping & Delivery","month":"April","satisfaction":81.81818181818183,"threeRound":78.35820895522389,"tickets":137},{"type":"Shipping & Delivery","month":"March","satisfaction":null,"threeRound":0,"tickets":2},{"type":"Product Question","month":"November","satisfaction":80,"threeRound":91.39344262295081,"tickets":278},{"type":"Product Question","month":"October","satisfaction":79.81651376146789,"threeRound":92.52437703141928,"tickets":994},{"type":"Product Question","month":"September","satisfaction":80.45112781954887,"threeRound":91.71539961013644,"tickets":1088},{"type":"Product Question","month":"August","satisfaction":82.3943661971831,"threeRound":93.43986543313709,"tickets":1226},{"type":"Product Question","month":"July","satisfaction":83.47826086956522,"threeRound":93.90142021720969,"tickets":1284},{"type":"Product Question","month":"June","satisfaction":86.5079365079365,"threeRound":94.97161394971614,"tickets":1621},{"type":"Product Question","month":"May","satisfaction":80.12048192771084,"threeRound":93.02172481895984,"tickets":1883},{"type":"Product Question","month":"April","satisfaction":70.2127659574468,"threeRound":90.03322259136213,"tickets":916},{"type":"Product Question","month":"March","satisfaction":null,"threeRound":66.66666666666666,"tickets":12},{"type":"Product Question","month":"February","satisfaction":0,"threeRound":88.88888888888889,"tickets":21},{"type":"Product Question","month":"January","satisfaction":null,"threeRound":100,"tickets":1},{"type":"Product Defect","month":"November","satisfaction":96.1864406779661,"threeRound":56.61057692307693,"tickets":1938},{"type":"Product Defect","month":"October","satisfaction":95.22546419098144,"threeRound":42.52443933294997,"tickets":5892},{"type":"Product Defect","month":"September","satisfaction":92.16101694915254,"threeRound":64.3126499828591,"tickets":6364},{"type":"Product Defect","month":"August","satisfaction":90.57971014492753,"threeRound":64.30248155600268,"tickets":6452},{"type":"Product Defect","month":"July","satisfaction":88.61386138613861,"threeRound":69.90309014445054,"tickets":5891},{"type":"Product Defect","month":"June","satisfaction":90.0126422250316,"threeRound":68.39145106861643,"tickets":4600},{"type":"Product Defect","month":"May","satisfaction":88.67132867132868,"threeRound":62.824207492795395,"tickets":4464},{"type":"Product Defect","month":"April","satisfaction":86.93790149892934,"threeRound":53.00400534045394,"tickets":2347},{"type":"Product Defect","month":"March","satisfaction":72.72727272727273,"threeRound":14.285714285714285,"tickets":122},{"type":"Product Defect","month":"February","satisfaction":50,"threeRound":23.076923076923077,"tickets":13},{"type":"Product Defect","month":"January","satisfaction":null,"threeRound":0,"tickets":2},{"type":"Payment & Coupon Issues","month":"November","satisfaction":100,"threeRound":79.16666666666666,"tickets":29},{"type":"Payment & Coupon Issues","month":"October","satisfaction":88.88888888888889,"threeRound":75,"tickets":67},{"type":"Payment & Coupon Issues","month":"September","satisfaction":85.71428571428571,"threeRound":71.42857142857143,"tickets":65},{"type":"Payment & Coupon Issues","month":"August","satisfaction":80,"threeRound":91.76470588235294,"tickets":87},{"type":"Payment & Coupon Issues","month":"July","satisfaction":75,"threeRound":85.5072463768116,"tickets":73},{"type":"Payment & Coupon Issues","month":"June","satisfaction":50,"threeRound":52.38095238095239,"tickets":21},{"type":"Payment & Coupon Issues","month":"May","satisfaction":null,"threeRound":100,"tickets":10},{"type":"Payment & Coupon Issues","month":"April","satisfaction":null,"threeRound":100,"tickets":7},{"type":"Out of Stock","month":"November","satisfaction":100,"threeRound":100,"tickets":6},{"type":"Out of Stock","month":"October","satisfaction":80,"threeRound":85.71428571428571,"tickets":28},{"type":"Out of Stock","month":"September","satisfaction":100,"threeRound":94.44444444444444,"tickets":20},{"type":"Out of Stock","month":"August","satisfaction":75,"threeRound":100,"tickets":12},{"type":"Out of Stock","month":"July","satisfaction":75,"threeRound":94.44444444444444,"tickets":18},{"type":"Out of Stock","month":"June","satisfaction":50,"threeRound":91.17647058823529,"tickets":34},{"type":"Out of Stock","month":"May","satisfaction":50,"threeRound":97.36842105263158,"tickets":42},{"type":"Out of Stock","month":"April","satisfaction":50,"threeRound":80,"tickets":15},{"type":"Others- Report to Amy","month":"November","satisfaction":null,"threeRound":100,"tickets":2},{"type":"Others- Report to Amy","month":"October","satisfaction":66.66666666666666,"threeRound":100,"tickets":10},{"type":"Others- Report to Amy","month":"September","satisfaction":null,"threeRound":100,"tickets":6},{"type":"Others- Report to Amy","month":"August","satisfaction":null,"threeRound":100,"tickets":2},{"type":"Others- Report to Amy","month":"July","satisfaction":null,"threeRound":100,"tickets":5},{"type":"Others- Report to Amy","month":"June","satisfaction":100,"threeRound":91.66666666666666,"tickets":12},{"type":"Others- Report to Amy","month":"May","satisfaction":null,"threeRound":100,"tickets":9},{"type":"Others- Report to Amy","month":"April","satisfaction":50,"threeRound":85,"tickets":20},{"type":"Others- Report to Amy","month":"March","satisfaction":null,"threeRound":66.66666666666666,"tickets":3},{"type":"Negative Review","month":"November","satisfaction":null,"threeRound":100,"tickets":1},{"type":"Negative Review","month":"October","satisfaction":null,"threeRound":100,"tickets":4},{"type":"Negative Review","month":"September","satisfaction":null,"threeRound":50,"tickets":2},{"type":"Negative Review","month":"August","satisfaction":33.33333333333333,"threeRound":58.333333333333336,"tickets":31},{"type":"Negative Review","month":"July","satisfaction":100,"threeRound":62.5,"tickets":28},{"type":"Negative Review","month":"June","satisfaction":null,"threeRound":87.95180722891565,"tickets":119},{"type":"Negative Review","month":"May","satisfaction":null,"threeRound":94.6949602122016,"tickets":453},{"type":"Negative Review","month":"April","satisfaction":null,"threeRound":89.62962962962962,"tickets":139},{"type":"Merge","month":"November","satisfaction":null,"threeRound":100,"tickets":348},{"type":"Merge","month":"October","satisfaction":null,"threeRound":99.22756981580511,"tickets":1686},{"type":"Merge","month":"September","satisfaction":null,"threeRound":98.93190921228305,"tickets":1500},{"type":"Merge","month":"August","satisfaction":50,"threeRound":99.42693409742121,"tickets":1746},{"type":"Merge","month":"July","satisfaction":100,"threeRound":99.63273871983212,"tickets":1906},{"type":"Merge","month":"June","satisfaction":100,"threeRound":99.5881949210707,"tickets":1459},{"type":"Merge","month":"May","satisfaction":33.33333333333333,"threeRound":99.72451790633609,"tickets":1454},{"type":"Merge","month":"April","satisfaction":null,"threeRound":99.14163090128756,"tickets":233},{"type":"Merge","month":"March","satisfaction":null,"threeRound":84.61538461538461,"tickets":13},{"type":"Merge","month":"February","satisfaction":null,"threeRound":100,"tickets":9},{"type":"Merge","month":"January","satisfaction":null,"threeRound":100,"tickets":12},{"type":"Junk Message","month":"November","satisfaction":null,"threeRound":100,"tickets":175},{"type":"Junk Message","month":"October","satisfaction":null,"threeRound":100,"tickets":699},{"type":"Junk Message","month":"September","satisfaction":null,"threeRound":100,"tickets":502},{"type":"Junk Message","month":"August","satisfaction":null,"threeRound":99.60159362549801,"tickets":253},{"type":"Junk Message","month":"July","satisfaction":null,"threeRound":99.63898916967509,"tickets":280},{"type":"Junk Message","month":"June","satisfaction":null,"threeRound":100,"tickets":213},{"type":"Junk Message","month":"May","satisfaction":50,"threeRound":99.81884057971014,"tickets":554},{"type":"Junk Message","month":"April","satisfaction":null,"threeRound":99.59677419354838,"tickets":248},{"type":"Junk Message","month":"March","satisfaction":100,"threeRound":100,"tickets":1},{"type":"Invoice","month":"November","satisfaction":100,"threeRound":98.1981981981982,"tickets":125},{"type":"Invoice","month":"October","satisfaction":100,"threeRound":97.89303079416531,"tickets":649},{"type":"Invoice","month":"September","satisfaction":83.33333333333334,"threeRound":98.13242784380306,"tickets":612},{"type":"Invoice","month":"August","satisfaction":100,"threeRound":98.45094664371773,"tickets":582},{"type":"Invoice","month":"July","satisfaction":100,"threeRound":99.68354430379746,"tickets":636},{"type":"Invoice","month":"June","satisfaction":100,"threeRound":99.03846153846155,"tickets":416},{"type":"Invoice","month":"May","satisfaction":100,"threeRound":98.9247311827957,"tickets":282},{"type":"Invoice","month":"April","satisfaction":66.66666666666666,"threeRound":99.12280701754386,"tickets":229},{"type":"Cooperation","month":"November","satisfaction":null,"threeRound":99.22779922779922,"tickets":279},{"type":"Cooperation","month":"October","satisfaction":null,"threeRound":98.97360703812316,"tickets":709},{"type":"Cooperation","month":"September","satisfaction":null,"threeRound":99.50900163666121,"tickets":653},{"type":"Cooperation","month":"August","satisfaction":null,"threeRound":98.1358189081225,"tickets":804},{"type":"Cooperation","month":"July","satisfaction":null,"threeRound":99.30635838150289,"tickets":939},{"type":"Cooperation","month":"June","satisfaction":null,"threeRound":99.59404600811908,"tickets":838},{"type":"Cooperation","month":"May","satisfaction":66.66666666666666,"threeRound":98.40764331210191,"tickets":776},{"type":"Cooperation","month":"April","satisfaction":85.71428571428571,"threeRound":95.47413793103449,"tickets":467},{"type":"Cooperation","month":"March","satisfaction":null,"threeRound":71.42857142857143,"tickets":7},{"type":"Cooperation","month":"February","satisfaction":null,"threeRound":50,"tickets":2},{"type":"Call Not Answered","month":"November","satisfaction":null,"threeRound":100,"tickets":92},{"type":"Call Not Answered","month":"October","satisfaction":null,"threeRound":100,"tickets":416},{"type":"Call Not Answered","month":"September","satisfaction":null,"threeRound":100,"tickets":395},{"type":"Call Not Answered","month":"August","satisfaction":null,"threeRound":100,"tickets":443},{"type":"Call Not Answered","month":"July","satisfaction":null,"threeRound":100,"tickets":395},{"type":"Call Not Answered","month":"June","satisfaction":null,"threeRound":100,"tickets":260},{"type":"Call Not Answered","month":"May","satisfaction":null,"threeRound":100,"tickets":73},{"type":"Call Not Answered","month":"April","satisfaction":null,"threeRound":100,"tickets":1},{"type":"Call Not Answered","month":"March","satisfaction":null,"threeRound":100,"tickets":1},{"type":"Call Not Answered","month":"February","satisfaction":null,"threeRound":100,"tickets":1},{"type":"Bulk Order","month":"November","satisfaction":null,"threeRound":100,"tickets":8},{"type":"Bulk Order","month":"October","satisfaction":33.33333333333333,"threeRound":100,"tickets":31},{"type":"Bulk Order","month":"September","satisfaction":100,"threeRound":87.5,"tickets":18},{"type":"Bulk Order","month":"August","satisfaction":0,"threeRound":93.75,"tickets":18},{"type":"Bulk Order","month":"July","satisfaction":0,"threeRound":100,"tickets":6},{"type":"Bulk Order","month":"June","satisfaction":null,"threeRound":0,"tickets":1},{"type":"Activate warranty","month":"November","satisfaction":100,"threeRound":100,"tickets":77},{"type":"Activate warranty","month":"October","satisfaction":86.04651162790698,"threeRound":94.6360153256705,"tickets":268},{"type":"Activate warranty","month":"September","satisfaction":90.9090909090909,"threeRound":97.77777777777777,"tickets":233},{"type":"Activate warranty","month":"August","satisfaction":87.17948717948718,"threeRound":96.42857142857143,"tickets":282},{"type":"Activate warranty","month":"July","satisfaction":89.1891891891892,"threeRound":96.95945945945947,"tickets":299},{"type":"Activate warranty","month":"June","satisfaction":94.11764705882352,"threeRound":98.72340425531915,"tickets":238},{"type":"Activate warranty","month":"May","satisfaction":100,"threeRound":98.93617021276596,"tickets":203},{"type":"Activate warranty","month":"April","satisfaction":78.57142857142857,"threeRound":95.16129032258065,"tickets":124},{"type":"Activate warranty","month":"March","satisfaction":null,"threeRound":100,"tickets":4},{"type":"30-Day Free Return","month":"November","satisfaction":100,"threeRound":60,"tickets":15},{"type":"30-Day Free Return","month":"October","satisfaction":86.66666666666667,"threeRound":65.85365853658537,"tickets":46},{"type":"30-Day Free Return","month":"September","satisfaction":86.66666666666667,"threeRound":77.96610169491525,"tickets":61},{"type":"30-Day Free Return","month":"August","satisfaction":100,"threeRound":86.53846153846155,"tickets":53},{"type":"30-Day Free Return","month":"July","satisfaction":100,"threeRound":70.45454545454545,"tickets":44},{"type":"30-Day Free Return","month":"June","satisfaction":100,"threeRound":77.41935483870968,"tickets":32},{"type":"30-Day Free Return","month":"May","satisfaction":80,"threeRound":66.66666666666666,"tickets":32},{"type":"30-Day Free Return","month":"April","satisfaction":100,"threeRound":57.14285714285714,"tickets":14}],"dataThrough":"2026-11-09","deliveryDirectory":"incoming-20261110","productSource":"Zendesk Explore · Ticket Type workbook","productSourceFile":"C:\\Users\\Amy\\Downloads\\Ticket_Type_11102026_1129.xlsx","productExportedAt":"2026-11-10T11:29:00+08:00","productDataThrough":"2026-11-10"};
+const volumeRows = liveData.volume;
+const responseRows = liveData.response;
+const productRows = liveData.product;
+const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const monthShort = {January:"1月",February:"2月",March:"3月",April:"4月",May:"5月",June:"6月",July:"7月",August:"8月",September:"9月",October:"10月",November:"11月",December:"12月"};
+const satisfactionDailyRows = (liveData.satisfactionDaily || [])
+  .map(row => ({ ...row, label: row.date.slice(5) }))
+  .sort((a, b) => a.date.localeCompare(b.date));
+const satisfactionMonthlyRows = (liveData.satisfactionMonthly || []).map(row => {
+  const monthIndex = monthNames.indexOf(row.month);
+  const month = String(monthIndex + 1).padStart(2, "0");
+  const lastDay = new Date(Date.UTC(row.year, monthIndex + 1, 0)).getUTCDate();
+  return { ...row, date: row.year + "-" + month + "-" + lastDay, label: row.year + "年" + monthShort[row.month] };
+}).sort((a, b) => a.date.localeCompare(b.date));
+const satisfactionRows = satisfactionDailyRows.length ? satisfactionDailyRows : satisfactionMonthlyRows;
+const ogsmFallback = {"source":"Bueno OGSM 项目看板 · iNIU Care · CSAT","updatedAt":"2026-11-09 17:48:17","objective":"iNIU Care","target":95,"owner":"王文青","actions":[{"phase":"Q4","title":"不满意工单分析100%分析，通过月度会议将TOP5问题闭环","detail":"来自 iNIU Care OGSM 项目看板","progress":35,"due":"2026-12-31"},{"phase":"Q4","title":"海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2026-12-31"},{"phase":"27Q1","title":"探索AI辅助质检工具，让质检更聚焦于服务痛点，减少随机性","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2027-03-31"},{"phase":"27Q1","title":"满意度分析会议机制&质检分析会议机制复盘","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2027-01-31"}],"roadmap":{"title":"CSAT · OGSM-PDCA 执行地图","columns":["端到端成果","关键矛盾与策略","Q4拟实质性进展","27Q1拟实质性进展","实质性进展","关键会议"],"rows":[{"code":"A","outcome":"CSAT≥95%","strategy":"即时服务渠道不足、邮件排班与人员能力未能充分匹配进件需求；通过Live Chat补齐即时响应空档，建立动态排班与人员培养机制，实现用户快速获得帮助","q4":"不满意工单分析100%分析，通过月度会议将TOP5问题闭环<br>海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）","q1":"探索AI辅助质检工具，让质检更聚焦于服务痛点，减少随机性<br>满意度分析会议机制&质检分析会议机制复盘","substantiveProgress":"9.29 不满意工单分析会议<br>不满意工单分析/质检结构性调整同步TL，从11月开始试运行<br>重构团队绩效、晋升发展","substantialItems":[{"mapping":"A","text":"9.29 不满意工单分析会议","submitter":"王文青","time":"2026-10-08 21:03:01","links":[],"attachments":[]},{"mapping":"A","text":"不满意工单分析/质检结构性调整同步TL，从11月开始试运行","submitter":"王文青","time":"2026-10-21 16:48:52","links":[{"label":"https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im"}],"attachments":[]},{"mapping":"M（Multi）","text":"重构团队绩效、晋升发展","submitter":"王文青","time":"2026-11-03 10:24:49","links":[{"label":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"},{"label":"团队绩效文档","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"}],"attachments":[{"name":"团队绩效文档","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space","id":"att_mw02eo3w_36tpq"}]}],"meetings":"CSAT分析复盘会议<br>CSAT复盘","meetingItems":[{"subject":"CSAT分析复盘会议","date":"2026-10-28","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"CSAT复盘","date":"2026-11-12","start":"","end":"","status":"upcoming","attachments":[],"links":[]}],"links":[{"label":"https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im"},{"label":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"},{"label":"团队绩效文档","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"}],"attachments":[]}]},"syncedAt":"2026-11-10 16:19:44"};
+let ogsmData = ogsmFallback;
+const ogsmSyncUrl = new URLSearchParams(location.search).get("ogsmUrl") || "./ogsm-csat.json";
+
+const syncLabel = liveData.exportedAt ? liveData.exportedAt.slice(0, 16).replace("T", " ") + " GMT+8" : "—";
+function refreshSyncStatus() {
+  const el = document.getElementById("sourceSyncStatus");
+  if (el) el.textContent = "● 工作台数据同步 · " + syncLabel;
+}
+
+const ticketOgsFallback = {"source":"Bueno OGSM 项目看板 · iNIU Care · B","updatedAt":"2026-11-09 17:48:17","objective":"邮件10mins响应率≥80%，20mins响应率≥95%，三回合解决率≥90%","actions":[{"phase":"Q4","title":"海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2026-12-31"},{"phase":"Q4","title":"完成Livechat 0–1搭建与部分时间段试运行","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2026-12-31"},{"phase":"Q4","title":"识别7*24小时响应速度的波峰波谷，识别卡点为值班体系/某处理流程复杂性等，再针对性解决","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2026-11-30"},{"phase":"27Q1","title":"Livechat形成稳定的7*24小时人工接待承接能力","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2027-02-28"},{"phase":"27Q1","title":"响应时效的复盘机制，根据最新响应时间持续复盘当前最新邮件快速响应卡点","detail":"来自 iNIU Care OGSM 项目看板","progress":0,"due":"2027-01-31"}],"roadmap":{"title":"响应时效 · OGSM-PDCA 执行地图","columns":["端到端成果","关键矛盾与策略","Q4拟实质性进展","27Q1拟实质性进展","实质性进展","关键会议"],"rows":[{"code":"B","outcome":"邮件10mins响应率≥80%，20mins响应率≥95%，三回合解决率≥90%","strategy":"即时服务渠道不足、邮件排班与人员能力未能充分匹配进件需求；通过Live Chat补齐即时响应空档，建立动态排班与人员培养机制，实现用户快速获得帮助","q4":"海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）<br>完成Livechat 0–1搭建与部分时间段试运行<br>识别7*24小时响应速度的波峰波谷，识别卡点为值班体系/某处理流程复杂性等，再针对性解决","q1":"Livechat形成稳定的7*24小时人工接待承接能力<br>响应时效的复盘机制，根据最新响应时间持续复盘当前最新邮件快速响应卡点","substantiveProgress":"官网开发已上线，表单多语言感谢页*自动回复解决ing<br>重构团队绩效、晋升发展<br>livechat规划+人员排版规划","substantialItems":[{"mapping":"B","text":"官网开发已上线，表单多语言感谢页*自动回复解决ing","submitter":"王文青","time":"2026-10-08 21:09:20","links":[],"attachments":[]},{"mapping":"M（Multi）","text":"重构团队绩效、晋升发展","submitter":"王文青","time":"2026-11-03 10:24:49","links":[{"label":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"},{"label":"团队绩效文档","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"}],"attachments":[{"name":"团队绩效文档","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space","id":"att_mw02eo3w_36tpq"}]},{"mapping":"B","text":"livechat规划+人员排版规划","submitter":"王文青","time":"2026-11-09 17:38:47","links":[{"label":"https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"}],"attachments":[]}],"meetings":"响应时效分析+livechat正式立项<br>livechat+AI自助服务方案1.0<br>团队人员&绩效规划<br>人员规划+livechat2.0<br>livechat节点会议","meetingItems":[{"subject":"响应时效分析+livechat正式立项","date":"2026-10-16","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"livechat+AI自助服务方案1.0","date":"","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"团队人员&绩效规划","date":"2026-10-26","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"人员规划+livechat2.0","date":"2026-11-09","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"livechat节点会议","date":"2026-11-27","start":"","end":"","status":"upcoming","attachments":[],"links":[]}],"links":[{"label":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"},{"label":"团队绩效文档","url":"https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"},{"label":"https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im","url":"https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"}],"attachments":[]}]},"syncedAt":"2026-11-10 16:19:44"};
+let ticketOgsData = ticketOgsFallback;
+
+const productOgsFallback = {"source":"Bueno OGSM 项目看板 · 产品质量 / VOC","syncedAt":"2026-11-10 16:19:44","projects":[{"id":1000067,"name":"课题1：VOC驱动产品闭环","owner":"王文青","updatedAt":"2026-11-09 17:32:45","rows":[{"outcome":"投诉减少50% - 客诉从1W2/ Month 到6K/ Month","strategy":"—","q4":"iNIU smart help上线，完成TOP2的ticket type分析，并形成闭环的客诉解决方案","q1":"iNIU smart help，建立产品知识与TOP10客诉持续更新机制；AI从基础问答升级为可指导用户完成常见问题排障，并通过解决效果持续优化","substantial":"—","meetings":"VOC数据仪表盘<br>P781方案复盘+新品试用方案1.0<br>各品类周期不良品分析会议<br>Ticket type分析<br>客户声音工作台进展同步<br>12月客户声音工作台进展同步<br>招募整体方案对齐<br>P781复盘+RG20000启动招募<br>TOP3 ticket type 分析","meetingItems":[{"subject":"VOC数据仪表盘","date":"2026-10-23","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"P781方案复盘+新品试用方案1.0","date":"2026-10-15","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"各品类周期不良品分析会议","date":"2026-10-13","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"Ticket type分析","date":"2026-11-15","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"客户声音工作台进展同步","date":"2026-11-16","start":"2026-11-16T14:00:00","end":"2026-11-16T15:30:00","status":"upcoming","attachments":[],"links":[]},{"subject":"12月客户声音工作台进展同步","date":"","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"招募整体方案对齐","date":"2026-11-13","start":"2026-11-13T14:30:00","end":"2026-11-13T16:40:00","status":"upcoming","attachments":[],"links":[]},{"subject":"P781复盘+RG20000启动招募","date":"2026-11-27","start":"2026-11-27T15:20:00","end":"2026-11-27T16:42:00","status":"upcoming","attachments":[],"links":[]},{"subject":"TOP3 ticket type 分析","date":"2026-11-19","start":"2026-11-19T14:00:00","end":"2026-11-19T15:30:00","status":"upcoming","attachments":[],"links":[]}]}]},{"id":1000112,"name":"iNIU Smart Help","owner":"黄子靖","updatedAt":"2026-11-09 17:34:51","rows":[{"outcome":"自助解决率≥50%；自助满意度≥95%","strategy":"构建“产品二维码+官网”一体化自助服务体系，让用户按型号快速获取帮助并自主解决问题<br>建立“统一知识库+AI智能解答+人工兜底”的持续优化机制，实现从被动回答到智能解决","q4":"完成Smart Help从0到1建设，打通重点产品二维码与官网专属帮助页面，整合说明书、FAQ、视频及故障排查<br>完成AI Agent试点，跑通智能解答、问题识别与转人工闭环","q1":"形成覆盖核心产品的型号化自助服务体系，建立产品知识与TOP10客诉持续更新机制；AI从基础问答升级为可指导用户完成常见问题排障，并通过解决效果持续优化","substantial":"—","meetings":"海帆CRM<br>包装二维码方案<br>livechat+AI自助服务方案1.0<br>AI对齐会","meetingItems":[{"subject":"海帆CRM","date":"2026-10-08","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"包装二维码方案","date":"2026-10-28","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"livechat+AI自助服务方案1.0","date":"2026-11-02","start":"","end":"","status":"upcoming","attachments":[],"links":[]},{"subject":"AI对齐会","date":"2026-11-10","start":"2026-11-10T16:00","end":"2026-11-10T17:00","status":"upcoming","attachments":[],"links":[]}]}]}]};
+let productOgsData = productOgsFallback;
+
+let activeRange = "7";
+let customRange = { start: liveData.dateRanges.response[0], end: liveData.dataThrough || volumeRows.at(-1).date };
+let showAllProductTypes = true;
+let rankingExpanded = { tickets: false, satisfaction: false, threeRound: false };
+
+const fmt = value => new Intl.NumberFormat("zh-CN").format(Math.round(value || 0));
+const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+function addDays(iso, days) {
+  const [year, month, day] = iso.split("-").map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day + days));
+  return date.toISOString().slice(0, 10);
+}
+
+function addMonths(iso, months) {
+  const date = new Date(iso + "T00:00:00Z");
+  date.setUTCMonth(date.getUTCMonth() + months);
+  return date.toISOString().slice(0, 10);
+}
+
+function within(row, start, end) {
+  return row.date >= start && row.date <= end;
+}
+
+function getCustomDates(_prefix, fallbackStart, fallbackEnd) {
+  return {
+    start: customRange.start || fallbackStart,
+    end: customRange.end || fallbackEnd,
+  };
+}
+
+function dateRangeFor(range, prefix, first, last) {
+  if (range === "custom") return getCustomDates(prefix, first, last);
+  const starts = {
+    "7": addDays(last, -6),
+    "30": addDays(last, -29),
+    "90": addDays(last, -89),
+    "6": addMonths(last, -6),
+  };
+  return { start: starts[range] || first, end: last };
+}
+
+function updateRangeControls(range) {
+  document.querySelectorAll(".range").forEach(select => {
+    if ([...select.options].some(option => option.value === range)) {
+      select.value = range;
+    }
+  });
+  document.querySelectorAll(".tab").forEach(tab => {
+    const custom = tab.querySelector(".date-range");
+    if (custom) custom.style.display = range === "custom" ? "inline-flex" : "none";
+  });
+}
+
+function overviewUpdate(range) {
+  const dates = range === "custom"
+    ? getCustomDates("sat", volumeRows[0].date, volumeRows.at(-1).date)
+    : dateRangeFor(range, "sat", volumeRows[0].date, volumeRows.at(-1).date);
+  const rangeStart = dates.start;
+  const rangeEnd = dates.end;
+  const rows = volumeRows.filter(row => row.date >= rangeStart && row.date <= rangeEnd);
+  document.querySelectorAll("#overview .total").forEach(el => {
+    el.textContent = rows.length
+      ? fmt(rows.reduce((sum, row) => sum + row.inbound, 0))
+      : "—";
+  });
+  const sat = aggregateSatisfaction(range);
+  const response = rangeStart
+    ? responseRows.filter(row =>
+        row.date >= rangeStart &&
+        row.date <= rangeEnd &&
+        row.date !== responseRows.at(-1).date,
+      )
+    : [];
+  document.querySelectorAll("#overview .score").forEach(el => {
+    el.textContent = sat.score.toFixed(1) + "%";
+  });
+  document.querySelectorAll("#overview .median").forEach(el => {
+    el.textContent = response.length
+      ? Math.round(response.reduce((sum, row) => sum + row.median, 0) / response.length) + " min"
+      : "—";
+  });
+  document.querySelectorAll("#overview .onehour").forEach(el => {
+    el.textContent = response.length
+      ? Math.round(response.reduce((sum, row) => sum + row.p1h, 0) / response.length) + "%"
+      : "—";
+  });
+}
+
+function aggregateSatisfaction(range) {
+  const first = satisfactionRows[0]?.date;
+  const last = satisfactionRows.at(-1)?.date;
+  const { start, end } = dateRangeFor(range, "sat", first, last);
+  const rows = satisfactionRows.filter(row => within(row, start, end));
+  if (!rows.length) {
+    return { score: 0, good: null, bad: null, rated: 0, countsComplete: false, mode: "daily", start, end, rows: [] };
+  }
+  const good = rows.reduce((sum, row) => sum + (row.good || 0), 0);
+  const bad = rows.reduce((sum, row) => sum + (row.bad || 0), 0);
+  const rated = rows.reduce((sum, row) => sum + (row.rated || 0), 0);
+  return {
+    score: good + bad ? good / (good + bad) * 100 : rows.reduce((sum, row) => sum + row.score, 0) / rows.length,
+    good,
+    bad,
+    rated,
+    countsComplete: true,
+    mode: "daily",
+    start,
+    end,
+    rows,
+  };
+}
+
+function groupDailyByMonth(rows) {
+  const groups = new Map();
+  rows.forEach(row => {
+    const key = row.date.slice(0, 7);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
+  });
+  return [...groups].map(([key, items]) => {
+    const year = Number(key.slice(0, 4));
+    const monthIndex = Number(key.slice(5, 7)) - 1;
+    const monthName = monthNames[monthIndex];
+    const monthlyFallback = satisfactionMonthlyRows.find(row =>
+      row.year === year && row.month === monthName,
+    );
+    const countedDays = items.filter(row => row.ratingCountAvailable === true);
+    const good = items.reduce((sum, row) => sum + (row.good || 0), 0);
+    const bad = items.reduce((sum, row) => sum + (row.bad || 0), 0);
+    const dailyCountsComplete = countedDays.length === items.length;
+    const rated = dailyCountsComplete
+      ? items.reduce((sum, row) => sum + (row.rated || 0), 0)
+      : monthlyFallback?.rated ?? items.reduce((sum, row) => sum + (row.rated || 0), 0);
+    return {
+      label: Number(key.slice(5)) + "月",
+      score: dailyCountsComplete && good + bad
+        ? good / (good + bad) * 100
+        : items.reduce((sum, row) => sum + row.score, 0) / items.length,
+      rated,
+      rows: items,
+    };
+  });
+}
+
+
+
+function ogsmEscape(value) {
+  return String(value == null ? "" : value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function ogsmResourceLinks(row) {
+  const items = [...(row?.links || []), ...(row?.attachments || [])];
+  if (!items.length) return '<span class="ogsm-resource-empty">链接与附件待同步</span>';
+  return '<div class="ogsm-resources">' + items.map(item => {
+    const rawLabel = typeof item === "string"
+      ? item
+      : (item.label || item.name || item.title || item.url || "附件");
+    const url = typeof item === "string" ? "" : (item.url || item.href || "");
+    const label = /^https?:\/\//i.test(String(rawLabel)) ? "打开链接" : rawLabel;
+    return url
+      ? '<a href="' + ogsmEscape(url) + '" target="_blank" rel="noreferrer">' + ogsmEscape(label) + '</a>'
+      : '<span>' + ogsmEscape(label) + '</span>';
+  }).join("") + "</div>";
+}
+
+function ogsmNewest(items, timeFor) {
+  return [...(items || [])].sort((left, right) =>
+    String(timeFor(right) || "").localeCompare(String(timeFor(left) || "")),
+  );
+}
+
+function ogsmWithMore(items, render, label, timeFor) {
+  const sorted = ogsmNewest(items, timeFor);
+  const visible = sorted.slice(0, 2).map(render).join("");
+  const hidden = sorted.slice(2);
+  return hidden.length
+    ? visible + '<details class="ogsm-more"><summary>查看其余 ' + hidden.length +
+      " 项" + label + '</summary><div class="ogsm-more-content">' +
+      hidden.map(render).join("") + "</div></details>"
+    : visible;
+}
+
+function ogsmTextCell(value) {
+  const items = String(value || "—")
+    .split(/<br\s*\/?>|\n/i)
+    .map(item => item.trim())
+    .filter(Boolean);
+  return items.length
+    ? '<div class="ogsm-text-list">' + items.map(item =>
+      '<div class="ogsm-text-item">' + ogsmEscape(item) + "</div>",
+    ).join("") + "</div>"
+    : '<span class="ogsm-resource-empty">暂无同步内容</span>';
+}
+
+function ogsmPhaseCell(row, phase, actions) {
+  const matched = (actions || []).filter(action => action.phase === phase);
+  if (!matched.length) return ogsmTextCell(phase === "Q4" ? row.q4 : row.q1);
+  return '<div class="ogsm-phase-list">' + matched.map(action =>
+    '<article class="ogsm-phase-card"><b>' + ogsmEscape(action.phase) + " · " +
+      Number(action.progress || 0) + '%</b><span>' + ogsmEscape(action.title) +
+      '</span><small>DDL ' + ogsmEscape(action.due || "—") + "</small></article>",
+  ).join("") + "</div>";
+}
+
+function ogsmSubstantialCell(row) {
+  const items = row.substantialItems || [];
+  if (!items.length) return ogsmTextCell(row.substantiveProgress || row.substantial || row.progress);
+  return '<div class="ogsm-substantial-list">' + ogsmWithMore(
+    items,
+    item => '<article class="ogsm-substantial-item"><b>对应 ' + ogsmEscape(item.mapping) +
+      '</b><span>' + ogsmEscape(item.text) + '</span><small>' +
+      ogsmEscape(item.submitter || "—") + " · " + ogsmEscape(item.time || "—") +
+      "</small>" + ogsmResourceLinks(item) + "</article>",
+    "项",
+    item => item.time || item.updatedAt || item.upd || item.createdAt,
+  ) + "</div>";
+}
+
+function ogsmMeetingsCell(row) {
+  const items = row.meetingItems || [];
+  if (!items.length) return ogsmTextCell(row.meetings);
+  const today = new Date().toISOString().slice(0, 10);
+  const card = item => {
+    const meetingDate = item.date || (item.start || "").slice(0, 10);
+    const state = meetingDate
+      ? (meetingDate < today ? "已结束" : meetingDate === today ? "进行中" : "即将")
+      : (item.status || "待排期");
+    const label = meetingDate ? meetingDate.slice(5).replace("-", "/") : "待排期";
+    const time = item.start && item.end
+      ? item.start.slice(11, 16) + "–" + item.end.slice(11, 16)
+      : "";
+    return '<article class="ogsm-meeting-item"><b>' + ogsmEscape(item.subject || "—") +
+      '</b><span class="meeting-status ' + state + '">' + state +
+      '</span><span class="meeting-date">▣ ' + label + (time ? " " + time : "") +
+      "</span>" + ogsmResourceLinks({ links: item.links, attachments: item.attachments }) +
+      "</article>";
+  };
+  return '<div class="ogsm-meeting-list">' + ogsmWithMore(
+    items,
+    card,
+    "场会议",
+    item => item.date || item.start || item.updatedAt,
+  ) + "</div>";
+}
+
+function ogsmRoadmapTable(title, rows, actions) {
+  const columns = [
+    "端到端成果",
+    "关键矛盾与策略",
+    "Q4拟实质性进展",
+    "27Q1拟实质性进展",
+    "实质性进展",
+    "关键会议",
+  ];
+  return (title ? '<h3>' + ogsmEscape(title) + "</h3>" : "") +
+    '<div class="ogsm-roadmap-scroll"><table class="ogsm-roadmap-table"><thead><tr>' +
+    columns.map(column => "<th>" + column + "</th>").join("") +
+    "</tr></thead><tbody>" + (rows || []).map(row =>
+      "<tr><td>" + (row.code ? '<span class="ogsm-code">' + ogsmEscape(row.code) +
+        "</span>" : "") + '<span class="ogsm-outcome">' + ogsmEscape(row.outcome || "—") +
+        "</span></td><td>" + ogsmTextCell(row.strategy) + "</td><td>" +
+        ogsmPhaseCell(row, "Q4", actions) + "</td><td>" +
+        ogsmPhaseCell(row, "27Q1", actions) + "</td><td>" +
+        ogsmSubstantialCell(row) + "</td><td>" + ogsmMeetingsCell(row) +
+        "</td></tr>",
+    ).join("") + "</tbody></table></div>";
+}
+
+
+function renderTicketOgsM(range) {
+  const rows = getTicketRows(range);
+  const data = ticketOgsData;
+  const avg = key => rows.length
+    ? rows.reduce((sum, row) => sum + (row[key] || 0), 0) / rows.length
+    : 0;
+  document.getElementById("ticketOgsTarget").textContent =
+    data.roadmap?.rows?.[0]?.outcome || "—";
+  document.getElementById("ticketOgsTen").textContent =
+    rows.length ? avg("p10").toFixed(1) + "%" : "—";
+  document.getElementById("ticketOgsTwenty").textContent =
+    rows.length ? avg("p20").toFixed(1) + "%" : "—";
+  document.getElementById("ticketOgsPeriod").textContent =
+    rows.length ? rows[0].date + "–" + rows.at(-1).date : "—";
+  document.getElementById("ticketOgsObjective").textContent = data.objective || "—";
+  const roadmap = data.roadmap || {};
+  document.getElementById("ticketOgsRoadmap").innerHTML = roadmap.rows?.length
+    ? ogsmRoadmapTable(roadmap.title, roadmap.rows, data.actions)
+    : "";
+  document.getElementById("ticketOgsCheck").textContent = rows.length
+    ? "Check：当前筛选区间内 ≤10mins 响应 " + avg("p10").toFixed(1) +
+      "%，≤20mins 响应 " + avg("p20").toFixed(1) +
+      "%。请结合 B / M 实质性进展验证改善效果。"
+    : "Check：暂无可验证的响应时效数据。";
+  document.getElementById("ticketOgsSyncState").textContent =
+    data.syncedAt ? "每日同步" : "项目快照";
+}
+async function syncTicketOgsM(){try{const r=await fetch('./ogsm-ticket.json',{cache:'no-store'});if(!r.ok)throw new Error();const incoming=await r.json();ticketOgsData={...ticketOgsFallback,...incoming};renderTicketOgsM(activeRange);}catch(_error){renderTicketOgsM(activeRange);}}
+
+function renderSatisfaction(range) {
+  const data = aggregateSatisfaction(range);
+  document.querySelectorAll("#satisfaction .score").forEach(el => el.textContent = data.score.toFixed(1) + "%");
+  document.querySelectorAll("#satisfaction .good").forEach(el => el.textContent = data.good == null ? "—" : fmt(data.good));
+  document.querySelectorAll("#satisfaction .bad").forEach(el => el.textContent = data.bad == null ? "—" : fmt(data.bad));
+
+  const source = document.querySelector("#satisfaction .notice");
+  if (source) {
+    source.textContent = "数据源：Zendesk Explore · Non-Recall Satisfaction · " + data.start +
+      " 至 " + data.end + " · " + data.rows.length + " 天原始明细 · 评价 " + fmt(data.rated) + " 单。";
+  }
+
+  const points = data.rows.length > 31
+    ? groupDailyByMonth(data.rows)
+    : data.rows.map(row => ({
+        label: row.label || row.date.slice(5),
+        score: row.score,
+        rated: row.rated,
+      }));
+  drawSatisfaction(points);
+}
+
+function drawSatisfaction(points) {
+  const el = document.getElementById("satChart");
+  if (!el) return;
+  const width = 900, height = 315, left = 58, right = 58, top = 40, bottom = 48;
+  const chartWidth = width - left - right;
+  const chartHeight = height - top - bottom;
+  const maxRated = Math.max(1, ...points.map(point => point.rated)) * 1.2;
+  const minScore = Math.max(50, Math.min(...points.map(point => point.score)) - 5);
+  const maxScore = Math.min(100, Math.max(...points.map(point => point.score)) + 3);
+  const scoreSpan = Math.max(5, maxScore - minScore);
+  const step = chartWidth / Math.max(1, points.length);
+  let output = "";
+
+  for (let index = 0; index < 4; index++) {
+    const y = top + chartHeight * index / 3;
+    const rated = Math.round(maxRated * (1 - index / 3));
+    const score = Math.round(maxScore - scoreSpan * index / 3);
+    output += '<line x1="' + left + '" y1="' + y + '" x2="' + (width - right) +
+      '" y2="' + y + '" stroke="#dfe6ee"/>';
+    output += '<text x="5" y="' + (y + 4) + '" fill="#65758b" font-size="11">' + rated + "</text>";
+    output += '<text x="' + (width - right + 9) + '" y="' + (y + 4) +
+      '" fill="#4f806a" font-size="11">' + score + "%</text>";
+  }
+
+  points.forEach((point, index) => {
+    const x = left + index * step + step * .2;
+    const barWidth = Math.max(8, step * .48);
+    const barHeight = chartHeight * point.rated / maxRated;
+    output += '<rect x="' + x + '" y="' + (top + chartHeight - barHeight) +
+      '" width="' + barWidth + '" height="' + barHeight +
+      '" rx="3" fill="#2e5963" opacity=".92"/>';
+    output += '<text x="' + (x + barWidth / 2) + '" y="' + (height - 17) +
+      '" text-anchor="middle" fill="#65758b" font-size="10">' + point.label + "</text>";
+  });
+
+  const line = points.map((point, index) => {
+    const x = left + index * step + step * .52;
+    const y = top + chartHeight * (maxScore - point.score) / scoreSpan;
+    return { x, y, score: point.score };
+  });
+  output += '<polyline points="' + line.map(point => point.x + "," + point.y).join(" ") +
+    '" fill="none" stroke="#61a584" stroke-width="3"/>';
+  line.forEach((point, index) => {
+    output += '<circle cx="' + point.x + '" cy="' + point.y + '" r="5" fill="#61a584"/>';
+    if (points.length <= 8 || index === 0 || index === line.length - 1) {
+      output += '<rect x="' + (point.x - 23) + '" y="' + (point.y - 24) +
+        '" width="46" height="17" rx="8" fill="#e9f5ee"/>';
+      output += '<text x="' + point.x + '" y="' + (point.y - 12) +
+        '" text-anchor="middle" fill="#256e4c" font-size="10" font-weight="700">' +
+        point.score.toFixed(1) + "%</text>";
+    }
+  });
+  el.innerHTML = output;
+}
+
+const completeDataEnd = liveData.dataThrough || volumeRows.at(-1).date;
+
+function getTicketRows(range) {
+  const dates = range === "custom"
+    ? getCustomDates("sat", responseRows[0].date, completeDataEnd)
+    : dateRangeFor(range, "sat", responseRows[0].date, completeDataEnd);
+  return responseRows.filter(row => within(row, dates.start, dates.end));
+}
+
+function weekStart(iso) {
+  const date = new Date(iso + "T00:00:00Z");
+  const day = date.getUTCDay() || 7;
+  return addDays(iso, -(day - 1));
+}
+
+function analyzeWeeks(rows) {
+  const groups = new Map();
+  rows.forEach(row => {
+    const key = weekStart(row.date);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
+  });
+  return [...groups].map(([start, items]) => ({
+    start,
+    end: items.at(-1).date,
+    days: items.length,
+    average: items.reduce((sum, row) => sum + row.inbound, 0) / items.length,
+  })).filter(week => week.days === 7).sort((a, b) => a.start.localeCompare(b.start));
+}
+
+function weekdayAnalysis(rows) {
+  const names = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+  const groups = Array.from({ length: 7 }, () => []);
+  rows.forEach(row => {
+    const date = new Date(row.date + "T00:00:00Z");
+    groups[date.getUTCDay()].push(row);
+  });
+  return groups.map((items, index) => ({
+    name: names[index],
+    median: items.length ? items.reduce((sum, row) => sum + row.median, 0) / items.length : null,
+    volume: items.length ? items.reduce((sum, row) => sum + row.inbound, 0) / items.length : null,
+  })).filter(row => row.median !== null);
+}
+
+function renderTickets(range) {
+  const response = getTicketRows(range);
+  const hint = document.getElementById("ticketSyncHint");
+  if (!response.length) {
+    if (hint) hint.textContent = "数据状态：当前附件仅提供 31 天 Tickets 明细；3 个月和 6 个月需等待对应 Dataset export。";
+    document.getElementById("rows").innerHTML =
+      '<tr><td colspan="10" class="hint" style="text-align:center;padding:42px">当前时间范围暂无完整 Tickets 明细</td></tr>';
+    document.getElementById("ticketChart").innerHTML =
+      '<text x="450" y="150" text-anchor="middle" fill="#718096" font-size="15">暂无经校验的明细数据</text>';
+    return;
+  }
+
+  const start = response[0].date;
+  const end = response.at(-1).date;
+  const volumeMap = new Map(volumeRows.map(row => [row.date, row]));
+  const joined = response.map(row => ({
+    ...row,
+    inbound: volumeMap.get(row.date)?.inbound || row.targets,
+  }));
+  if (hint) {
+    const requested = range === "custom"
+      ? getCustomDates("sat", responseRows[0].date, completeDataEnd)
+      : dateRangeFor(range, "sat", responseRows[0].date, completeDataEnd);
+    const partialCoverage = start > requested.start || end < requested.end;
+    hint.textContent = "数据状态：Zendesk Explore 原始明细 · " + start + " 至 " + end +
+      " · " + joined.length + " 天" +
+      (partialCoverage ? " · 所选范围数据未完整，已显示全部可用明细" : "") +
+      " · 更新于 " + syncLabel;
+  }
+
+  const mean = key => joined.reduce((sum, row) => sum + row[key], 0) / joined.length;
+  document.querySelectorAll("#tickets .median").forEach(el => el.textContent = Math.round(mean("median")) + " min");
+  document.querySelectorAll("#tickets .avg").forEach(el => el.textContent = Math.round(mean("average")) + " min");
+  document.querySelectorAll(".ten").forEach(el => el.textContent = mean("p10").toFixed(1) + "%");
+  document.querySelectorAll(".twenty").forEach(el => el.textContent = mean("p20").toFixed(1) + "%");
+  document.querySelectorAll(".thirty").forEach(el => el.textContent = mean("p30").toFixed(1) + "%");
+  document.querySelectorAll(".onehour").forEach(el => el.textContent = mean("p1h").toFixed(1) + "%");
+  document.querySelectorAll(".twohour").forEach(el => el.textContent = mean("p2h").toFixed(1) + "%");
+
+  document.getElementById("rows").innerHTML = joined.map(row => {
+    const cells = [
+      row.date,
+      fmt(row.targets),
+      Math.round(row.median) + " min",
+      Math.round(row.average) + " min",
+      fmt(row.cycles10),
+      row.p10.toFixed(2) + "%",
+      row.p20.toFixed(2) + "%",
+      row.p30.toFixed(2) + "%",
+      row.p1h.toFixed(2) + "%",
+      row.p2h.toFixed(2) + "%",
+    ];
+    return "<tr>" + cells.map(cell => "<td>" + cell + "</td>").join("") + "</tr>";
+  }).join("");
+
+  const typicalVolume = [...joined].sort((a, b) => a.inbound - b.inbound)[Math.floor(joined.length / 2)].inbound;
+  const latest = joined.at(-1);
+  const latestPartial = joined.length > 1 && latest.inbound < typicalVolume * .45;
+  const complete = latestPartial ? joined.slice(0, -1) : joined;
+  const weeks = analyzeWeeks(complete);
+  let weekly = "完整周数据不足，暂无法比较周均增长。";
+  if (weeks.length >= 2) {
+    const currentWeek = weeks.at(-1);
+    const previousWeek = weeks.at(-2);
+    const difference = currentWeek.average - previousWeek.average;
+    const percent = currentWeek.average ? difference / previousWeek.average * 100 : 0;
+    weekly = previousWeek.start.slice(5) + "–" + previousWeek.end.slice(5) +
+      " 日均 " + Math.round(previousWeek.average) + " 单，最近完整周 " +
+      currentWeek.start.slice(5) + "–" + currentWeek.end.slice(5) + " 日均 " +
+      Math.round(currentWeek.average) + " 单，日均" +
+      (difference >= 0 ? "增加 " : "减少 ") + Math.abs(Math.round(difference)) +
+      " 单（" + (percent >= 0 ? "+" : "") + percent.toFixed(1) + "%）。";
+  }
+
+  const span = Math.min(5, Math.floor(complete.length / 2));
+  const earlyMedian = complete.slice(0, span).reduce((sum, row) => sum + row.median, 0) / span;
+  const recentMedian = complete.slice(-span).reduce((sum, row) => sum + row.median, 0) / span;
+  const medianDelta = recentMedian - earlyMedian;
+  const weekdays = weekdayAnalysis(complete).sort((a, b) => b.median - a.median);
+  const worstDay = weekdays[0];
+  const overallMedian = mean("median");
+
+  document.getElementById("dataQualityInsight").textContent = latestPartial
+    ? "已排除 " + latest.date + "：当日进件仅 " + fmt(latest.inbound) +
+      " 单，低于典型日 " + fmt(typicalVolume) + " 单，属于未完整数据。"
+    : "当前范围内所有日期均为完整数据。";
+  document.getElementById("volumeInsight").textContent = weekly;
+  document.getElementById("responseInsight").textContent =
+    "前期完整日中位数平均 " + Math.round(earlyMedian) + " 分钟，最近完整日为 " +
+    Math.round(recentMedian) + " 分钟；" +
+    (medianDelta <= -1 ? "响应速度正在提升。" : medianDelta >= 1 ? "响应压力正在上升。" : "整体保持稳定。");
+  document.getElementById("tenInsight").textContent =
+    Math.round(complete[0].p10) + "% → " + Math.round(complete.at(-1).p10) + "%，" +
+    (complete.at(-1).p10 >= complete[0].p10 ? "10 分钟覆盖改善。" : "10 分钟覆盖回落。");
+  document.getElementById("twentyInsight").textContent =
+    Math.round(complete[0].p20) + "% → " + Math.round(complete.at(-1).p20) + "%，" +
+    (complete.at(-1).p20 >= complete[0].p20 ? "20 分钟覆盖改善。" : "20 分钟覆盖回落。");
+  document.getElementById("weekdayInsight").textContent = worstDay
+    ? worstDay.name + "的中位数最高，平均 " + Math.round(worstDay.median) +
+      " 分钟；期间日均进件 " + Math.round(worstDay.volume) + " 单。"
+    : "数据不足，暂无法识别星期规律。";
+  document.getElementById("strategyInsight").textContent =
+    worstDay && worstDay.median > overallMedian * 1.15
+      ? "优先在" + worstDay.name + "增加弹性人力，并检查该日高峰时段的渠道分配。"
+      : "本周排班总体匹配，继续用知识库与问题分流降低高频类型的处理时长。";
+
+  drawTicket(joined, latestPartial);
+}
+
+function drawTicket(rows, latestPartial) {
+  const el = document.getElementById("ticketChart");
+  const width = 900, height = 315, left = 58, right = 58, top = 38, bottom = 46;
+  const chartWidth = width - left - right;
+  const chartHeight = height - top - bottom;
+  const maxVolume = Math.max(1, ...rows.map(row => row.inbound)) * 1.12;
+  const maxMedian = Math.max(30, Math.ceil(Math.max(...rows.map(row => row.median)) / 5) * 5);
+  const step = chartWidth / rows.length;
+  let output = "";
+
+  for (let index = 0; index < 4; index++) {
+    const y = top + chartHeight * index / 3;
+    output += '<line x1="' + left + '" y1="' + y + '" x2="' + (width - right) +
+      '" y2="' + y + '" stroke="#dfe6ee"/>';
+    output += '<text x="5" y="' + (y + 4) + '" fill="#65758b" font-size="11">' +
+      fmt(maxVolume * (1 - index / 3)) + "</text>";
+    output += '<text x="' + (width - right + 9) + '" y="' + (y + 4) +
+      '" fill="#4f806a" font-size="11">' + Math.round(maxMedian * (1 - index / 3)) + "m</text>";
+  }
+
+  const targetY = top + chartHeight - 15 / maxMedian * chartHeight;
+  output += '<line x1="' + left + '" y1="' + targetY + '" x2="' + (width - right) +
+    '" y2="' + targetY + '" stroke="#d39a42" stroke-dasharray="5 5"/>';
+  output += '<text x="' + (width - right - 2) + '" y="' + (targetY - 5) +
+    '" text-anchor="end" fill="#a56c19" font-size="10">15 分钟目标</text>';
+
+  rows.forEach((row, index) => {
+    const x = left + index * step + step * .2;
+    const barWidth = Math.max(4, step * .55);
+    const barHeight = chartHeight * row.inbound / maxVolume;
+    const partial = latestPartial && index === rows.length - 1;
+    output += '<rect x="' + x + '" y="' + (top + chartHeight - barHeight) +
+      '" width="' + barWidth + '" height="' + barHeight + '" rx="2" fill="' +
+      (partial ? "#c5ced2" : "#315963") + '"/>';
+    if (rows.length <= 10 || index === 0 || index === rows.length - 1 || index % 5 === 0) {
+      output += '<text x="' + (x + barWidth / 2) + '" y="' + (height - 16) +
+        '" text-anchor="middle" fill="#65758b" font-size="10">' + row.date.slice(5) + "</text>";
+    }
+  });
+
+  const line = rows.map((row, index) => {
+    const x = left + index * step + step * .52;
+    const y = top + chartHeight - row.median / maxMedian * chartHeight;
+    return { x, y, median: row.median };
+  });
+  output += '<polyline points="' + line.map(point => point.x + "," + point.y).join(" ") +
+    '" fill="none" stroke="#61a17f" stroke-width="3"/>';
+  line.forEach((point, index) => {
+    output += '<circle cx="' + point.x + '" cy="' + point.y + '" r="4" fill="#61a17f"/>';
+    if (rows.length <= 7 || index === 0 || index === rows.length - 1 || index % 5 === 0) {
+      output += '<rect x="' + (point.x - 18) + '" y="' + (point.y - 22) +
+        '" width="36" height="15" rx="7" fill="#e8f4ed"/>';
+      output += '<text x="' + point.x + '" y="' + (point.y - 11) +
+        '" text-anchor="middle" fill="#286847" font-size="10" font-weight="700">' +
+        Math.round(point.median) + "m</text>";
+    }
+  });
+  el.innerHTML = output;
+}
+
+const productMonths = ["January","February","March","April","May","June","July","August","September","October","November"];
+const productExportDate = new Date(liveData.productExportedAt || liveData.exportedAt);
+const productExportParts = Object.fromEntries(
+  new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  }).formatToParts(productExportDate).map(part => [part.type, part.value]),
+);
+const productExportMonth = Number(productExportParts.month) - 1;
+const productExportDay = Number((liveData.productDataThrough || liveData.dataThrough || liveData.dateRanges.satisfaction[1]).slice(8, 10));
+const productSyncLabel = (liveData.productExportedAt || liveData.exportedAt)
+  ? (liveData.productExportedAt || liveData.exportedAt).slice(0, 16).replace("T", " ") + " GMT+8"
+  : "—";
+function isIncompleteProductMonth(month) {
+  return monthNames.indexOf(month) === productExportMonth && productExportDay < 15;
+}
+function partialMonthLabel(month) {
+  return monthShort[month] + '截至 ' + productExportDay + ' 日';
+}
+function productScopeMonths(range) {
+  const latestIndex = Math.max(0, productMonths.indexOf(monthNames[productExportMonth]));
+  if (range === "7" || range === "30") return [productMonths[latestIndex]];
+  if (range === "90") return productMonths.slice(Math.max(0, latestIndex - 2), latestIndex + 1);
+  if (range === "6") return productMonths.slice(Math.max(0, latestIndex - 5), latestIndex + 1);
+  const startMonth = monthNames[Number(customRange.start.slice(5, 7)) - 1];
+  const endMonth = monthNames[Number(customRange.end.slice(5, 7)) - 1];
+  const startIndex = Math.max(0, productMonths.indexOf(startMonth));
+  const endIndex = productMonths.indexOf(endMonth);
+  return productMonths.slice(startIndex, endIndex >= 0 ? endIndex + 1 : productMonths.length);
+}
+
+function productSets(months) {
+  return productRows.filter(row => months.includes(row.month));
+}
+
+function renderProduct(range) {
+  const allMonths = productMonths;
+  const scopeMonths = productScopeMonths(range);
+  const scopeRows = productSets(scopeMonths);
+  const latestMonth = scopeMonths.at(-1);
+  const latestIndex = allMonths.indexOf(latestMonth);
+  const previousMonth = latestIndex > 0 ? allMonths[latestIndex - 1] : latestMonth;
+  const chartMonths = scopeMonths.length === 1 ? [previousMonth, latestMonth] : scopeMonths;
+  const chartRows = productSets(chartMonths);
+  const allRows = productSets(allMonths);
+  const total = scopeRows.reduce((sum, row) => sum + row.tickets, 0);
+  const byType = new Map();
+  scopeRows.forEach(row => {
+    const item = byType.get(row.type) || { type: row.type, tickets: 0 };
+    item.tickets += row.tickets;
+    byType.set(row.type, item);
+  });
+  const ranked = [...byType.values()].sort((a, b) => b.tickets - a.tickets);
+  const top = ranked[0];
+  const defects = chartMonths.map(month => chartRows.find(row => row.month === month && row.type === "Product Defect"));
+  const latestDefect = defects.at(-1);
+  const previousDefect = defects.at(-2);
+  let kpiMonths = scopeMonths.filter(month => !isIncompleteProductMonth(month));
+  if (kpiMonths.length < 2) {
+    const partialMonth = scopeMonths.find(isIncompleteProductMonth);
+    const partialIndex = productMonths.indexOf(partialMonth || scopeMonths.at(-1));
+    kpiMonths = productMonths.slice(Math.max(0, partialIndex - 2), partialIndex);
+  }
+  const kpiStartMonth = kpiMonths[0];
+  const kpiEndMonth = kpiMonths.at(-1);
+  const kpiStartDefect = productRows.find(row => row.month === kpiStartMonth && row.type === "Product Defect");
+  const kpiEndDefect = productRows.find(row => row.month === kpiEndMonth && row.type === "Product Defect");
+  const kpiRangeLabel = kpiStartMonth && kpiEndMonth ? monthShort[kpiStartMonth] + "→" + monthShort[kpiEndMonth] : "完整月数据不足";
+
+  document.getElementById("productTotal").textContent = fmt(total);
+  document.getElementById("productTotalNote").textContent =
+    scopeMonths.length === 1
+      ? partialMonthLabel(latestMonth)
+      : scopeMonths[0] + " 至 " + latestMonth;
+  document.getElementById("productTopType").textContent = top?.type || "—";
+  document.getElementById("productTopNote").textContent = top ? fmt(top.tickets) + " 单，占所选范围首位" : "—";
+  const satisfactionDelta = kpiStartDefect?.satisfaction != null && kpiEndDefect?.satisfaction != null
+    ? kpiEndDefect.satisfaction - kpiStartDefect.satisfaction : null;
+  const threeRoundDelta = kpiStartDefect?.threeRound != null && kpiEndDefect?.threeRound != null
+    ? kpiEndDefect.threeRound - kpiStartDefect.threeRound : null;
+  document.getElementById("productDefectSatisfaction").textContent =
+    satisfactionDelta == null ? "—" : (satisfactionDelta >= 0 ? "+" : "") + satisfactionDelta.toFixed(1) + "%";
+  document.getElementById("productDefectSatisfactionNote").textContent =
+    satisfactionDelta == null ? "完整月数据不足" : kpiRangeLabel + " · " + kpiEndDefect.satisfaction.toFixed(1) + "%";
+  document.getElementById("productDefectThreeRound").textContent =
+    threeRoundDelta == null ? "—" : (threeRoundDelta >= 0 ? "+" : "") + threeRoundDelta.toFixed(1) + "%";
+  document.getElementById("productDefectThreeRoundNote").textContent =
+    threeRoundDelta == null ? "完整月数据不足" : kpiRangeLabel + " · " + kpiEndDefect.threeRound.toFixed(1) + "%";
+  document.getElementById("productSource").textContent =
+    "数据源：" + (liveData.productSource || "Zendesk Explore · Product Analysis") + " · " +
+    (scopeMonths.length === 1 ? latestMonth : scopeMonths[0] + " 至 " + latestMonth) +
+    (isIncompleteProductMonth(scopeMonths.at(-1)) ? " · " + partialMonthLabel(scopeMonths.at(-1)) : "") +
+    " · 更新于 " + productSyncLabel + "。";
+
+  const typeSelect = document.getElementById("productTypeSelect");
+  if (!typeSelect.options.length) {
+    const allTypes = [...new Set(allRows.map(row => row.type))].sort((a, b) => a.localeCompare(b));
+    allTypes.forEach(type => {
+      const option = document.createElement("option");
+      option.value = type;
+      option.textContent = type;
+      typeSelect.appendChild(option);
+    });
+    typeSelect.value = allTypes.includes("Product Defect") ? "Product Defect" : allTypes[0];
+  }
+  const selectedType = typeSelect.value;
+  const series = chartMonths.map(month => {
+    const row = chartRows.find(item => item.month === month && item.type === selectedType) || {};
+    return {
+      month,
+      label: monthShort[month],
+      tickets: row.tickets || 0,
+      satisfaction: row.satisfaction,
+      threeRound: row.threeRound,
+    };
+  });
+  document.getElementById("productTrendTitle").textContent = selectedType + " · 月度趋势";
+  document.getElementById("productTrendHint").textContent =
+    "柱形为工单量；绿线为满意度；橙线为三回合比例。";
+  drawProduct(series);
+
+  const completeSeries = series.filter(item => !isIncompleteProductMonth(item.month));
+  const trendSeries = completeSeries.length ? completeSeries : series;
+  const firstTrend = trendSeries[0] || {};
+  const latestTrend = trendSeries.at(-1) || {};
+  const excludedPartial = series.filter(item => isIncompleteProductMonth(item.month));
+  const completeLabel = trendSeries.map(item => item.label).join("–");
+  document.getElementById("productTrendFoot").innerHTML =
+    "<span><b>完整月趋势（" + completeLabel + "）</b></span>" +
+    "<span><b>工单量</b> " + fmt(firstTrend.tickets) + " → " + fmt(latestTrend.tickets) + "</span>" +
+    "<span><b>满意度</b> " + (firstTrend.satisfaction == null ? "—" : firstTrend.satisfaction.toFixed(1) + "%") + " → " +
+    (latestTrend.satisfaction == null ? "—" : latestTrend.satisfaction.toFixed(1) + "%") + "</span>" +
+    "<span><b>三回合比例</b> " + (firstTrend.threeRound == null ? "—" : firstTrend.threeRound.toFixed(1) + "%") + " → " +
+    (latestTrend.threeRound == null ? "—" : latestTrend.threeRound.toFixed(1) + "%") + "</span>" +
+    (excludedPartial.length ? '<span class="trend-partial">' + excludedPartial.map(item => partialMonthLabel(item.month)).join("、") + '，仅供查看</span>' : "");
+
+  renderProductTable(allRows, scopeMonths, latestMonth, previousMonth);
+  renderProductInsights(allRows, scopeMonths, selectedType);
+}
+
+function drawProduct(series) {
+  const el = document.getElementById("productChart");
+  const width = 1000, height = 360, left = 62, right = 64, top = 42, bottom = 52;
+  const chartWidth = width - left - right;
+  const chartHeight = height - top - bottom;
+  const maxTickets = Math.max(1, ...series.map(item => item.tickets)) * 1.15;
+  const percentValues = series.flatMap(item => [item.satisfaction, item.threeRound]).filter(value => value != null);
+  const rawPercentMin = percentValues.length ? Math.min(...percentValues) : 0;
+  const rawPercentMax = percentValues.length ? Math.max(...percentValues) : 100;
+  const percentMin = Math.max(0, Math.floor((rawPercentMin - 5) / 10) * 10);
+  const percentMax = Math.min(100, Math.max(percentMin + 10, Math.ceil((rawPercentMax + 5) / 10) * 10));
+  const step = chartWidth / Math.max(1, series.length);
+  let output = '<rect x="' + left + '" y="9" width="12" height="8" rx="2" fill="#3b7480"/><text x="' + (left + 18) + '" y="17" fill="#3b7480" font-size="11">工单量</text>' +
+    '<line x1="' + (left + 90) + '" y1="13" x2="' + (left + 106) + '" y2="13" stroke="#61a584" stroke-width="3"/><text x="' + (left + 112) + '" y="17" fill="#4f806a" font-size="11">满意度</text>' +
+    '<line x1="' + (left + 185) + '" y1="13" x2="' + (left + 201) + '" y2="13" stroke="#d5a14b" stroke-width="3"/><text x="' + (left + 207) + '" y="17" fill="#a56c19" font-size="11">三回合比例</text>';
+
+  for (let index = 0; index < 5; index++) {
+    const y = top + chartHeight * index / 4;
+    output += '<line x1="' + left + '" y1="' + y + '" x2="' + (width - right) +
+      '" y2="' + y + '" stroke="#dfe6ee"/>';
+    output += '<text x="6" y="' + (y + 4) + '" fill="#65758b" font-size="11">' +
+      fmt(maxTickets * (1 - index / 4)) + "</text>";
+    output += '<text x="' + (width - right + 9) + '" y="' + (y + 4) +
+      '" fill="#65758b" font-size="11">' +
+      Math.round(percentMax - (percentMax - percentMin) * index / 4) + "%</text>";
+  }
+
+  series.forEach((item, index) => {
+    const x = left + index * step + step * .18;
+    const barWidth = Math.max(12, step * .48);
+    const barHeight = chartHeight * item.tickets / maxTickets;
+    output += '<rect x="' + x + '" y="' + (top + chartHeight - barHeight) +
+      '" width="' + barWidth + '" height="' + barHeight + '" rx="4" fill="#3b7480"/>';
+    output += '<text x="' + (x + barWidth / 2) + '" y="' + (height - 31) +
+      '" text-anchor="middle" fill="#2b5660" font-size="11" font-weight="700">' +
+      fmt(item.tickets) + "</text>";
+    output += '<text x="' + (x + barWidth / 2) + '" y="' + (height - 13) +
+      '" text-anchor="middle" fill="#65758b" font-size="11">' + item.label + "</text>";
+  });
+
+  const pointY = value => top + chartHeight * (percentMax - value) / (percentMax - percentMin);
+  const satisfactionPoints = series.map((item, index) =>
+    item.satisfaction == null ? null : {
+      x: left + index * step + step * .52,
+      y: pointY(item.satisfaction),
+      value: item.satisfaction,
+    },
+  ).filter(Boolean);
+  const threePoints = series.map((item, index) =>
+    item.threeRound == null ? null : {
+      x: left + index * step + step * .52,
+      y: pointY(item.threeRound),
+      value: item.threeRound,
+    },
+  ).filter(Boolean);
+
+  if (satisfactionPoints.length) {
+    output += '<polyline points="' + satisfactionPoints.map(point => point.x + "," + point.y).join(" ") +
+      '" fill="none" stroke="#61a584" stroke-width="3"/>';
+  }
+  if (threePoints.length) {
+    output += '<polyline points="' + threePoints.map(point => point.x + "," + point.y).join(" ") +
+      '" fill="none" stroke="#d5a14b" stroke-width="2.5"/>';
+  }
+  satisfactionPoints.forEach(point => {
+    const labelY = Math.max(top + 20, point.y - 18);
+    output += '<circle cx="' + point.x + '" cy="' + point.y + '" r="4" fill="#61a584"/>';
+    output += '<text x="' + point.x + '" y="' + labelY + '" text-anchor="middle" fill="#34725a" stroke="#fff" stroke-width="3" paint-order="stroke" font-size="10" font-weight="700">' + point.value.toFixed(1) + '%</text>';
+  });
+  threePoints.forEach(point => {
+    const labelY = Math.min(top + chartHeight - 4, point.y + 17);
+    output += '<circle cx="' + point.x + '" cy="' + point.y + '" r="4" fill="#d5a14b"/>';
+    output += '<text x="' + point.x + '" y="' + labelY + '" text-anchor="middle" fill="#9b691d" stroke="#fff" stroke-width="3" paint-order="stroke" font-size="10" font-weight="700">' + point.value.toFixed(1) + '%</text>';
+  });
+  output += '<text x="' + left + '" y="19" fill="#3b7480" font-size="11">工单量（左）</text>';
+  output += '<text x="' + (width - right) + '" y="19" text-anchor="end" fill="#65758b" font-size="11">比例（右）</text>';
+  el.innerHTML = output;
+}
+
+function renderProductTable(rows, scopeMonths, latestMonth, previousMonth) {
+  const tableMonths = scopeMonths.length === 1 ? [previousMonth, latestMonth] : scopeMonths;
+  const rankingMonths = scopeMonths.filter(month => !isIncompleteProductMonth(month));
+  const monthsForRanking = rankingMonths.length ? rankingMonths : scopeMonths;
+  const types = [...new Set(rows.map(row => row.type))];
+  const byTypeMonth = new Map(rows.map(row => [row.type + "|" + row.month, row]));
+  const ranked = types.map(type => ({
+    type,
+    total: scopeMonths.reduce((sum, month) => sum + (byTypeMonth.get(type + "|" + month)?.tickets || 0), 0),
+  })).sort((a, b) => b.total - a.total || a.type.localeCompare(b.type));
+  const visible = showAllProductTypes ? ranked : ranked.slice(0, 8);
+  const number = value => value == null ? '<span class="cell-muted">—</span>' : fmt(value);
+  const percentage = value => value == null ? '<span class="cell-muted">—</span>' : value.toFixed(2) + "%";
+  const metricAverage = (type, key) => {
+    const values = monthsForRanking.map(month => byTypeMonth.get(type + "|" + month)?.[key]).filter(value => value != null);
+    return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+  };
+  const ticketRanking = ranked.filter(item => item.total > 0).map(item => ({ ...item, value: item.total }));
+  const satisfactionRanking = types.map(type => ({ type, value: metricAverage(type, "satisfaction") })).filter(item => item.value != null).sort((a, b) => b.value - a.value || a.type.localeCompare(b.type));
+  const threeRoundRanking = types.map(type => ({ type, value: metricAverage(type, "threeRound") })).filter(item => item.value != null).sort((a, b) => b.value - a.value || a.type.localeCompare(b.type));
+  const rankPanel = (key, title, subtitle, entries, format) => {
+    const display = rankingExpanded[key] ? entries : entries.slice(0, 10);
+    const max = Math.max(1, ...entries.map(item => item.value));
+    return '<aside class="metric-ranking"><div class="ranking-heading"><div><h4>' + title + '</h4><p>' + subtitle + '</p></div></div><ol>' +
+      display.map((item, index) => '<li><span class="rank-number">' + (index + 1) + '</span><div class="rank-main"><b>' + item.type + '</b><i><em style="width:' + (item.value / max * 100).toFixed(1) + '%"></em></i></div><strong>' + format(item.value) + '</strong></li>').join('') +
+      '</ol><button class="btn rank-toggle" data-ranking-toggle="' + key + '">' + (rankingExpanded[key] ? '收起排行榜' : '展开全部（' + entries.length + '）') + '</button></aside>';
+  };
+  const buildMetricTable = (title, description, getValue, format, rankingPanel) =>
+    '<section class="product-metric-section"><div class="product-metric-heading"><h3>' + title + '</h3><span>' + description + '</span></div><div class="product-metric-layout"><div class="table-wrap product-metric-wrap"><table class="product-table product-metric-table"><thead><tr><th>Ticket Type</th>' +
+    tableMonths.map(month => '<th>' + monthShort[month] + '</th>').join("") + '</tr></thead><tbody>' +
+    visible.map(item => '<tr><td><i class="type-dot"></i>' + item.type + '</td>' +
+      tableMonths.map(month => '<td>' + format(getValue(byTypeMonth.get(item.type + "|" + month))) + '</td>').join("") + '</tr>').join("") +
+    '</tbody></table></div>' + rankingPanel + '</div></section>';
+
+  document.getElementById("productMetricTables").innerHTML =
+    buildMetricTable('工单量', '按月创建工单数', record => record?.tickets, number, rankPanel('tickets', 'TOP 工单量', '所选范围累计', ticketRanking, value => fmt(value))) +
+    buildMetricTable('满意度', '每月 Satisfaction score', record => record?.satisfaction, percentage, rankPanel('satisfaction', 'TOP 满意度', '所选完整月平均', satisfactionRanking, value => value.toFixed(1) + '%')) +
+    buildMetricTable('三回合比例', '每月三回合比例', record => record?.threeRound, percentage, rankPanel('threeRound', 'TOP 三回合比例', '所选完整月平均', threeRoundRanking, value => value.toFixed(1) + '%'));
+  document.getElementById("productTableHint").textContent =
+    '共 ' + types.length + ' 个 Ticket Type。左侧为完整月度数据，右侧为对应指标排行榜。';
+  document.getElementById("productTableToggle").textContent = showAllProductTypes ? '收起类型' : '仅看前 8 类';
+}
+
+function renderProductVolumeTrend(rows, scopeMonths) {
+  const el = document.getElementById("productVolumeTrendChart");
+  if (!el) return;
+  const byTypeMonth = new Map(rows.map(row => [row.type + "|" + row.month, row]));
+  const ranked = [...new Set(rows.map(row => row.type))].map(type => ({
+    type,
+    total: scopeMonths.reduce((sum, month) => sum + (byTypeMonth.get(type + "|" + month)?.tickets || 0), 0),
+  })).sort((a, b) => b.total - a.total || a.type.localeCompare(b.type)).slice(0, 5);
+  const width = 1000, height = 310, left = 60, right = 26, top = 54, bottom = 44;
+  const chartWidth = width - left - right, chartHeight = height - top - bottom;
+  const series = ranked.map((item, index) => ({
+    ...item,
+    color: ["#3b7480", "#4f8f74", "#c89445", "#7b6cb0", "#c76d6d"][index],
+    values: scopeMonths.map(month => byTypeMonth.get(item.type + "|" + month)?.tickets || 0),
+  }));
+  const maxValue = Math.max(1, ...series.flatMap(item => item.values)) * 1.15;
+  const step = chartWidth / Math.max(1, scopeMonths.length - 1);
+  let output = "";
+  for (let index = 0; index < 5; index++) {
+    const y = top + chartHeight * index / 4;
+    output += '<line x1="' + left + '" y1="' + y + '" x2="' + (width - right) + '" y2="' + y + '" stroke="#dfe6ee"/>';
+    output += '<text x="6" y="' + (y + 4) + '" fill="#65758b" font-size="11">' + fmt(maxValue * (1 - index / 4)) + '</text>';
+  }
+  scopeMonths.forEach((month, index) => {
+    const x = left + index * step;
+    output += '<text x="' + x + '" y="' + (height - 15) + '" text-anchor="middle" fill="#65758b" font-size="11">' + monthShort[month] + '</text>';
+  });
+  series.forEach((item, seriesIndex) => {
+    const legendX = left + seriesIndex * 178;
+    output += '<line x1="' + legendX + '" y1="22" x2="' + (legendX + 16) + '" y2="22" stroke="' + item.color + '" stroke-width="3"/>';
+    output += '<text x="' + (legendX + 22) + '" y="26" fill="#475569" font-size="11">' + item.type + '</text>';
+    const points = item.values.map((value, index) => ({ x: left + index * step, y: top + chartHeight - value / maxValue * chartHeight, value }));
+    output += '<polyline points="' + points.map(point => point.x + "," + point.y).join(" ") + '" fill="none" stroke="' + item.color + '" stroke-width="3"/>';
+    points.forEach((point, index) => {
+      output += '<circle cx="' + point.x + '" cy="' + point.y + '" r="4" fill="' + item.color + '"/>';
+      if (index === points.length - 1) output += '<text x="' + (point.x + 7) + '" y="' + (point.y - 7) + '" fill="' + item.color + '" font-size="10" font-weight="700">' + fmt(point.value) + '</text>';
+    });
+  });
+  el.innerHTML = output;
+  document.getElementById("productVolumeTrendNote").textContent =
+    '按所选范围累计工单量排名前 5 的 Ticket Type；末端数字为最新月份工单量。';
+}
+
+function renderProductInsights(_rows, months, _selectedType) {
+  const selectedLabel = months.map(month => monthShort[month]).join('–');
+  const partialMonths = months.filter(isIncompleteProductMonth);
+  let analysisMonths = months.filter(month => !isIncompleteProductMonth(month));
+  if (partialMonths.length && analysisMonths.length < 2) {
+    const partialIndex = productMonths.indexOf(partialMonths.at(-1));
+    analysisMonths = productMonths.slice(Math.max(0, partialIndex - 2), partialIndex);
+  }
+  const compareMonths = analysisMonths.length > 1 ? [analysisMonths[0], analysisMonths.at(-1)] : analysisMonths;
+  const [priorMonth, latestMonth] = compareMonths;
+  const completeLabel = analysisMonths.map(month => monthShort[month]).join('–');
+  const comparisonLabel = priorMonth && latestMonth ? monthShort[priorMonth] + '→' + monthShort[latestMonth] : '完整月数据不足';
+  const types = [...new Set(productRows.map(row => row.type))];
+  const comparisons = types.map(type => ({
+    type,
+    prior: productRows.find(row => row.type === type && row.month === priorMonth),
+    latest: productRows.find(row => row.type === type && row.month === latestMonth),
+  })).filter(item => item.prior && item.latest);
+  const lowSample = item => Math.min(item.prior.tickets || 0, item.latest.tickets || 0) < 50;
+  const sampleLabel = item => lowSample(item) ? ' <em>低样本</em>' : '';
+  const classify = (items, getDelta, threshold) => {
+    const result = { up: [], flat: [], down: [] };
+    items.forEach(item => {
+      const delta = getDelta(item);
+      if (delta > threshold) result.up.push({ ...item, delta });
+      else if (delta < -threshold) result.down.push({ ...item, delta });
+      else result.flat.push({ ...item, delta });
+    });
+    result.up.sort((a, b) => b.delta - a.delta);
+    result.down.sort((a, b) => a.delta - b.delta);
+    return result;
+  };
+  const volume = classify(comparisons, item => item.latest.tickets - item.prior.tickets, 30);
+  const satisfaction = classify(comparisons.filter(item => item.prior.satisfaction != null && item.latest.satisfaction != null), item => item.latest.satisfaction - item.prior.satisfaction, 2);
+  const threeRound = classify(comparisons.filter(item => item.prior.threeRound != null && item.latest.threeRound != null), item => item.latest.threeRound - item.prior.threeRound, 3);
+  const list = (items, formatter) => items.slice(0, 3).map(item => '<li>' + formatter(item) + sampleLabel(item) + '</li>').join('') || '<li>无显著变化</li>';
+  const volumeFormatter = item => item.type + ' ' + (item.delta >= 0 ? '+' : '') + fmt(item.delta) + ' 单（' + (item.delta / item.prior.tickets * 100 >= 0 ? '+' : '') + (item.delta / item.prior.tickets * 100).toFixed(1) + '%）';
+  const rateFormatter = item => item.type + ' ' + (item.delta >= 0 ? '+' : '') + item.delta.toFixed(1) + '%';
+  const partialText = partialMonths.length ? '；' + partialMonths.map(partialMonthLabel).join('、') + '尚未完整，已排除' : '';
+  const notice = '<div class="analysis-note' + (partialMonths.length ? '' : ' neutral') + '"><b>分析口径：</b>筛选范围 ' + selectedLabel + partialText + '；完整分析范围 ' + completeLabel + '；趋势比较 ' + comparisonLabel + '，覆盖 ' + comparisons.length + ' 个可比 Ticket Type。</div>';
+  document.getElementById("productInsights").innerHTML = notice +
+    '<div class="product-insights-grid all-type-insights">' +
+    '<div class="product-insight"><strong>工单量变化 <small>（' + comparisonLabel + '）</small></strong><p><b class="move-up">走高</b></p><ul>' + list(volume.up, volumeFormatter) + '</ul><p><b class="move-flat">持平</b> ' + volume.flat.length + ' 类</p><p><b class="move-down">走低</b></p><ul>' + list(volume.down, volumeFormatter) + '</ul></div>' +
+    '<div class="product-insight"><strong>满意度变化 <small>（' + comparisonLabel + '）</small></strong><p><b class="move-up">走高</b></p><ul>' + list(satisfaction.up, rateFormatter) + '</ul><p><b class="move-flat">持平</b> ' + satisfaction.flat.length + ' 类</p><p><b class="move-down">走低</b></p><ul>' + list(satisfaction.down, rateFormatter) + '</ul></div>' +
+    '<div class="product-insight"><strong>三回合比例变化 <small>（' + comparisonLabel + '）</small></strong><p><b class="move-up">走高</b></p><ul>' + list(threeRound.up, rateFormatter) + '</ul><p><b class="move-flat">持平</b> ' + threeRound.flat.length + ' 类</p><p><b class="move-down">走低（轮次减少）</b></p><ul>' + list(threeRound.down, rateFormatter) + '</ul></div>' +
+    '</div>';
+}
+
+
+
+function renderCsatOgsM(range) {
+  const data = aggregateSatisfaction(range);
+  const target = Number(ogsmData.target || 95);
+  const gap = data.score - target;
+  const period = data.rows.length
+    ? data.rows[0].label + "–" + data.rows.at(-1).label
+    : "暂无可用区间";
+  document.getElementById("ogsmTarget").textContent = target.toFixed(1) + "%";
+  document.getElementById("ogsmCurrent").textContent = data.score.toFixed(1) + "%";
+  document.getElementById("ogsmGap").textContent =
+    (gap >= 0 ? "+" : "") + gap.toFixed(1) + "%";
+  document.getElementById("ogsmPeriod").textContent = period;
+  document.getElementById("ogsmObjective").textContent = ogsmData.objective || "—";
+  document.getElementById("ogsmActions").innerHTML = "";
+  const roadmap = ogsmData.roadmap || {};
+  document.getElementById("ogsmRoadmap").innerHTML = roadmap.rows?.length
+    ? ogsmRoadmapTable(roadmap.title, roadmap.rows, ogsmData.actions)
+    : "";
+  const check = document.getElementById("ogsmCheck");
+  const actionCount = (ogsmData.actions || []).length;
+  if (gap >= 0) {
+    check.className = "csat-ogsm-check good";
+    check.textContent = "Check：当前 CSAT 已达到目标。继续按 OGSM 行动验证改善是否稳定。";
+  } else {
+    check.className = "csat-ogsm-check watch";
+    check.textContent = "Check：当前 CSAT 距目标还差 " + Math.abs(gap).toFixed(1) +
+      "% 。请用 " + actionCount +
+      " 项 OGSM 行动的进度与后续完整月 CSAT 对照，验证行动是否带来增长。";
+  }
+  document.getElementById("ogsmSyncState").textContent =
+    ogsmData.syncedAt ? "每日同步" : "项目快照";
+}
+async function syncCsatOgsM() {
+  try {
+    const response = await fetch(ogsmSyncUrl, { cache: "no-store" });
+    if (!response.ok) throw new Error("OGSM data unavailable");
+    const incoming = await response.json();
+    if (incoming && Array.isArray(incoming.actions)) {
+      ogsmData = { ...ogsmFallback, ...incoming };
+      renderCsatOgsM(activeRange);
+    }
+  } catch (_error) {
+    renderCsatOgsM(activeRange);
+  }
+}
+
+
+
+function renderProductOgsM() {
+  const data = productOgsData;
+  const block = (data.projects || []).map(project =>
+    '<section class="product-ogsm-project"><h3>' + ogsmEscape(project.name) +
+    " <span>" + ogsmEscape(project.owner) + " · 更新 " +
+    ogsmEscape(project.updatedAt) + "</span></h3>" +
+    ogsmRoadmapTable("", project.rows, []) + "</section>",
+  ).join("") || '<p class="hint">等待 OGSM 项目数据同步。</p>';
+  document.getElementById("productOgsProjects").innerHTML = block;
+  document.getElementById("productOgsSyncState").textContent =
+    data.syncedAt ? "每日同步" : "项目快照";
+}
+async function syncProductOgsM(){try{const r=await fetch('./ogsm-product.json',{cache:'no-store'});if(!r.ok)throw new Error();productOgsData={...productOgsFallback,...await r.json()};renderProductOgsM();}catch(_){renderProductOgsM();}}
+
+function updateAll(range) {
+  refreshSyncStatus();
+  activeRange = range;
+  updateRangeControls(range);
+  renderTickets(range);
+  renderTicketOgsM(range);
+  renderSatisfaction(range);
+  renderCsatOgsM(range);
+  renderProduct(range);
+  renderProductOgsM();
+  overviewUpdate(range);
+}
+
+document.querySelectorAll(".nav").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".nav").forEach(item =>
+      item.classList.toggle("active", item === button),
+    );
+    document.querySelectorAll(".tab").forEach(tab =>
+      tab.classList.toggle("active", tab.id === button.dataset.tab),
+    );
+  });
+});
+
+document.querySelectorAll(".range").forEach(select => {
+  select.addEventListener("change", () => updateAll(select.value));
+});
+
+function syncCustomDateControls() {
+  document.querySelectorAll("[data-custom-date='start']").forEach(input => input.value = customRange.start);
+  document.querySelectorAll("[data-custom-date='end']").forEach(input => input.value = customRange.end);
+}
+
+document.querySelectorAll("[data-custom-date]").forEach(input => {
+  input.addEventListener("change", event => {
+    customRange[event.target.dataset.customDate] = event.target.value;
+    if (customRange.start > customRange.end) {
+      const changed = event.target.dataset.customDate;
+      if (changed === "start") customRange.end = customRange.start;
+      else customRange.start = customRange.end;
+    }
+    syncCustomDateControls();
+    updateAll("custom");
+  });
+});
+
+document.getElementById("productTypeSelect").addEventListener("change", () =>
+  renderProduct(activeRange),
+);
+document.getElementById("productTableToggle").addEventListener("click", () => {
+  showAllProductTypes = !showAllProductTypes;
+  renderProduct(activeRange);
+});
+document.getElementById("productMetricTables").addEventListener("click", event => {
+  const button = event.target.closest("[data-ranking-toggle]");
+  if (!button) return;
+  const key = button.dataset.rankingToggle;
+  rankingExpanded[key] = !rankingExpanded[key];
+  renderProduct(activeRange);
+});
+document.getElementById("refresh").addEventListener("click", () => updateAll(activeRange));
+
+syncCustomDateControls();
+updateAll("7");
+syncCsatOgsM();
+syncTicketOgsM();
+syncProductOgsM();
+setInterval(syncCsatOgsM, 300000);
+setInterval(syncTicketOgsM, 300000);
+setInterval(syncProductOgsM, 300000);
+
+</script></body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

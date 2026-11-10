@@ -1,0 +1,173 @@
+{
+  "source": "Bueno OGSM 项目看板 · iNIU Care · B",
+  "updatedAt": "2026-11-09 17:48:17",
+  "objective": "邮件10mins响应率≥80%，20mins响应率≥95%，三回合解决率≥90%",
+  "actions": [
+    {
+      "phase": "Q4",
+      "title": "海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2026-12-31"
+    },
+    {
+      "phase": "Q4",
+      "title": "完成Livechat 0–1搭建与部分时间段试运行",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2026-12-31"
+    },
+    {
+      "phase": "Q4",
+      "title": "识别7*24小时响应速度的波峰波谷，识别卡点为值班体系/某处理流程复杂性等，再针对性解决",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2026-11-30"
+    },
+    {
+      "phase": "27Q1",
+      "title": "Livechat形成稳定的7*24小时人工接待承接能力",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2027-02-28"
+    },
+    {
+      "phase": "27Q1",
+      "title": "响应时效的复盘机制，根据最新响应时间持续复盘当前最新邮件快速响应卡点",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2027-01-31"
+    }
+  ],
+  "roadmap": {
+    "title": "响应时效 · OGSM-PDCA 执行地图",
+    "columns": [
+      "端到端成果",
+      "关键矛盾与策略",
+      "Q4拟实质性进展",
+      "27Q1拟实质性进展",
+      "实质性进展",
+      "关键会议"
+    ],
+    "rows": [
+      {
+        "code": "B",
+        "outcome": "邮件10mins响应率≥80%，20mins响应率≥95%，三回合解决率≥90%",
+        "strategy": "即时服务渠道不足、邮件排班与人员能力未能充分匹配进件需求；通过Live Chat补齐即时响应空档，建立动态排班与人员培养机制，实现用户快速获得帮助",
+        "q4": "海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）<br>完成Livechat 0–1搭建与部分时间段试运行<br>识别7*24小时响应速度的波峰波谷，识别卡点为值班体系/某处理流程复杂性等，再针对性解决",
+        "q1": "Livechat形成稳定的7*24小时人工接待承接能力<br>响应时效的复盘机制，根据最新响应时间持续复盘当前最新邮件快速响应卡点",
+        "substantiveProgress": "官网开发已上线，表单多语言感谢页*自动回复解决ing<br>重构团队绩效、晋升发展<br>livechat规划+人员排版规划",
+        "substantialItems": [
+          {
+            "mapping": "B",
+            "text": "官网开发已上线，表单多语言感谢页*自动回复解决ing",
+            "submitter": "王文青",
+            "time": "2026-10-08 21:09:20",
+            "links": [],
+            "attachments": []
+          },
+          {
+            "mapping": "M（Multi）",
+            "text": "重构团队绩效、晋升发展",
+            "submitter": "王文青",
+            "time": "2026-11-03 10:24:49",
+            "links": [
+              {
+                "label": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im",
+                "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"
+              },
+              {
+                "label": "团队绩效文档",
+                "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"
+              }
+            ],
+            "attachments": [
+              {
+                "name": "团队绩效文档",
+                "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space",
+                "id": "att_mw02eo3w_36tpq"
+              }
+            ]
+          },
+          {
+            "mapping": "B",
+            "text": "livechat规划+人员排版规划",
+            "submitter": "王文青",
+            "time": "2026-11-09 17:38:47",
+            "links": [
+              {
+                "label": "https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im",
+                "url": "https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"
+              }
+            ],
+            "attachments": []
+          }
+        ],
+        "meetings": "响应时效分析+livechat正式立项<br>livechat+AI自助服务方案1.0<br>团队人员&绩效规划<br>人员规划+livechat2.0<br>livechat节点会议",
+        "meetingItems": [
+          {
+            "subject": "响应时效分析+livechat正式立项",
+            "date": "2026-10-16",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          },
+          {
+            "subject": "livechat+AI自助服务方案1.0",
+            "date": "",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          },
+          {
+            "subject": "团队人员&绩效规划",
+            "date": "2026-10-26",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          },
+          {
+            "subject": "人员规划+livechat2.0",
+            "date": "2026-11-09",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          },
+          {
+            "subject": "livechat节点会议",
+            "date": "2026-11-27",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          }
+        ],
+        "links": [
+          {
+            "label": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im",
+            "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"
+          },
+          {
+            "label": "团队绩效文档",
+            "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"
+          },
+          {
+            "label": "https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im",
+            "url": "https://alidocs.dingtalk.com/i/nodes/14lgGw3P8vLgmALPHnm6Qoa3V5daZ90D?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"
+          }
+        ],
+        "attachments": []
+      }
+    ]
+  },
+  "syncedAt": "2026-11-10 16:19:44"
+}

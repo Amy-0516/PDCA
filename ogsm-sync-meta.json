@@ -1,0 +1,21 @@
+{
+  "source": "Bueno OGSM 项目看板",
+  "syncedAt": "2026-11-10 16:19:44",
+  "projects": [
+    {
+      "id": 1000104,
+      "name": "iNIU Care",
+      "updatedAt": "2026-11-09 17:48:17"
+    },
+    {
+      "id": 1000067,
+      "name": "课题1：VOC驱动产品闭环",
+      "updatedAt": "2026-11-09 17:32:45"
+    },
+    {
+      "id": 1000112,
+      "name": "iNIU Smart Help",
+      "updatedAt": "2026-11-09 17:34:51"
+    }
+  ]
+}

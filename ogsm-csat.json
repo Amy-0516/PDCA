@@ -1,0 +1,141 @@
+{
+  "source": "Bueno OGSM 项目看板 · iNIU Care · CSAT",
+  "updatedAt": "2026-11-09 17:48:17",
+  "objective": "iNIU Care",
+  "target": 95,
+  "owner": "王文青",
+  "actions": [
+    {
+      "phase": "Q4",
+      "title": "不满意工单分析100%分析，通过月度会议将TOP5问题闭环",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 35,
+      "due": "2026-12-31"
+    },
+    {
+      "phase": "Q4",
+      "title": "海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2026-12-31"
+    },
+    {
+      "phase": "27Q1",
+      "title": "探索AI辅助质检工具，让质检更聚焦于服务痛点，减少随机性",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2027-03-31"
+    },
+    {
+      "phase": "27Q1",
+      "title": "满意度分析会议机制&质检分析会议机制复盘",
+      "detail": "来自 iNIU Care OGSM 项目看板",
+      "progress": 0,
+      "due": "2027-01-31"
+    }
+  ],
+  "roadmap": {
+    "title": "CSAT · OGSM-PDCA 执行地图",
+    "columns": [
+      "端到端成果",
+      "关键矛盾与策略",
+      "Q4拟实质性进展",
+      "27Q1拟实质性进展",
+      "实质性进展",
+      "关键会议"
+    ],
+    "rows": [
+      {
+        "code": "A",
+        "outcome": "CSAT≥95%",
+        "strategy": "即时服务渠道不足、邮件排班与人员能力未能充分匹配进件需求；通过Live Chat补齐即时响应空档，建立动态排班与人员培养机制，实现用户快速获得帮助",
+        "q4": "不满意工单分析100%分析，通过月度会议将TOP5问题闭环<br>海外团队小组建设（质检SOP、人员培训、绩效、晋升、质检标准、抽样比例、辅导闭环、质检分享会议机制etc）",
+        "q1": "探索AI辅助质检工具，让质检更聚焦于服务痛点，减少随机性<br>满意度分析会议机制&质检分析会议机制复盘",
+        "substantiveProgress": "9.29 不满意工单分析会议<br>不满意工单分析/质检结构性调整同步TL，从11月开始试运行<br>重构团队绩效、晋升发展",
+        "substantialItems": [
+          {
+            "mapping": "A",
+            "text": "9.29 不满意工单分析会议",
+            "submitter": "王文青",
+            "time": "2026-10-08 21:03:01",
+            "links": [],
+            "attachments": []
+          },
+          {
+            "mapping": "A",
+            "text": "不满意工单分析/质检结构性调整同步TL，从11月开始试运行",
+            "submitter": "王文青",
+            "time": "2026-10-21 16:48:52",
+            "links": [
+              {
+                "label": "https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im",
+                "url": "https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im"
+              }
+            ],
+            "attachments": []
+          },
+          {
+            "mapping": "M（Multi）",
+            "text": "重构团队绩效、晋升发展",
+            "submitter": "王文青",
+            "time": "2026-11-03 10:24:49",
+            "links": [
+              {
+                "label": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im",
+                "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"
+              },
+              {
+                "label": "团队绩效文档",
+                "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"
+              }
+            ],
+            "attachments": [
+              {
+                "name": "团队绩效文档",
+                "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space",
+                "id": "att_mw02eo3w_36tpq"
+              }
+            ]
+          }
+        ],
+        "meetings": "CSAT分析复盘会议<br>CSAT复盘",
+        "meetingItems": [
+          {
+            "subject": "CSAT分析复盘会议",
+            "date": "2026-10-28",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          },
+          {
+            "subject": "CSAT复盘",
+            "date": "2026-11-12",
+            "start": "",
+            "end": "",
+            "status": "upcoming",
+            "attachments": [],
+            "links": []
+          }
+        ],
+        "links": [
+          {
+            "label": "https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im",
+            "url": "https://alidocs.dingtalk.com/i/nodes/y20BglGWOX25oePwfvn11qK3VA7depqY?cid=65008478531&corpId=dingc2edc96e6fd1ff1a61140c4bc72587ba&doc_type=wiki_doc&iframeQuery=utm_medium=im_card&utm_source=im&utm_medium=im_card&utm_scene=person_space&utm_source=im"
+          },
+          {
+            "label": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im",
+            "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?corpId=ding28cf635caf86a1b635c2f4657eb6378f&utm_medium=im_card&iframeQuery=utm_medium%3Dim_card%26utm_source%3Dim&utm_scene=person_space&utm_source=im"
+          },
+          {
+            "label": "团队绩效文档",
+            "url": "https://alidocs.dingtalk.com/i/nodes/QG53mjyd80ylA9yKtzPMGQKRW6zbX04v?utm_scene=person_space"
+          }
+        ],
+        "attachments": []
+      }
+    ]
+  },
+  "syncedAt": "2026-11-10 16:19:44"
+}

@@ -1,0 +1,159 @@
+{
+  "source": "Bueno OGSM 项目看板 · 产品质量 / VOC",
+  "syncedAt": "2026-11-10 16:19:44",
+  "projects": [
+    {
+      "id": 1000067,
+      "name": "课题1：VOC驱动产品闭环",
+      "owner": "王文青",
+      "updatedAt": "2026-11-09 17:32:45",
+      "rows": [
+        {
+          "outcome": "投诉减少50% - 客诉从1W2/ Month 到6K/ Month",
+          "strategy": "—",
+          "q4": "iNIU smart help上线，完成TOP2的ticket type分析，并形成闭环的客诉解决方案",
+          "q1": "iNIU smart help，建立产品知识与TOP10客诉持续更新机制；AI从基础问答升级为可指导用户完成常见问题排障，并通过解决效果持续优化",
+          "substantial": "—",
+          "meetings": "VOC数据仪表盘<br>P781方案复盘+新品试用方案1.0<br>各品类周期不良品分析会议<br>Ticket type分析<br>客户声音工作台进展同步<br>12月客户声音工作台进展同步<br>招募整体方案对齐<br>P781复盘+RG20000启动招募<br>TOP3 ticket type 分析",
+          "meetingItems": [
+            {
+              "subject": "VOC数据仪表盘",
+              "date": "2026-10-23",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "P781方案复盘+新品试用方案1.0",
+              "date": "2026-10-15",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "各品类周期不良品分析会议",
+              "date": "2026-10-13",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "Ticket type分析",
+              "date": "2026-11-15",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "客户声音工作台进展同步",
+              "date": "2026-11-16",
+              "start": "2026-11-16T14:00:00",
+              "end": "2026-11-16T15:30:00",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "12月客户声音工作台进展同步",
+              "date": "",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "招募整体方案对齐",
+              "date": "2026-11-13",
+              "start": "2026-11-13T14:30:00",
+              "end": "2026-11-13T16:40:00",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "P781复盘+RG20000启动招募",
+              "date": "2026-11-27",
+              "start": "2026-11-27T15:20:00",
+              "end": "2026-11-27T16:42:00",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "TOP3 ticket type 分析",
+              "date": "2026-11-19",
+              "start": "2026-11-19T14:00:00",
+              "end": "2026-11-19T15:30:00",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1000112,
+      "name": "iNIU Smart Help",
+      "owner": "黄子靖",
+      "updatedAt": "2026-11-09 17:34:51",
+      "rows": [
+        {
+          "outcome": "自助解决率≥50%；自助满意度≥95%",
+          "strategy": "构建“产品二维码+官网”一体化自助服务体系，让用户按型号快速获取帮助并自主解决问题<br>建立“统一知识库+AI智能解答+人工兜底”的持续优化机制，实现从被动回答到智能解决",
+          "q4": "完成Smart Help从0到1建设，打通重点产品二维码与官网专属帮助页面，整合说明书、FAQ、视频及故障排查<br>完成AI Agent试点，跑通智能解答、问题识别与转人工闭环",
+          "q1": "形成覆盖核心产品的型号化自助服务体系，建立产品知识与TOP10客诉持续更新机制；AI从基础问答升级为可指导用户完成常见问题排障，并通过解决效果持续优化",
+          "substantial": "—",
+          "meetings": "海帆CRM<br>包装二维码方案<br>livechat+AI自助服务方案1.0<br>AI对齐会",
+          "meetingItems": [
+            {
+              "subject": "海帆CRM",
+              "date": "2026-10-08",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "包装二维码方案",
+              "date": "2026-10-28",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "livechat+AI自助服务方案1.0",
+              "date": "2026-11-02",
+              "start": "",
+              "end": "",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            },
+            {
+              "subject": "AI对齐会",
+              "date": "2026-11-10",
+              "start": "2026-11-10T16:00",
+              "end": "2026-11-10T17:00",
+              "status": "upcoming",
+              "attachments": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
