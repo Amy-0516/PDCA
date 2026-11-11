@@ -4700,90 +4700,90 @@
     {
       "year": 2025,
       "month": "December",
-      "score": 53.1606593008513,
-      "rated": 5521,
-      "good": 2935,
-      "bad": 2586
+      "score": 52.44857982370226,
+      "rated": 6126,
+      "good": 3213,
+      "bad": 2913
     },
     {
       "year": 2026,
       "month": "January",
-      "score": 62.78950077200206,
-      "rated": 1943,
-      "good": 1220,
-      "bad": 723
+      "score": 62.62626262626263,
+      "rated": 3069,
+      "good": 1922,
+      "bad": 1147
     },
     {
       "year": 2026,
       "month": "February",
-      "score": 76.6076421248835,
-      "rated": 1073,
-      "good": 822,
-      "bad": 251
+      "score": 71.53179190751445,
+      "rated": 1384,
+      "good": 990,
+      "bad": 394
     },
     {
       "year": 2026,
       "month": "March",
-      "score": 82.5,
-      "rated": 1040,
-      "good": 858,
-      "bad": 182
+      "score": 78.4503631961259,
+      "rated": 1239,
+      "good": 972,
+      "bad": 267
     },
     {
       "year": 2026,
       "month": "April",
-      "score": 81.48837209302326,
-      "rated": 1075,
-      "good": 876,
-      "bad": 199
+      "score": 78.73417721518987,
+      "rated": 1185,
+      "good": 933,
+      "bad": 252
     },
     {
       "year": 2026,
       "month": "May",
-      "score": 85.22483940042827,
-      "rated": 934,
-      "good": 796,
-      "bad": 138
+      "score": 84.070796460177,
+      "rated": 1017,
+      "good": 855,
+      "bad": 162
     },
     {
       "year": 2026,
       "month": "June",
-      "score": 89.87701040681173,
-      "rated": 1057,
-      "good": 950,
-      "bad": 107
+      "score": 89.40338379341051,
+      "rated": 1123,
+      "good": 1004,
+      "bad": 119
     },
     {
       "year": 2026,
       "month": "July",
-      "score": 87.90476190476191,
-      "rated": 1050,
-      "good": 923,
-      "bad": 127
+      "score": 87.07052441229656,
+      "rated": 1106,
+      "good": 963,
+      "bad": 143
     },
     {
       "year": 2026,
       "month": "August",
-      "score": 89.2802450229709,
-      "rated": 1306,
-      "good": 1166,
-      "bad": 140
+      "score": 88.59649122807018,
+      "rated": 1368,
+      "good": 1212,
+      "bad": 156
     },
     {
       "year": 2026,
       "month": "September",
-      "score": 90.62015503875969,
-      "rated": 1290,
-      "good": 1169,
-      "bad": 121
+      "score": 90.42232277526395,
+      "rated": 1326,
+      "good": 1199,
+      "bad": 127
     },
     {
       "year": 2026,
       "month": "October",
-      "score": 93.07637401855817,
-      "rated": 1401,
-      "good": 1304,
-      "bad": 97
+      "score": 92.54355400696865,
+      "rated": 1435,
+      "good": 1328,
+      "bad": 107
     }
   ],
   "product": [
@@ -5794,5 +5794,9 @@
   "productSource": "Zendesk Explore · Ticket Type workbook",
   "productSourceFile": "C:\\Users\\Amy\\Downloads\\Ticket_Type_11102026_1129.xlsx",
   "productExportedAt": "2026-11-10T11:29:00+08:00",
-  "productDataThrough": "2026-11-10"
+  "productDataThrough": "2026-11-10",
+  "satisfactionSource": "Zendesk Explore · Satisfaction score and rated tickets by month (12 months)",
+  "satisfactionSourceFile": "Satisfaction_Satisfaction_score_and_rated_tickets_by_month_(12_months)_default_11112026_1004.xlsx",
+  "satisfactionExportedAt": "2026-11-11T10:04:00+08:00",
+  "satisfactionDataThrough": "2026-10-31"
 }
