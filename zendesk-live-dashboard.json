@@ -4844,935 +4844,11 @@
   ],
   "product": [
     {
-      "type": "Shopify Account Issues",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 4
-    },
-    {
-      "type": "Shopify Account Issues",
-      "month": "October",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 3
-    },
-    {
-      "type": "Shopify Account Issues",
-      "month": "September",
-      "satisfaction": 100,
-      "threeRound": 50,
-      "tickets": 7
-    },
-    {
-      "type": "Shopify Account Issues",
-      "month": "August",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 7
-    },
-    {
-      "type": "Shopify Account Issues",
-      "month": "July",
-      "satisfaction": 71.42857142857143,
-      "threeRound": 92.5,
-      "tickets": 44
-    },
-    {
-      "type": "Shopify Account Issues",
-      "month": "June",
-      "satisfaction": 0,
-      "threeRound": 73.33333333333333,
-      "tickets": 15
-    },
-    {
-      "type": "Shopify Account Issues",
-      "month": "May",
-      "satisfaction": 83.33333333333334,
-      "threeRound": 82.92682926829268,
-      "tickets": 42
-    },
-    {
-      "type": "Shopify Account Issues",
+      "type": "30-Day Free Return",
       "month": "April",
       "satisfaction": 100,
-      "threeRound": 83.33333333333334,
-      "tickets": 12
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "November",
-      "satisfaction": 92.45283018867924,
-      "threeRound": 83.984375,
-      "tickets": 316
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "October",
-      "satisfaction": 81.64556962025317,
-      "threeRound": 77.91563275434244,
-      "tickets": 893
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "September",
-      "satisfaction": 85.96491228070175,
-      "threeRound": 78.2258064516129,
-      "tickets": 798
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "August",
-      "satisfaction": 87.56756756756758,
-      "threeRound": 81.94174757281554,
-      "tickets": 1056
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "July",
-      "satisfaction": 80.41237113402062,
-      "threeRound": 85.06224066390041,
-      "tickets": 742
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "June",
-      "satisfaction": 83.11688311688312,
-      "threeRound": 83.6322869955157,
-      "tickets": 465
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "May",
-      "satisfaction": 78.33333333333333,
-      "threeRound": 81.41361256544502,
-      "tickets": 441
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "April",
-      "satisfaction": 81.81818181818183,
-      "threeRound": 78.35820895522389,
-      "tickets": 137
-    },
-    {
-      "type": "Shipping & Delivery",
-      "month": "March",
-      "satisfaction": null,
-      "threeRound": 0,
-      "tickets": 2
-    },
-    {
-      "type": "Product Question",
-      "month": "November",
-      "satisfaction": 80,
-      "threeRound": 91.39344262295081,
-      "tickets": 278
-    },
-    {
-      "type": "Product Question",
-      "month": "October",
-      "satisfaction": 79.81651376146789,
-      "threeRound": 92.52437703141928,
-      "tickets": 994
-    },
-    {
-      "type": "Product Question",
-      "month": "September",
-      "satisfaction": 80.45112781954887,
-      "threeRound": 91.71539961013644,
-      "tickets": 1088
-    },
-    {
-      "type": "Product Question",
-      "month": "August",
-      "satisfaction": 82.3943661971831,
-      "threeRound": 93.43986543313709,
-      "tickets": 1226
-    },
-    {
-      "type": "Product Question",
-      "month": "July",
-      "satisfaction": 83.47826086956522,
-      "threeRound": 93.90142021720969,
-      "tickets": 1284
-    },
-    {
-      "type": "Product Question",
-      "month": "June",
-      "satisfaction": 86.5079365079365,
-      "threeRound": 94.97161394971614,
-      "tickets": 1621
-    },
-    {
-      "type": "Product Question",
-      "month": "May",
-      "satisfaction": 80.12048192771084,
-      "threeRound": 93.02172481895984,
-      "tickets": 1883
-    },
-    {
-      "type": "Product Question",
-      "month": "April",
-      "satisfaction": 70.2127659574468,
-      "threeRound": 90.03322259136213,
-      "tickets": 916
-    },
-    {
-      "type": "Product Question",
-      "month": "March",
-      "satisfaction": null,
-      "threeRound": 66.66666666666666,
-      "tickets": 12
-    },
-    {
-      "type": "Product Question",
-      "month": "February",
-      "satisfaction": 0,
-      "threeRound": 88.88888888888889,
-      "tickets": 21
-    },
-    {
-      "type": "Product Question",
-      "month": "January",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 1
-    },
-    {
-      "type": "Product Defect",
-      "month": "November",
-      "satisfaction": 96.1864406779661,
-      "threeRound": 56.61057692307693,
-      "tickets": 1938
-    },
-    {
-      "type": "Product Defect",
-      "month": "October",
-      "satisfaction": 95.22546419098144,
-      "threeRound": 42.52443933294997,
-      "tickets": 5892
-    },
-    {
-      "type": "Product Defect",
-      "month": "September",
-      "satisfaction": 92.16101694915254,
-      "threeRound": 64.3126499828591,
-      "tickets": 6364
-    },
-    {
-      "type": "Product Defect",
-      "month": "August",
-      "satisfaction": 90.57971014492753,
-      "threeRound": 64.30248155600268,
-      "tickets": 6452
-    },
-    {
-      "type": "Product Defect",
-      "month": "July",
-      "satisfaction": 88.61386138613861,
-      "threeRound": 69.90309014445054,
-      "tickets": 5891
-    },
-    {
-      "type": "Product Defect",
-      "month": "June",
-      "satisfaction": 90.0126422250316,
-      "threeRound": 68.39145106861643,
-      "tickets": 4600
-    },
-    {
-      "type": "Product Defect",
-      "month": "May",
-      "satisfaction": 88.67132867132868,
-      "threeRound": 62.824207492795395,
-      "tickets": 4464
-    },
-    {
-      "type": "Product Defect",
-      "month": "April",
-      "satisfaction": 86.93790149892934,
-      "threeRound": 53.00400534045394,
-      "tickets": 2347
-    },
-    {
-      "type": "Product Defect",
-      "month": "March",
-      "satisfaction": 72.72727272727273,
-      "threeRound": 14.285714285714285,
-      "tickets": 122
-    },
-    {
-      "type": "Product Defect",
-      "month": "February",
-      "satisfaction": 50,
-      "threeRound": 23.076923076923077,
-      "tickets": 13
-    },
-    {
-      "type": "Product Defect",
-      "month": "January",
-      "satisfaction": null,
-      "threeRound": 0,
-      "tickets": 2
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "November",
-      "satisfaction": 100,
-      "threeRound": 79.16666666666666,
-      "tickets": 29
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "October",
-      "satisfaction": 88.88888888888889,
-      "threeRound": 75,
-      "tickets": 67
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "September",
-      "satisfaction": 85.71428571428571,
-      "threeRound": 71.42857142857143,
-      "tickets": 65
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "August",
-      "satisfaction": 80,
-      "threeRound": 91.76470588235294,
-      "tickets": 87
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "July",
-      "satisfaction": 75,
-      "threeRound": 85.5072463768116,
-      "tickets": 73
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "June",
-      "satisfaction": 50,
-      "threeRound": 52.38095238095239,
-      "tickets": 21
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "May",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 10
-    },
-    {
-      "type": "Payment & Coupon Issues",
-      "month": "April",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 7
-    },
-    {
-      "type": "Out of Stock",
-      "month": "November",
-      "satisfaction": 100,
-      "threeRound": 100,
-      "tickets": 6
-    },
-    {
-      "type": "Out of Stock",
-      "month": "October",
-      "satisfaction": 80,
-      "threeRound": 85.71428571428571,
-      "tickets": 28
-    },
-    {
-      "type": "Out of Stock",
-      "month": "September",
-      "satisfaction": 100,
-      "threeRound": 94.44444444444444,
-      "tickets": 20
-    },
-    {
-      "type": "Out of Stock",
-      "month": "August",
-      "satisfaction": 75,
-      "threeRound": 100,
-      "tickets": 12
-    },
-    {
-      "type": "Out of Stock",
-      "month": "July",
-      "satisfaction": 75,
-      "threeRound": 94.44444444444444,
-      "tickets": 18
-    },
-    {
-      "type": "Out of Stock",
-      "month": "June",
-      "satisfaction": 50,
-      "threeRound": 91.17647058823529,
-      "tickets": 34
-    },
-    {
-      "type": "Out of Stock",
-      "month": "May",
-      "satisfaction": 50,
-      "threeRound": 97.36842105263158,
-      "tickets": 42
-    },
-    {
-      "type": "Out of Stock",
-      "month": "April",
-      "satisfaction": 50,
-      "threeRound": 80,
-      "tickets": 15
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 2
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "October",
-      "satisfaction": 66.66666666666666,
-      "threeRound": 100,
-      "tickets": 10
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "September",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 6
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "August",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 2
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "July",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 5
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "June",
-      "satisfaction": 100,
-      "threeRound": 91.66666666666666,
-      "tickets": 12
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "May",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 9
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "April",
-      "satisfaction": 50,
-      "threeRound": 85,
-      "tickets": 20
-    },
-    {
-      "type": "Others- Report to Amy",
-      "month": "March",
-      "satisfaction": null,
-      "threeRound": 66.66666666666666,
-      "tickets": 3
-    },
-    {
-      "type": "Negative Review",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 1
-    },
-    {
-      "type": "Negative Review",
-      "month": "October",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 4
-    },
-    {
-      "type": "Negative Review",
-      "month": "September",
-      "satisfaction": null,
-      "threeRound": 50,
-      "tickets": 2
-    },
-    {
-      "type": "Negative Review",
-      "month": "August",
-      "satisfaction": 33.33333333333333,
-      "threeRound": 58.333333333333336,
-      "tickets": 31
-    },
-    {
-      "type": "Negative Review",
-      "month": "July",
-      "satisfaction": 100,
-      "threeRound": 62.5,
-      "tickets": 28
-    },
-    {
-      "type": "Negative Review",
-      "month": "June",
-      "satisfaction": null,
-      "threeRound": 87.95180722891565,
-      "tickets": 119
-    },
-    {
-      "type": "Negative Review",
-      "month": "May",
-      "satisfaction": null,
-      "threeRound": 94.6949602122016,
-      "tickets": 453
-    },
-    {
-      "type": "Negative Review",
-      "month": "April",
-      "satisfaction": null,
-      "threeRound": 89.62962962962962,
-      "tickets": 139
-    },
-    {
-      "type": "Merge",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 348
-    },
-    {
-      "type": "Merge",
-      "month": "October",
-      "satisfaction": null,
-      "threeRound": 99.22756981580511,
-      "tickets": 1686
-    },
-    {
-      "type": "Merge",
-      "month": "September",
-      "satisfaction": null,
-      "threeRound": 98.93190921228305,
-      "tickets": 1500
-    },
-    {
-      "type": "Merge",
-      "month": "August",
-      "satisfaction": 50,
-      "threeRound": 99.42693409742121,
-      "tickets": 1746
-    },
-    {
-      "type": "Merge",
-      "month": "July",
-      "satisfaction": 100,
-      "threeRound": 99.63273871983212,
-      "tickets": 1906
-    },
-    {
-      "type": "Merge",
-      "month": "June",
-      "satisfaction": 100,
-      "threeRound": 99.5881949210707,
-      "tickets": 1459
-    },
-    {
-      "type": "Merge",
-      "month": "May",
-      "satisfaction": 33.33333333333333,
-      "threeRound": 99.72451790633609,
-      "tickets": 1454
-    },
-    {
-      "type": "Merge",
-      "month": "April",
-      "satisfaction": null,
-      "threeRound": 99.14163090128756,
-      "tickets": 233
-    },
-    {
-      "type": "Merge",
-      "month": "March",
-      "satisfaction": null,
-      "threeRound": 84.61538461538461,
-      "tickets": 13
-    },
-    {
-      "type": "Merge",
-      "month": "February",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 9
-    },
-    {
-      "type": "Merge",
-      "month": "January",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 12
-    },
-    {
-      "type": "Junk Message",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 175
-    },
-    {
-      "type": "Junk Message",
-      "month": "October",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 699
-    },
-    {
-      "type": "Junk Message",
-      "month": "September",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 502
-    },
-    {
-      "type": "Junk Message",
-      "month": "August",
-      "satisfaction": null,
-      "threeRound": 99.60159362549801,
-      "tickets": 253
-    },
-    {
-      "type": "Junk Message",
-      "month": "July",
-      "satisfaction": null,
-      "threeRound": 99.63898916967509,
-      "tickets": 280
-    },
-    {
-      "type": "Junk Message",
-      "month": "June",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 213
-    },
-    {
-      "type": "Junk Message",
-      "month": "May",
-      "satisfaction": 50,
-      "threeRound": 99.81884057971014,
-      "tickets": 554
-    },
-    {
-      "type": "Junk Message",
-      "month": "April",
-      "satisfaction": null,
-      "threeRound": 99.59677419354838,
-      "tickets": 248
-    },
-    {
-      "type": "Junk Message",
-      "month": "March",
-      "satisfaction": 100,
-      "threeRound": 100,
-      "tickets": 1
-    },
-    {
-      "type": "Invoice",
-      "month": "November",
-      "satisfaction": 100,
-      "threeRound": 98.1981981981982,
-      "tickets": 125
-    },
-    {
-      "type": "Invoice",
-      "month": "October",
-      "satisfaction": 100,
-      "threeRound": 97.89303079416531,
-      "tickets": 649
-    },
-    {
-      "type": "Invoice",
-      "month": "September",
-      "satisfaction": 83.33333333333334,
-      "threeRound": 98.13242784380306,
-      "tickets": 612
-    },
-    {
-      "type": "Invoice",
-      "month": "August",
-      "satisfaction": 100,
-      "threeRound": 98.45094664371773,
-      "tickets": 582
-    },
-    {
-      "type": "Invoice",
-      "month": "July",
-      "satisfaction": 100,
-      "threeRound": 99.68354430379746,
-      "tickets": 636
-    },
-    {
-      "type": "Invoice",
-      "month": "June",
-      "satisfaction": 100,
-      "threeRound": 99.03846153846155,
-      "tickets": 416
-    },
-    {
-      "type": "Invoice",
-      "month": "May",
-      "satisfaction": 100,
-      "threeRound": 98.9247311827957,
-      "tickets": 282
-    },
-    {
-      "type": "Invoice",
-      "month": "April",
-      "satisfaction": 66.66666666666666,
-      "threeRound": 99.12280701754386,
-      "tickets": 229
-    },
-    {
-      "type": "Cooperation",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 99.22779922779922,
-      "tickets": 279
-    },
-    {
-      "type": "Cooperation",
-      "month": "October",
-      "satisfaction": null,
-      "threeRound": 98.97360703812316,
-      "tickets": 709
-    },
-    {
-      "type": "Cooperation",
-      "month": "September",
-      "satisfaction": null,
-      "threeRound": 99.50900163666121,
-      "tickets": 653
-    },
-    {
-      "type": "Cooperation",
-      "month": "August",
-      "satisfaction": null,
-      "threeRound": 98.1358189081225,
-      "tickets": 804
-    },
-    {
-      "type": "Cooperation",
-      "month": "July",
-      "satisfaction": null,
-      "threeRound": 99.30635838150289,
-      "tickets": 939
-    },
-    {
-      "type": "Cooperation",
-      "month": "June",
-      "satisfaction": null,
-      "threeRound": 99.59404600811908,
-      "tickets": 838
-    },
-    {
-      "type": "Cooperation",
-      "month": "May",
-      "satisfaction": 66.66666666666666,
-      "threeRound": 98.40764331210191,
-      "tickets": 776
-    },
-    {
-      "type": "Cooperation",
-      "month": "April",
-      "satisfaction": 85.71428571428571,
-      "threeRound": 95.47413793103449,
-      "tickets": 467
-    },
-    {
-      "type": "Cooperation",
-      "month": "March",
-      "satisfaction": null,
-      "threeRound": 71.42857142857143,
-      "tickets": 7
-    },
-    {
-      "type": "Cooperation",
-      "month": "February",
-      "satisfaction": null,
-      "threeRound": 50,
-      "tickets": 2
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 92
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "October",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 416
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "September",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 395
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "August",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 443
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "July",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 395
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "June",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 260
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "May",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 73
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "April",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 1
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "March",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 1
-    },
-    {
-      "type": "Call Not Answered",
-      "month": "February",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 1
-    },
-    {
-      "type": "Bulk Order",
-      "month": "November",
-      "satisfaction": null,
-      "threeRound": 100,
-      "tickets": 8
-    },
-    {
-      "type": "Bulk Order",
-      "month": "October",
-      "satisfaction": 33.33333333333333,
-      "threeRound": 100,
-      "tickets": 31
-    },
-    {
-      "type": "Bulk Order",
-      "month": "September",
-      "satisfaction": 100,
-      "threeRound": 87.5,
-      "tickets": 18
-    },
-    {
-      "type": "Bulk Order",
-      "month": "August",
-      "satisfaction": 0,
-      "threeRound": 93.75,
-      "tickets": 18
-    },
-    {
-      "type": "Bulk Order",
-      "month": "July",
-      "satisfaction": 0,
-      "threeRound": 100,
-      "tickets": 6
-    },
-    {
-      "type": "Bulk Order",
-      "month": "June",
-      "satisfaction": null,
-      "threeRound": 0,
-      "tickets": 1
-    },
-    {
-      "type": "Activate warranty",
-      "month": "November",
-      "satisfaction": 100,
-      "threeRound": 100,
-      "tickets": 77
-    },
-    {
-      "type": "Activate warranty",
-      "month": "October",
-      "satisfaction": 86.04651162790698,
-      "threeRound": 94.6360153256705,
-      "tickets": 268
-    },
-    {
-      "type": "Activate warranty",
-      "month": "September",
-      "satisfaction": 90.9090909090909,
-      "threeRound": 97.77777777777777,
-      "tickets": 233
-    },
-    {
-      "type": "Activate warranty",
-      "month": "August",
-      "satisfaction": 87.17948717948718,
-      "threeRound": 96.42857142857143,
-      "tickets": 282
-    },
-    {
-      "type": "Activate warranty",
-      "month": "July",
-      "satisfaction": 89.1891891891892,
-      "threeRound": 96.95945945945947,
-      "tickets": 299
-    },
-    {
-      "type": "Activate warranty",
-      "month": "June",
-      "satisfaction": 94.11764705882352,
-      "threeRound": 98.72340425531915,
-      "tickets": 238
-    },
-    {
-      "type": "Activate warranty",
-      "month": "May",
-      "satisfaction": 100,
-      "threeRound": 98.93617021276596,
-      "tickets": 203
+      "threeRound": 57.14285714285714,
+      "tickets": 14
     },
     {
       "type": "Activate warranty",
@@ -5782,32 +4858,95 @@
       "tickets": 124
     },
     {
-      "type": "Activate warranty",
-      "month": "March",
+      "type": "Call Not Answered",
+      "month": "April",
       "satisfaction": null,
       "threeRound": 100,
-      "tickets": 4
+      "tickets": 1
     },
     {
-      "type": "30-Day Free Return",
-      "month": "November",
-      "satisfaction": 100,
-      "threeRound": 60,
+      "type": "Cooperation",
+      "month": "April",
+      "satisfaction": 85.71428571428571,
+      "threeRound": 95.47413793103449,
+      "tickets": 467
+    },
+    {
+      "type": "Invoice",
+      "month": "April",
+      "satisfaction": 66.66666666666666,
+      "threeRound": 99.12280701754386,
+      "tickets": 229
+    },
+    {
+      "type": "Junk Message",
+      "month": "April",
+      "satisfaction": null,
+      "threeRound": 99.59677419354838,
+      "tickets": 248
+    },
+    {
+      "type": "Merge",
+      "month": "April",
+      "satisfaction": null,
+      "threeRound": 99.14163090128756,
+      "tickets": 233
+    },
+    {
+      "type": "Negative Review",
+      "month": "April",
+      "satisfaction": null,
+      "threeRound": 89.62962962962962,
+      "tickets": 139
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "April",
+      "satisfaction": 50,
+      "threeRound": 85,
+      "tickets": 20
+    },
+    {
+      "type": "Out of Stock",
+      "month": "April",
+      "satisfaction": 50,
+      "threeRound": 80,
       "tickets": 15
     },
     {
-      "type": "30-Day Free Return",
-      "month": "October",
-      "satisfaction": 86.66666666666667,
-      "threeRound": 65.85365853658537,
-      "tickets": 46
+      "type": "Payment & Coupon Issues",
+      "month": "April",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 7
     },
     {
-      "type": "30-Day Free Return",
-      "month": "September",
-      "satisfaction": 86.66666666666667,
-      "threeRound": 77.96610169491525,
-      "tickets": 61
+      "type": "Product Defect",
+      "month": "April",
+      "satisfaction": 86.93790149892934,
+      "threeRound": 53.00400534045394,
+      "tickets": 2347
+    },
+    {
+      "type": "Product Question",
+      "month": "April",
+      "satisfaction": 70.2127659574468,
+      "threeRound": 90.03322259136213,
+      "tickets": 916
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "April",
+      "satisfaction": 81.81818181818183,
+      "threeRound": 78.35820895522389,
+      "tickets": 137
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "April",
+      "satisfaction": 100,
+      "threeRound": 83.33333333333334,
+      "tickets": 12
     },
     {
       "type": "30-Day Free Return",
@@ -5817,10 +4956,276 @@
       "tickets": 53
     },
     {
+      "type": "Activate warranty",
+      "month": "August",
+      "satisfaction": 87.17948717948718,
+      "threeRound": 96.42857142857143,
+      "tickets": 282
+    },
+    {
+      "type": "Bulk Order",
+      "month": "August",
+      "satisfaction": 0,
+      "threeRound": 93.75,
+      "tickets": 18
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "August",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 443
+    },
+    {
+      "type": "Cooperation",
+      "month": "August",
+      "satisfaction": null,
+      "threeRound": 98.1358189081225,
+      "tickets": 804
+    },
+    {
+      "type": "Invoice",
+      "month": "August",
+      "satisfaction": 100,
+      "threeRound": 98.45094664371773,
+      "tickets": 582
+    },
+    {
+      "type": "Junk Message",
+      "month": "August",
+      "satisfaction": null,
+      "threeRound": 99.60159362549801,
+      "tickets": 253
+    },
+    {
+      "type": "Merge",
+      "month": "August",
+      "satisfaction": 50,
+      "threeRound": 99.42693409742121,
+      "tickets": 1746
+    },
+    {
+      "type": "Negative Review",
+      "month": "August",
+      "satisfaction": 33.33333333333333,
+      "threeRound": 58.333333333333336,
+      "tickets": 31
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "August",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 2
+    },
+    {
+      "type": "Out of Stock",
+      "month": "August",
+      "satisfaction": 75,
+      "threeRound": 100,
+      "tickets": 12
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "August",
+      "satisfaction": 80,
+      "threeRound": 91.76470588235294,
+      "tickets": 87
+    },
+    {
+      "type": "Product Defect",
+      "month": "August",
+      "satisfaction": 90.57971014492753,
+      "threeRound": 64.30248155600268,
+      "tickets": 6452
+    },
+    {
+      "type": "Product Question",
+      "month": "August",
+      "satisfaction": 82.3943661971831,
+      "threeRound": 93.43986543313709,
+      "tickets": 1226
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "August",
+      "satisfaction": 87.56756756756758,
+      "threeRound": 81.94174757281554,
+      "tickets": 1056
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "August",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 7
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "February",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 1
+    },
+    {
+      "type": "Cooperation",
+      "month": "February",
+      "satisfaction": null,
+      "threeRound": 50,
+      "tickets": 2
+    },
+    {
+      "type": "Merge",
+      "month": "February",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 9
+    },
+    {
+      "type": "Product Defect",
+      "month": "February",
+      "satisfaction": 50,
+      "threeRound": 23.076923076923077,
+      "tickets": 13
+    },
+    {
+      "type": "Product Question",
+      "month": "February",
+      "satisfaction": 0,
+      "threeRound": 88.88888888888889,
+      "tickets": 21
+    },
+    {
+      "type": "Merge",
+      "month": "January",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 12
+    },
+    {
+      "type": "Product Defect",
+      "month": "January",
+      "satisfaction": null,
+      "threeRound": 0,
+      "tickets": 2
+    },
+    {
+      "type": "Product Question",
+      "month": "January",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 1
+    },
+    {
       "type": "30-Day Free Return",
       "month": "July",
       "satisfaction": 100,
       "threeRound": 70.45454545454545,
+      "tickets": 44
+    },
+    {
+      "type": "Activate warranty",
+      "month": "July",
+      "satisfaction": 89.1891891891892,
+      "threeRound": 96.95945945945947,
+      "tickets": 299
+    },
+    {
+      "type": "Bulk Order",
+      "month": "July",
+      "satisfaction": 0,
+      "threeRound": 100,
+      "tickets": 6
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "July",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 395
+    },
+    {
+      "type": "Cooperation",
+      "month": "July",
+      "satisfaction": null,
+      "threeRound": 99.30635838150289,
+      "tickets": 939
+    },
+    {
+      "type": "Invoice",
+      "month": "July",
+      "satisfaction": 100,
+      "threeRound": 99.68354430379746,
+      "tickets": 636
+    },
+    {
+      "type": "Junk Message",
+      "month": "July",
+      "satisfaction": null,
+      "threeRound": 99.63898916967509,
+      "tickets": 280
+    },
+    {
+      "type": "Merge",
+      "month": "July",
+      "satisfaction": 100,
+      "threeRound": 99.63273871983212,
+      "tickets": 1906
+    },
+    {
+      "type": "Negative Review",
+      "month": "July",
+      "satisfaction": 100,
+      "threeRound": 62.5,
+      "tickets": 28
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "July",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 5
+    },
+    {
+      "type": "Out of Stock",
+      "month": "July",
+      "satisfaction": 75,
+      "threeRound": 94.44444444444444,
+      "tickets": 18
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "July",
+      "satisfaction": 75,
+      "threeRound": 85.5072463768116,
+      "tickets": 73
+    },
+    {
+      "type": "Product Defect",
+      "month": "July",
+      "satisfaction": 88.61386138613861,
+      "threeRound": 69.90309014445054,
+      "tickets": 5891
+    },
+    {
+      "type": "Product Question",
+      "month": "July",
+      "satisfaction": 83.47826086956522,
+      "threeRound": 93.90142021720969,
+      "tickets": 1284
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "July",
+      "satisfaction": 80.41237113402062,
+      "threeRound": 85.06224066390041,
+      "tickets": 742
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "July",
+      "satisfaction": 71.42857142857143,
+      "threeRound": 92.5,
       "tickets": 44
     },
     {
@@ -5831,6 +5236,174 @@
       "tickets": 32
     },
     {
+      "type": "Activate warranty",
+      "month": "June",
+      "satisfaction": 94.11764705882352,
+      "threeRound": 98.72340425531915,
+      "tickets": 238
+    },
+    {
+      "type": "Bulk Order",
+      "month": "June",
+      "satisfaction": null,
+      "threeRound": 0,
+      "tickets": 1
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "June",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 260
+    },
+    {
+      "type": "Cooperation",
+      "month": "June",
+      "satisfaction": null,
+      "threeRound": 99.59404600811908,
+      "tickets": 838
+    },
+    {
+      "type": "Invoice",
+      "month": "June",
+      "satisfaction": 100,
+      "threeRound": 99.03846153846155,
+      "tickets": 416
+    },
+    {
+      "type": "Junk Message",
+      "month": "June",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 213
+    },
+    {
+      "type": "Merge",
+      "month": "June",
+      "satisfaction": 100,
+      "threeRound": 99.5881949210707,
+      "tickets": 1459
+    },
+    {
+      "type": "Negative Review",
+      "month": "June",
+      "satisfaction": null,
+      "threeRound": 87.95180722891565,
+      "tickets": 119
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "June",
+      "satisfaction": 100,
+      "threeRound": 91.66666666666666,
+      "tickets": 12
+    },
+    {
+      "type": "Out of Stock",
+      "month": "June",
+      "satisfaction": 50,
+      "threeRound": 91.17647058823529,
+      "tickets": 34
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "June",
+      "satisfaction": 50,
+      "threeRound": 52.38095238095239,
+      "tickets": 21
+    },
+    {
+      "type": "Product Defect",
+      "month": "June",
+      "satisfaction": 90.0126422250316,
+      "threeRound": 68.39145106861643,
+      "tickets": 4600
+    },
+    {
+      "type": "Product Question",
+      "month": "June",
+      "satisfaction": 86.5079365079365,
+      "threeRound": 94.97161394971614,
+      "tickets": 1621
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "June",
+      "satisfaction": 83.11688311688312,
+      "threeRound": 83.6322869955157,
+      "tickets": 465
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "June",
+      "satisfaction": 0,
+      "threeRound": 73.33333333333333,
+      "tickets": 15
+    },
+    {
+      "type": "Activate warranty",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 4
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 1
+    },
+    {
+      "type": "Cooperation",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 71.42857142857143,
+      "tickets": 7
+    },
+    {
+      "type": "Junk Message",
+      "month": "March",
+      "satisfaction": 100,
+      "threeRound": 100,
+      "tickets": 1
+    },
+    {
+      "type": "Merge",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 84.61538461538461,
+      "tickets": 13
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 66.66666666666666,
+      "tickets": 3
+    },
+    {
+      "type": "Product Defect",
+      "month": "March",
+      "satisfaction": 72.72727272727273,
+      "threeRound": 14.285714285714285,
+      "tickets": 122
+    },
+    {
+      "type": "Product Question",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 66.66666666666666,
+      "tickets": 12
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "March",
+      "satisfaction": null,
+      "threeRound": 0,
+      "tickets": 2
+    },
+    {
       "type": "30-Day Free Return",
       "month": "May",
       "satisfaction": 80,
@@ -5838,21 +5411,450 @@
       "tickets": 32
     },
     {
-      "type": "30-Day Free Return",
-      "month": "April",
+      "type": "Activate warranty",
+      "month": "May",
       "satisfaction": 100,
-      "threeRound": 57.14285714285714,
-      "tickets": 14
+      "threeRound": 98.93617021276596,
+      "tickets": 203
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "May",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 73
+    },
+    {
+      "type": "Cooperation",
+      "month": "May",
+      "satisfaction": 66.66666666666666,
+      "threeRound": 98.40764331210191,
+      "tickets": 776
+    },
+    {
+      "type": "Invoice",
+      "month": "May",
+      "satisfaction": 100,
+      "threeRound": 98.9247311827957,
+      "tickets": 282
+    },
+    {
+      "type": "Junk Message",
+      "month": "May",
+      "satisfaction": 50,
+      "threeRound": 99.81884057971014,
+      "tickets": 554
+    },
+    {
+      "type": "Merge",
+      "month": "May",
+      "satisfaction": 33.33333333333333,
+      "threeRound": 99.72451790633609,
+      "tickets": 1454
+    },
+    {
+      "type": "Negative Review",
+      "month": "May",
+      "satisfaction": null,
+      "threeRound": 94.6949602122016,
+      "tickets": 453
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "May",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 9
+    },
+    {
+      "type": "Out of Stock",
+      "month": "May",
+      "satisfaction": 50,
+      "threeRound": 97.36842105263158,
+      "tickets": 42
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "May",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 10
+    },
+    {
+      "type": "Product Defect",
+      "month": "May",
+      "satisfaction": 88.67132867132868,
+      "threeRound": 62.824207492795395,
+      "tickets": 4464
+    },
+    {
+      "type": "Product Question",
+      "month": "May",
+      "satisfaction": 80.12048192771084,
+      "threeRound": 93.02172481895984,
+      "tickets": 1883
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "May",
+      "satisfaction": 78.33333333333333,
+      "threeRound": 81.41361256544502,
+      "tickets": 441
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "May",
+      "satisfaction": 83.33333333333334,
+      "threeRound": 82.92682926829268,
+      "tickets": 42
+    },
+    {
+      "type": "30-Day Free Return",
+      "month": "November",
+      "satisfaction": 100,
+      "threeRound": 66.66666666666666,
+      "tickets": 19
+    },
+    {
+      "type": "Activate warranty",
+      "month": "November",
+      "satisfaction": 100,
+      "threeRound": 98.9010989010989,
+      "tickets": 101
+    },
+    {
+      "type": "Bulk Order",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 10
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 126
+    },
+    {
+      "type": "Cooperation",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 99.42363112391931,
+      "tickets": 373
+    },
+    {
+      "type": "Invoice",
+      "month": "November",
+      "satisfaction": 50,
+      "threeRound": 98.73417721518987,
+      "tickets": 174
+    },
+    {
+      "type": "Junk Message",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 235
+    },
+    {
+      "type": "Merge",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 463
+    },
+    {
+      "type": "Negative Review",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 3
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 4
+    },
+    {
+      "type": "Out of Stock",
+      "month": "November",
+      "satisfaction": 100,
+      "threeRound": 100,
+      "tickets": 9
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "November",
+      "satisfaction": 75,
+      "threeRound": 85.71428571428571,
+      "tickets": 37
+    },
+    {
+      "type": "Product Defect",
+      "month": "November",
+      "satisfaction": 96.17486338797814,
+      "threeRound": 51.839999999999996,
+      "tickets": 2485
+    },
+    {
+      "type": "Product Question",
+      "month": "November",
+      "satisfaction": 80,
+      "threeRound": 92.01277955271566,
+      "tickets": 362
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "November",
+      "satisfaction": 91.78082191780823,
+      "threeRound": 81.41592920353983,
+      "tickets": 430
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "November",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 5
+    },
+    {
+      "type": "30-Day Free Return",
+      "month": "October",
+      "satisfaction": 86.66666666666667,
+      "threeRound": 65.85365853658537,
+      "tickets": 46
+    },
+    {
+      "type": "Activate warranty",
+      "month": "October",
+      "satisfaction": 86.04651162790698,
+      "threeRound": 94.6360153256705,
+      "tickets": 268
+    },
+    {
+      "type": "Bulk Order",
+      "month": "October",
+      "satisfaction": 33.33333333333333,
+      "threeRound": 100,
+      "tickets": 31
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "October",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 416
+    },
+    {
+      "type": "Cooperation",
+      "month": "October",
+      "satisfaction": null,
+      "threeRound": 98.97360703812316,
+      "tickets": 709
+    },
+    {
+      "type": "Invoice",
+      "month": "October",
+      "satisfaction": 100,
+      "threeRound": 97.89303079416531,
+      "tickets": 649
+    },
+    {
+      "type": "Junk Message",
+      "month": "October",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 699
+    },
+    {
+      "type": "Merge",
+      "month": "October",
+      "satisfaction": null,
+      "threeRound": 99.22756981580511,
+      "tickets": 1686
+    },
+    {
+      "type": "Negative Review",
+      "month": "October",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 4
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "October",
+      "satisfaction": 66.66666666666666,
+      "threeRound": 100,
+      "tickets": 10
+    },
+    {
+      "type": "Out of Stock",
+      "month": "October",
+      "satisfaction": 80,
+      "threeRound": 85.71428571428571,
+      "tickets": 28
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "October",
+      "satisfaction": 88.88888888888889,
+      "threeRound": 75,
+      "tickets": 67
+    },
+    {
+      "type": "Product Defect",
+      "month": "October",
+      "satisfaction": 95.22546419098144,
+      "threeRound": 42.52443933294997,
+      "tickets": 5892
+    },
+    {
+      "type": "Product Question",
+      "month": "October",
+      "satisfaction": 79.81651376146789,
+      "threeRound": 92.52437703141928,
+      "tickets": 994
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "October",
+      "satisfaction": 81.64556962025317,
+      "threeRound": 77.91563275434244,
+      "tickets": 893
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "October",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 3
+    },
+    {
+      "type": "30-Day Free Return",
+      "month": "September",
+      "satisfaction": 86.66666666666667,
+      "threeRound": 77.96610169491525,
+      "tickets": 61
+    },
+    {
+      "type": "Activate warranty",
+      "month": "September",
+      "satisfaction": 90.9090909090909,
+      "threeRound": 97.77777777777777,
+      "tickets": 233
+    },
+    {
+      "type": "Bulk Order",
+      "month": "September",
+      "satisfaction": 100,
+      "threeRound": 87.5,
+      "tickets": 18
+    },
+    {
+      "type": "Call Not Answered",
+      "month": "September",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 395
+    },
+    {
+      "type": "Cooperation",
+      "month": "September",
+      "satisfaction": null,
+      "threeRound": 99.50900163666121,
+      "tickets": 653
+    },
+    {
+      "type": "Invoice",
+      "month": "September",
+      "satisfaction": 83.33333333333334,
+      "threeRound": 98.13242784380306,
+      "tickets": 612
+    },
+    {
+      "type": "Junk Message",
+      "month": "September",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 502
+    },
+    {
+      "type": "Merge",
+      "month": "September",
+      "satisfaction": null,
+      "threeRound": 98.93190921228305,
+      "tickets": 1500
+    },
+    {
+      "type": "Negative Review",
+      "month": "September",
+      "satisfaction": null,
+      "threeRound": 50,
+      "tickets": 2
+    },
+    {
+      "type": "Others- Report to Amy",
+      "month": "September",
+      "satisfaction": null,
+      "threeRound": 100,
+      "tickets": 6
+    },
+    {
+      "type": "Out of Stock",
+      "month": "September",
+      "satisfaction": 100,
+      "threeRound": 94.44444444444444,
+      "tickets": 20
+    },
+    {
+      "type": "Payment & Coupon Issues",
+      "month": "September",
+      "satisfaction": 85.71428571428571,
+      "threeRound": 71.42857142857143,
+      "tickets": 65
+    },
+    {
+      "type": "Product Defect",
+      "month": "September",
+      "satisfaction": 92.16101694915254,
+      "threeRound": 64.3126499828591,
+      "tickets": 6364
+    },
+    {
+      "type": "Product Question",
+      "month": "September",
+      "satisfaction": 80.45112781954887,
+      "threeRound": 91.71539961013644,
+      "tickets": 1088
+    },
+    {
+      "type": "Shipping & Delivery",
+      "month": "September",
+      "satisfaction": 85.96491228070175,
+      "threeRound": 78.2258064516129,
+      "tickets": 798
+    },
+    {
+      "type": "Shopify Account Issues",
+      "month": "September",
+      "satisfaction": 100,
+      "threeRound": 50,
+      "tickets": 7
     }
   ],
   "dataThrough": "2026-11-12",
   "deliveryDirectory": "incoming-20261113",
   "productSource": "Zendesk Explore · Ticket Type workbook",
   "productSourceFile": "C:\\Users\\Amy\\Downloads\\Ticket_Type_11102026_1129.xlsx",
-  "productExportedAt": "2026-11-10T11:29:00+08:00",
-  "productDataThrough": "2026-11-10",
+  "productExportedAt": "2026-11-13T02:10:38+08:00",
+  "productDataThrough": "2026-11-12",
   "satisfactionSource": "Zendesk Explore · Satisfaction score and rated tickets by month (12 months)",
   "satisfactionSourceFile": "Satisfaction_Satisfaction_score_and_rated_tickets_by_month_(12_months)_default_11112026_1004.xlsx",
   "satisfactionExportedAt": "2026-11-11T10:04:00+08:00",
-  "satisfactionDataThrough": "2026-10-31"
+  "satisfactionDataThrough": "2026-10-31",
+  "productCalibrationExportedAt": "2026-11-10T11:29:00+08:00",
+  "productCalibrationDataThrough": "2026-11-10"
 }
